@@ -1,0 +1,573 @@
+13:19:49.131 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+13:22:40.030 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+13:22:48.858 [main] INFO  com.epam.homelibrary.Main - Password: 
+13:23:25.651 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+13:23:25.669 [main] ERROR com.epam.homelibrary.Main - fsdfsdf
+13:25:17.640 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+13:25:20.724 [main] INFO  com.epam.homelibrary.Main - Password: 
+13:25:35.937 [main] INFO  com.epam.homelibrary.Main - Type username: 
+13:29:36.806 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+13:29:40.600 [main] INFO  com.epam.homelibrary.Main - Password: 
+13:30:05.888 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+13:31:42.802 [main] INFO  com.epam.homelibrary.Main - Password: 
+13:31:44.890 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+13:31:44.891 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book by bookmarks
+
+13:31:52.232 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+13:31:56.255 [main] INFO  com.epam.homelibrary.Main - Set author
+13:31:57.702 [main] INFO  com.epam.homelibrary.Main - Set year
+13:31:59.669 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+13:32:01.446 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+13:32:02.626 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+13:32:02.691 [main] INFO  com.epam.homelibrary.Main - New book "q"
+by q
+year 1
+ISBN - 12
+pages - 123
+is created.
+13:32:14.044 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks []
+13:32:14.048 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+13:32:17.000 [main] INFO  com.epam.homelibrary.Main - "q"
+by q
+year 1
+ISBN - 12
+pages - 123
+
+13:32:17.018 [main] INFO  com.epam.homelibrary.Main - Type number of page
+13:32:20.688 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book q on page 12 from user admin Irma Pince]
+13:32:20.689 [main] INFO  com.epam.homelibrary.Main - Bookmark in book q on page 12 from user admin Irma Pince
+13:32:37.016 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book q on page 12 from user admin Irma Pince]
+13:32:37.017 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+13:32:41.568 [main] INFO  com.epam.homelibrary.Main - "q"
+by q
+year 1
+ISBN - 12
+pages - 123
+
+13:32:41.569 [main] INFO  com.epam.homelibrary.Main - Type number of page
+13:32:43.183 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book q on page 12 from user admin Irma Pince, Bookmark in book q on page 23 from user admin Irma Pince]
+13:32:43.184 [main] INFO  com.epam.homelibrary.Main - Bookmark in book q on page 23 from user admin Irma Pince
+13:32:47.231 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book q on page 12 from user admin Irma Pince, Bookmark in book q on page 23 from user admin Irma Pince]
+13:32:47.232 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+13:32:51.750 [main] INFO  com.epam.homelibrary.Main - "q"
+by q
+year 1
+ISBN - 12
+pages - 123
+
+13:32:51.754 [main] INFO  com.epam.homelibrary.Main - Bookmark null from q is removed
+13:32:51.756 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book q on page 12 from user admin Irma Pince]
+13:33:08.972 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book q on page 12 from user admin Irma Pince]
+13:33:08.972 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+13:33:12.779 [main] INFO  com.epam.homelibrary.Main - "q"
+by q
+year 1
+ISBN - 12
+pages - 123
+
+13:33:12.780 [main] INFO  com.epam.homelibrary.Main - Bookmark null from q is removed
+13:33:12.782 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book q on page 12 from user admin Irma Pince]
+13:43:07.073 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+13:43:11.035 [main] INFO  com.epam.homelibrary.Main - Password: 
+13:43:14.458 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+13:43:14.459 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book by bookmarks
+
+13:43:17.013 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+13:43:19.484 [main] INFO  com.epam.homelibrary.Main - Set author
+13:43:22.529 [main] INFO  com.epam.homelibrary.Main - Set year
+13:43:24.274 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+13:43:25.148 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+13:43:26.435 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+13:43:26.482 [main] INFO  com.epam.homelibrary.Main - New book "qwe"
+by rty
+year 123
+ISBN - 321
+pages - 32
+is created.
+13:43:35.346 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks []
+13:43:35.348 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+13:43:46.228 [main] INFO  com.epam.homelibrary.Main - "qwe"
+by rty
+year 123
+ISBN - 321
+pages - 32
+
+13:43:46.229 [main] INFO  com.epam.homelibrary.Main - Type number of page
+13:43:51.858 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book qwe on page 12 from user admin Irma Pince]
+13:43:51.858 [main] INFO  com.epam.homelibrary.Main - Bookmark in book qwe on page 12 from user admin Irma Pince
+13:43:56.566 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks [Bookmark in book qwe on page 12 from user admin Irma Pince]
+13:43:56.569 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+13:43:58.853 [main] INFO  com.epam.homelibrary.Main - "qwe"
+by rty
+year 123
+ISBN - 321
+pages - 32
+
+13:43:58.857 [main] INFO  com.epam.homelibrary.Main - Bookmark null from qwe is removed
+13:43:58.858 [main] INFO  com.epam.homelibrary.Main - listOfBookmarks []
+13:45:13.460 [main] INFO  com.epam.homelibrary.Main - Type name of book you want to remove
+13:45:15.571 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+13:45:15.576 [main] INFO  com.epam.homelibrary.Main - Book qwe is removed.
+13:45:15.578 [main] INFO  com.epam.homelibrary.Main - List of books size: 0
+16:26:33.630 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:27:19.880 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:27:22.014 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+16:27:22.015 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book by bookmarks
+
+16:27:29.555 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:27:32.362 [main] INFO  com.epam.homelibrary.Main - Set author
+16:27:33.772 [main] INFO  com.epam.homelibrary.Main - Set year
+16:27:35.642 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:27:38.758 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:27:41.415 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+16:27:41.454 [main] INFO  com.epam.homelibrary.Main - New book "qwe"
+by we
+year 12
+ISBN - 123
+pages - 1231
+is created.
+16:27:43.862 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:27:47.095 [main] INFO  com.epam.homelibrary.Main - Set author
+16:27:49.012 [main] INFO  com.epam.homelibrary.Main - Set year
+16:27:50.694 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:27:51.924 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:27:53.196 [main] INFO  com.epam.homelibrary.Main - List of books size: 2
+16:27:53.197 [main] INFO  com.epam.homelibrary.Main - New book "ewq"
+by we
+year 312
+ISBN - 32
+pages - 2323
+is created.
+16:27:54.638 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:27:57.163 [main] INFO  com.epam.homelibrary.Main - Set author
+16:27:58.485 [main] INFO  com.epam.homelibrary.Main - Set year
+16:28:00.388 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:28:01.540 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:28:02.540 [main] INFO  com.epam.homelibrary.Main - List of books size: 3
+16:28:02.540 [main] INFO  com.epam.homelibrary.Main - New book "qew"
+by ds
+year 321
+ISBN - 23423
+pages - 34
+is created.
+16:28:05.298 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+16:28:45.756 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+16:32:24.733 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:32:27.895 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:32:30.009 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+16:32:30.010 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book by bookmarks
+
+16:32:36.359 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:32:38.445 [main] INFO  com.epam.homelibrary.Main - Set author
+16:32:40.050 [main] INFO  com.epam.homelibrary.Main - Set year
+16:32:41.191 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:32:41.722 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:32:42.399 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+16:32:42.456 [main] INFO  com.epam.homelibrary.Main - New book "qwe"
+by we
+year 2134
+ISBN - 423
+pages - 423
+is created.
+16:32:44.340 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:32:47.109 [main] INFO  com.epam.homelibrary.Main - Set author
+16:32:48.981 [main] INFO  com.epam.homelibrary.Main - Set year
+16:32:49.971 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:32:51.003 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:32:52.835 [main] INFO  com.epam.homelibrary.Main - List of books size: 2
+16:32:52.836 [main] INFO  com.epam.homelibrary.Main - New book "qweqwe"
+by we
+year 432
+ISBN - 323
+pages - 34
+is created.
+16:32:54.332 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:32:56.091 [main] INFO  com.epam.homelibrary.Main - Set author
+16:32:57.180 [main] INFO  com.epam.homelibrary.Main - Set year
+16:32:58.300 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:32:59.082 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:32:59.842 [main] INFO  com.epam.homelibrary.Main - List of books size: 3
+16:32:59.843 [main] INFO  com.epam.homelibrary.Main - New book "qwewqe"
+by ewqewqe
+year 342
+ISBN - 423
+pages - 32
+is created.
+16:33:09.459 [main] INFO  com.epam.homelibrary.Main - Type a name of an author
+16:34:29.297 [main] INFO  com.epam.homelibrary.Main - Type a name of an author
+16:34:54.170 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:34:56.546 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:34:58.383 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+16:34:58.384 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book by bookmarks
+
+16:35:00.939 [main] INFO  com.epam.homelibrary.Main - Type a name of an author
+16:35:06.346 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:35:08.010 [main] INFO  com.epam.homelibrary.Main - Set author
+16:35:09.318 [main] INFO  com.epam.homelibrary.Main - Set year
+16:35:11.041 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:35:11.770 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:35:12.637 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+16:35:12.693 [main] INFO  com.epam.homelibrary.Main - New book "qwe"
+by we
+year 324
+ISBN - 23432
+pages - 4232
+is created.
+16:35:16.129 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:35:18.177 [main] INFO  com.epam.homelibrary.Main - Set author
+16:35:19.240 [main] INFO  com.epam.homelibrary.Main - Set year
+16:35:20.248 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:35:20.968 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:35:21.968 [main] INFO  com.epam.homelibrary.Main - List of books size: 2
+16:35:21.969 [main] INFO  com.epam.homelibrary.Main - New book "qwewqe"
+by we
+year 4234
+ISBN - 432
+pages - 34
+is created.
+16:35:24.679 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:35:25.967 [main] INFO  com.epam.homelibrary.Main - Set author
+16:35:26.751 [main] INFO  com.epam.homelibrary.Main - Set year
+16:35:27.719 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:35:28.688 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:35:29.574 [main] INFO  com.epam.homelibrary.Main - List of books size: 3
+16:35:29.575 [main] INFO  com.epam.homelibrary.Main - New book "wqeew"
+by eqweqw
+year 4324
+ISBN - 43224
+pages - 34
+is created.
+16:35:34.454 [main] INFO  com.epam.homelibrary.Main - Type a name of an author
+16:35:36.384 [main] INFO  com.epam.homelibrary.Main - ["qwe"
+by we
+year 324
+ISBN - 23432
+pages - 4232
+, "qwewqe"
+by we
+year 4234
+ISBN - 432
+pages - 34
+]
+19:01:11.389 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:01:49.728 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:01:52.397 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+19:01:52.397 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book by bookmarks
+
+19:01:59.596 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+19:02:00.786 [main] INFO  com.epam.homelibrary.Main - Set author
+19:02:01.721 [main] INFO  com.epam.homelibrary.Main - Set year
+19:02:02.826 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+19:02:03.514 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+19:02:12.834 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+19:02:12.874 [main] INFO  com.epam.homelibrary.Main - New book "qwe"
+by ewq
+year 123
+ISBN - 321
+pages - 34
+is created.
+19:02:16.216 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+19:02:17.528 [main] INFO  com.epam.homelibrary.Main - Set author
+19:02:18.376 [main] INFO  com.epam.homelibrary.Main - Set year
+19:02:23.290 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+19:02:25.182 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+19:02:26.872 [main] INFO  com.epam.homelibrary.Main - List of books size: 2
+19:02:26.872 [main] INFO  com.epam.homelibrary.Main - New book "fds"
+by fgd
+year 125
+ISBN - 3421
+pages - 43
+is created.
+19:02:31.863 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+19:02:32.966 [main] INFO  com.epam.homelibrary.Main - Set author
+19:02:33.745 [main] INFO  com.epam.homelibrary.Main - Set year
+19:02:35.503 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+19:02:36.733 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+19:02:37.635 [main] INFO  com.epam.homelibrary.Main - List of books size: 3
+19:02:37.635 [main] INFO  com.epam.homelibrary.Main - New book "fds"
+by vfd
+year 4353
+ISBN - 5435
+pages - 4534
+is created.
+19:02:52.890 [main] INFO  com.epam.homelibrary.Main - Type a year from
+19:03:06.530 [main] INFO  com.epam.homelibrary.Main - Type a year to
+19:03:09.777 [main] INFO  com.epam.homelibrary.Main - ["fds"
+by vfd
+year 4353
+ISBN - 5435
+pages - 4534
+]
+19:04:43.266 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:04:45.964 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:04:53.303 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+19:04:53.303 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book by bookmarks
+
+19:04:59.987 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+19:05:01.494 [main] INFO  com.epam.homelibrary.Main - Set author
+19:05:02.913 [main] INFO  com.epam.homelibrary.Main - Set year
+19:05:11.064 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+19:05:13.138 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+19:05:14.217 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+19:05:14.262 [main] INFO  com.epam.homelibrary.Main - New book "wqewq"
+by ewqe
+year 123
+ISBN - 32432
+pages - 324
+is created.
+19:05:16.057 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+19:05:17.433 [main] INFO  com.epam.homelibrary.Main - Set author
+19:05:19.208 [main] INFO  com.epam.homelibrary.Main - Set year
+19:05:24.577 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+19:05:26.415 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+19:05:27.391 [main] INFO  com.epam.homelibrary.Main - List of books size: 2
+19:05:27.391 [main] INFO  com.epam.homelibrary.Main - New book "dscd"
+by cdscds
+year 125
+ISBN - 4324
+pages - 432
+is created.
+19:05:29.454 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+19:05:31.055 [main] INFO  com.epam.homelibrary.Main - Set author
+19:05:32.310 [main] INFO  com.epam.homelibrary.Main - Set year
+19:05:34.143 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+19:05:36.165 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+19:05:38.105 [main] INFO  com.epam.homelibrary.Main - List of books size: 3
+19:05:38.106 [main] INFO  com.epam.homelibrary.Main - New book "d"
+by vdfvd
+year 54353
+ISBN - 4234
+pages - 432
+is created.
+19:05:45.827 [main] INFO  com.epam.homelibrary.Main - Type a year from
+19:05:50.771 [main] INFO  com.epam.homelibrary.Main - Type a year to
+19:05:57.904 [main] INFO  com.epam.homelibrary.Main - ["wqewq"
+by ewqe
+year 123
+ISBN - 32432
+pages - 324
+, "dscd"
+by cdscds
+year 125
+ISBN - 4324
+pages - 432
+]
+19:18:26.491 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:18:29.725 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:18:32.874 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+19:18:32.880 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book by bookmarks
+
+19:18:35.358 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+19:18:39.197 [main] INFO  com.epam.homelibrary.Main - Set author
+19:18:41.693 [main] INFO  com.epam.homelibrary.Main - Set year
+19:18:43.285 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+19:18:45.299 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+19:18:47.724 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+19:18:47.766 [main] INFO  com.epam.homelibrary.Main - New book "qwe"
+by dsasd
+year 123
+ISBN - 1232131
+pages - 321
+is created.
+19:18:50.275 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+19:18:51.419 [main] INFO  com.epam.homelibrary.Main - Set author
+19:18:52.934 [main] INFO  com.epam.homelibrary.Main - Set year
+19:18:53.986 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+19:18:54.852 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+19:18:55.898 [main] INFO  com.epam.homelibrary.Main - List of books size: 2
+19:18:55.899 [main] INFO  com.epam.homelibrary.Main - New book "fsdf"
+by fds
+year 3123
+ISBN - 3123
+pages - 3123
+is created.
+19:19:04.539 [main] INFO  com.epam.homelibrary.Main - Type name of a book
+19:19:08.215 [main] INFO  com.epam.homelibrary.Main - Type a year
+19:19:10.472 [main] INFO  com.epam.homelibrary.Main - Type amount of pages
+19:19:13.087 [main] INFO  com.epam.homelibrary.Main - "qwe"
+by dsasd
+year 123
+ISBN - 1232131
+pages - 321
+
+14:45:43.170 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:45:46.031 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:45:48.023 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+14:45:48.024 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+
+14:47:58.033 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:48:02.551 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:48:04.753 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+14:48:04.754 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+

@@ -1,0 +1,1864 @@
+14:56:55.521 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:56:57.838 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:56:59.201 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+14:56:59.201 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+14:57:55.126 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:57:57.462 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:58:00.162 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+14:58:00.163 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+14:58:08.214 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+14:58:10.413 [main] INFO  com.epam.homelibrary.Main - Set author
+14:58:11.047 [main] INFO  com.epam.homelibrary.Main - Set year
+14:58:11.894 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+14:58:12.446 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+14:58:15.206 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+14:58:15.249 [main] INFO  com.epam.homelibrary.Main - New book "eewq"
+by rewr
+year 123
+ISBN - 321
+pages - 32
+is created.
+14:58:33.490 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+14:59:03.389 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:59:06.734 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:59:08.704 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+14:59:08.705 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+14:59:12.901 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+15:01:15.989 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:01:18.580 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:01:21.573 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+15:01:21.574 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:01:23.347 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:01:33.729 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:01:36.137 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:01:41.557 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+15:01:41.558 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+15:02:01.322 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+15:08:57.828 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:09:00.031 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:09:02.122 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+15:09:02.123 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:09:15.223 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:09:19.166 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:09:35.585 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:09:44.767 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:09:46.227 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+15:09:46.227 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+15:09:52.518 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:12:54.182 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:12:56.550 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:12:58.760 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+15:12:58.760 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:13:00.808 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:13:01.730 [main] INFO  com.epam.homelibrary.Main - There is no such a user
+15:13:04.375 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:13:13.828 [main] INFO  com.epam.homelibrary.Main - There is no such a user
+15:13:18.834 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:13:23.349 [main] INFO  com.epam.homelibrary.Main - There is no such a user
+15:13:34.423 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:13:37.373 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:13:39.180 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+15:13:39.181 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+15:13:42.216 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:13:43.758 [main] INFO  com.epam.homelibrary.Main - There is no such a user
+15:19:16.121 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:19:21.537 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:19:24.629 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+15:19:24.630 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:19:26.889 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:19:34.131 [main] INFO  com.epam.homelibrary.Main - There is no such a user
+15:20:10.302 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:20:12.555 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:20:13.913 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+15:20:13.913 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+15:20:19.473 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:20:21.071 [main] INFO  com.epam.homelibrary.Main - There is no such a user
+15:23:28.852 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:23:31.380 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:23:32.462 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+15:23:32.463 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+15:23:54.920 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:23:59.533 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:24:01.167 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+15:24:01.168 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:24:03.907 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:24:10.646 [main] INFO  com.epam.homelibrary.Main - There is no such a user
+15:27:28.461 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:27:50.589 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:27:52.891 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+15:27:52.892 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:27:54.988 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+15:28:14.915 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:28:17.211 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:28:19.117 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+15:28:19.118 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+15:28:28.640 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:28:31.400 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:28:33.676 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+15:28:33.677 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:28:35.008 [main] INFO  com.epam.homelibrary.Main - Type name of user you want to block
+16:21:22.281 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:21:28.604 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:21:33.003 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+16:21:33.004 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+16:22:11.601 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:22:59.809 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:23:01.294 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+16:23:01.294 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+16:26:25.543 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:26:31.068 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:26:32.706 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+16:26:32.707 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+18:34:30.840 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:34:34.353 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:37:49.683 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:38:16.810 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:38:19.180 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+18:38:19.180 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+18:39:22.535 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:39:25.896 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:39:28.590 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+18:39:28.595 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+18:42:56.865 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:43:00.640 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:43:04.795 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+18:43:04.795 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+18:44:43.025 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:45:48.054 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:46:36.169 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:46:37.994 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+18:46:37.994 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+18:47:43.870 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:47:47.629 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:47:49.639 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+18:47:49.639 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+18:50:17.993 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:50:21.279 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:50:24.064 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+18:50:24.064 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+18:52:44.048 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:52:46.360 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:52:48.061 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+18:52:48.061 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+18:54:48.519 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:54:52.044 [main] INFO  com.epam.homelibrary.Main - Password: 
+18:56:29.649 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+18:56:32.648 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:00:20.909 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:00:27.288 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:00:29.478 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+19:00:29.478 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+19:02:31.793 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:02:34.118 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:02:36.223 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+19:02:36.223 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+19:04:38.038 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:04:40.658 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:04:54.648 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:04:57.698 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:04:59.468 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+19:04:59.468 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+19:07:33.722 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:07:36.288 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:07:39.078 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+19:07:39.078 [main] INFO  com.epam.homelibrary.Main - You've login as admin.
+19:07:39.078 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+19:10:59.133 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:11:02.337 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:11:03.868 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+19:11:03.868 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+19:11:21.292 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:11:28.038 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:11:29.913 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+com.epam.homelibrary.User@3012646b
+19:11:29.918 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+com.epam.homelibrary.User@4a883b15
+19:11:29.918 [main] INFO  com.epam.homelibrary.Main - You've login as user.
+19:11:29.918 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:13:46.543 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:13:49.878 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:13:51.267 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:13:51.278 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:13:51.278 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:15:31.057 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:15:45.628 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:15:47.542 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+19:15:47.542 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+19:16:03.672 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:16:07.252 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:16:08.472 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:16:08.477 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:16:08.477 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:17:47.379 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:18:20.357 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:18:22.492 [main] INFO  com.epam.homelibrary.Main - Yjkou have logged as user
+user Hermione Granger
+19:18:22.497 [main] INFO  com.epam.homelibrary.Main - Yjkou have logged as user
+user Hermione Granger
+19:18:22.497 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:23:42.052 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:23:48.077 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:23:49.307 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:23:49.312 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:23:49.312 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:25:24.782 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:25:30.237 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:26:33.418 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:28:22.862 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:28:22.867 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:28:39.947 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:28:42.687 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:28:44.112 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:28:44.122 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:28:44.122 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:29:15.857 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:29:19.407 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:29:38.578 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:30:16.932 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:30:16.932 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:30:34.547 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:30:39.407 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:30:42.907 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+19:30:42.907 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+19:31:20.699 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:31:27.147 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:31:41.272 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+19:31:41.277 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+19:37:53.584 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:38:00.497 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:38:09.932 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:38:09.937 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:38:09.937 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:52:57.279 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:53:02.534 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:53:03.795 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:53:03.795 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:55:27.065 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:55:30.284 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:55:31.694 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:55:31.694 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:56:00.729 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:56:04.734 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:56:06.299 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:56:06.304 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:56:34.079 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:56:36.584 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:56:37.789 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:56:37.789 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:57:00.919 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:57:03.899 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:57:05.974 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:57:05.974 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:57:25.566 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:57:27.674 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:57:29.044 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:57:29.044 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+19:57:52.607 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+19:57:55.974 [main] INFO  com.epam.homelibrary.Main - Password: 
+19:57:57.829 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+19:57:57.834 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+20:01:10.794 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:01:13.504 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:01:14.854 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+20:01:14.854 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+20:01:41.944 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:01:46.044 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:01:47.594 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+20:01:47.594 [main] INFO  com.epam.homelibrary.Main - Sorry, you have been banned
+20:02:17.369 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:02:19.906 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:02:21.147 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+20:02:21.162 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+20:02:36.123 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:02:39.051 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:02:40.773 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+20:02:40.773 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+20:03:24.845 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:03:26.776 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:05:10.160 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:05:13.446 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:05:17.151 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+20:05:17.151 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+20:05:28.986 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:05:33.856 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:05:46.191 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:05:49.063 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:05:50.666 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+20:05:50.671 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+20:33:49.009 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:33:51.614 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:33:53.959 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+20:33:53.959 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+20:33:56.906 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+20:34:00.965 [main] INFO  com.epam.homelibrary.Main - Set author
+20:34:02.649 [main] INFO  com.epam.homelibrary.Main - Set year
+20:34:08.264 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+20:34:09.764 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+20:34:11.469 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+20:34:11.509 [main] INFO  com.epam.homelibrary.Main - New book "123"
+by 321
+year 345
+ISBN - 34
+pages - 34
+is created.
+20:34:31.105 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+20:34:33.064 [main] INFO  com.epam.homelibrary.Main - Set author
+20:34:34.154 [main] INFO  com.epam.homelibrary.Main - Set year
+20:34:35.456 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+20:34:36.465 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+20:34:37.675 [main] INFO  com.epam.homelibrary.Main - List of books size: 2
+20:34:37.675 [main] INFO  com.epam.homelibrary.Main - New book "vdf"
+by cds
+year 24
+ISBN - 23
+pages - 34534
+is created.
+20:38:53.513 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+20:38:56.264 [main] INFO  com.epam.homelibrary.Main - Password: 
+20:38:58.699 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+20:38:58.699 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+20:39:00.964 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+20:39:03.154 [main] INFO  com.epam.homelibrary.Main - Set author
+20:39:04.024 [main] INFO  com.epam.homelibrary.Main - Set year
+20:39:05.504 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+20:39:06.854 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+20:39:10.389 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+20:39:10.414 [main] INFO  com.epam.homelibrary.Main - New book "qwewq"
+by eqw
+year 312
+ISBN - 234
+pages - 423
+is created.
+12:51:31.295 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+12:51:34.145 [main] INFO  com.epam.homelibrary.Main - Password: 
+12:51:36.515 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+12:51:36.518 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+12:51:40.050 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+12:51:41.520 [main] INFO  com.epam.homelibrary.Main - Set author
+12:51:42.357 [main] INFO  com.epam.homelibrary.Main - Set year
+12:51:43.209 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+12:51:44.090 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+12:51:45.426 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+12:51:45.490 [main] INFO  com.epam.homelibrary.Main - New book "423423"
+by 42342
+year 2342
+ISBN - 2342
+pages - 23
+is created.
+12:51:55.915 [main] INFO  com.epam.homelibrary.Main - Type address of books catalog
+12:52:21.890 [main] INFO  com.epam.homelibrary.Main - Books from are added to Library.json
+13:00:32.097 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+13:00:34.755 [main] INFO  com.epam.homelibrary.Main - Password: 
+13:00:36.674 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+13:00:36.679 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+13:00:41.390 [main] INFO  com.epam.homelibrary.Main - Type address of books catalog
+13:01:05.899 [main] INFO  com.epam.homelibrary.Main - Books from are added to Library.json
+14:18:33.775 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:18:36.948 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:18:40.027 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+14:18:40.028 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+14:26:44.065 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:26:47.075 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:26:50.328 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+14:26:50.329 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+14:27:38.430 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:27:49.004 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:27:51.548 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+14:27:51.549 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+14:30:19.940 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:30:26.102 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:30:28.744 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+14:30:28.745 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+14:31:49.600 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:31:52.319 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:31:54.215 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+14:31:54.216 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+14:56:20.224 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+14:56:22.865 [main] INFO  com.epam.homelibrary.Main - Password: 
+14:56:25.355 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+14:56:25.355 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:14:29.169 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:14:32.144 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:14:34.509 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+15:14:34.510 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:15:04.306 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:15:07.236 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:15:08.991 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+15:15:08.991 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:16:54.261 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:16:57.942 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:17:00.303 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+15:17:00.304 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:17:40.662 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:17:42.992 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:17:44.495 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+15:17:44.496 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+15:45:40.369 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+15:45:43.134 [main] INFO  com.epam.homelibrary.Main - Password: 
+15:45:45.594 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+15:45:45.594 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+16:01:35.502 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:02:19.198 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:02:24.040 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+16:02:24.041 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+16:03:29.273 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:03:33.198 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:03:34.811 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+16:03:34.811 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+16:03:58.008 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:04:02.459 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:04:04.455 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+16:04:04.457 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+16:26:16.365 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:26:19.258 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:26:20.919 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+16:26:20.920 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+16:28:38.738 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:28:41.327 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:28:43.390 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+16:28:43.391 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+16:29:11.490 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:29:15.068 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:29:16.257 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+16:29:16.258 [main] INFO  com.epam.homelibrary.Main - Sorry, you have been banned
+16:29:30.572 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:30:02.517 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:30:05.197 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:30:21.411 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:30:23.390 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:30:24.892 [main] INFO  com.epam.homelibrary.Main - You have logged as user
+user Hermione Granger
+16:30:24.894 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a list of books
+5 to add a bookmark
+6 to remove a bookmark
+7 to search a book by name
+8 to search a book by author
+9 to search a book by ISBN
+10 to search a book in range of years
+11 to search a book by years pages name
+12 to search a book with bookmarks
+
+16:54:39.340 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:56:33.263 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:56:35.732 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+16:56:35.732 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+16:56:40.451 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+16:58:14.323 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+16:58:19.699 [main] INFO  com.epam.homelibrary.Main - Password: 
+16:58:21.840 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+16:58:21.840 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+16:58:24.575 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+16:58:26.872 [main] INFO  com.epam.homelibrary.Main - Set author
+16:58:28.122 [main] INFO  com.epam.homelibrary.Main - Set year
+16:58:29.091 [main] INFO  com.epam.homelibrary.Main - Set ISBN
+16:58:30.044 [main] INFO  com.epam.homelibrary.Main - Set number of pages
+16:58:31.842 [main] INFO  com.epam.homelibrary.Main - List of books size: 1
+16:58:31.889 [main] INFO  com.epam.homelibrary.Main - New book "qwe"
+by eqw
+year 123
+ISBN - 321
+pages - 12323
+is created.
+16:58:45.156 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+16:58:47.047 [main] INFO  com.epam.homelibrary.Main - "qwe"
+by eqw
+year 123
+ISBN - 321
+pages - 12323
+
+16:58:57.518 [main] INFO  com.epam.homelibrary.Main - Before - listOfBookmarks []
+16:58:57.518 [main] INFO  com.epam.homelibrary.Main - Type a name of a book
+16:58:59.643 [main] INFO  com.epam.homelibrary.Main - "qwe"
+by eqw
+year 123
+ISBN - 321
+pages - 12323
+
+16:58:59.643 [main] INFO  com.epam.homelibrary.Main - Bookmark from qwe is removed
+16:58:59.659 [main] INFO  com.epam.homelibrary.Main - After - listOfBookmarks []
+17:07:47.816 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+17:07:50.872 [main] INFO  com.epam.homelibrary.Main - Password: 
