@@ -1,5 +1,6 @@
 package com.epam.homelibrary;
 
+import com.epam.homelibrary.databaseDAO.DBConnector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +15,7 @@ import java.io.InputStreamReader;
  * DAO слой и реализовать работу с H2 DataBase с использованием flyway при помощи Hibernate.
  */
 public class Main {
-    static final Logger logger = LogManager.getLogger(Main.class);
+    public static final Logger logger = LogManager.getLogger(Main.class);
     static BufferedReader reader;
 
     public static void main(String[] args) {
@@ -24,6 +25,9 @@ public class Main {
             String login = reader.readLine();
             logger.info("Password: ");
             String password = reader.readLine();
+
+            DBConnector.connect();
+            DBConnector.createTable();
 
             Controller controller = new Controller();
             controller.operate(login, password);

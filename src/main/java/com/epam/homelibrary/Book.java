@@ -1,13 +1,29 @@
 package com.epam.homelibrary;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name = "Books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "author")
     private String author;
+    @Column(name = "year")
     private int year;
+    @Column(name = "ISBN")
     private long ISBN;
+    @Column(name = "pages")
     private int pages;
     private Bookmark bookmark;
     protected boolean hasBookmark = false;
+
+    public int getId() {
+        return id;
+    }
 
     public void setHasBookmark(boolean hasBookmark) {
         this.hasBookmark = hasBookmark;

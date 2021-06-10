@@ -1862,3 +1862,218 @@ pages - 12323
 Please login
 Login: 
 17:07:50.872 [main] INFO  com.epam.homelibrary.Main - Password: 
+12:06:28.211 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+12:06:35.027 [main] INFO  com.epam.homelibrary.Main - Password: 
+12:06:38.063 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+12:06:38.064 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+12:06:41.870 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+12:07:32.602 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+12:07:38.446 [main] INFO  com.epam.homelibrary.Main - Password: 
+12:07:41.943 [main] ERROR com.epam.homelibrary.Main - Синтаксическая ошибка в выражении SQL "CREATE TABLE BOOKS (
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(255),
+    AUTHOR VARCHAR(255),
+    YEAR INT
+    ISBN[*] LONG,
+    PAGES INT
+);"; ожидалось "(, FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE BOOKS (
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(255),
+    AUTHOR VARCHAR(255),
+    YEAR INT
+    ISBN[*] LONG,
+    PAGES INT
+);"; expected "(, FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE Books (
+    Id integer PRIMARY KEY AUTO_INCREMENT,
+    Name varchar(255),
+    Author varchar(255),
+    Year int
+    ISBN long,
+    Pages int
+); [42001-200]
+12:07:42.166 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+12:07:42.167 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+12:08:37.591 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+12:08:43.582 [main] INFO  com.epam.homelibrary.Main - Password: 
+12:08:45.672 [main] ERROR com.epam.homelibrary.Main - Синтаксическая ошибка в выражении SQL "CREATE TABLE BOOKS (
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(255),
+    AUTHOR VARCHAR(255),
+    YEAR INT
+    ISBN[*] LONG
+    PAGES INT
+);"; ожидалось "(, FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE BOOKS (
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(255),
+    AUTHOR VARCHAR(255),
+    YEAR INT
+    ISBN[*] LONG
+    PAGES INT
+);"; expected "(, FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE Books (
+    Id integer PRIMARY KEY AUTO_INCREMENT,
+    Name varchar(255),
+    Author varchar(255),
+    Year int
+    ISBN long
+    Pages int
+); [42001-200]
+12:08:45.842 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+12:08:45.843 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+12:09:19.732 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+12:09:25.728 [main] INFO  com.epam.homelibrary.Main - Password: 
+12:09:28.444 [main] ERROR com.epam.homelibrary.Main - Синтаксическая ошибка в выражении SQL "CREATE TABLE BOOKS (
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(255),
+    AUTHOR VARCHAR(255),
+    YEAR INT
+    ISBN[*] LONG
+    PAGES INT
+);"; ожидалось "(, FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE BOOKS (
+    ID INTEGER PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(255),
+    AUTHOR VARCHAR(255),
+    YEAR INT
+    ISBN[*] LONG
+    PAGES INT
+);"; expected "(, FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE Books (
+    Id integer PRIMARY KEY AUTO_INCREMENT,
+    Name varchar(255),
+    Author varchar(255),
+    Year int
+    ISBN long
+    Pages int
+); [42001-200]
+12:09:28.586 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+12:09:28.587 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+12:15:27.386 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+12:16:14.962 [main] INFO  com.epam.homelibrary.Main - Password: 
+12:16:19.518 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+12:16:19.519 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+
+12:16:27.889 [main] INFO  com.epam.homelibrary.Main - Set name of a book
+12:17:30.495 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+12:18:20.137 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
+12:18:27.762 [main] INFO  com.epam.homelibrary.Main - Password: 
+12:19:16.471 [main] INFO  com.epam.homelibrary.Main - You have logged as admin
+admin Irma Pince
+12:19:16.472 [main] INFO  com.epam.homelibrary.Main - Please type some of these commands:
+1 to create a user
+2 to block a user
+3 to add a new book
+4 to remove a book
+5 to remove a book by author
+6 to add a list of books
+7 to add a bookmark
+8 to remove a bookmark
+9 to search a book by name
+10 to search a book by author
+11 to search a book by ISBN
+12 to search a book in range of years
+13 to search a book by years pages name
+14 to search a book with bookmarks
+15 to get user log history
+

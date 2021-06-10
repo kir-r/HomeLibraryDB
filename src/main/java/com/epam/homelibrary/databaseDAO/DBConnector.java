@@ -1,4 +1,6 @@
-package com.epam.homelibrary;
+package com.epam.homelibrary.databaseDAO;
+
+import com.epam.homelibrary.Main;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -40,12 +42,12 @@ public class DBConnector {
             statement = connection.createStatement();
 
             String homeLibrary = "CREATE TABLE Books (\n" +
-                    "    ID integer PRIMARY KEY AUTO_INCREMENT,\n" +
+                    "    Id integer PRIMARY KEY AUTO_INCREMENT,\n" +
                     "    Name varchar(255),\n" +
                     "    Author varchar(255),\n" +
-                    "    Year int\n" +
+                    "    Year integer,\n" +
                     "    ISBN long,\n" +
-                    "    Pages int\n" +
+                    "    Pages integer\n" +
                     ");";
 
             statement.execute(homeLibrary);
@@ -53,7 +55,6 @@ public class DBConnector {
             /*statement = connection.createStatement();
 
             String values = "INSERT INTO CATALOGUE VALUES (111, 222, 'catalogue')";
-
 
             statement.execute(values);
 
