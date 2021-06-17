@@ -2,16 +2,13 @@ package com.epam.homelibrary;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class UserAuthenticator {
-    public static AbstractUser authenticate(String login, String password) {
+    public static User authenticate(String login, String password) {
         if (login.equalsIgnoreCase("Admin") && password.equals("qwerty")) {
             Admin admin = null;
             try (BufferedReader reader = new BufferedReader(new FileReader("src\\main\\resources\\admin.json"))) {
@@ -20,6 +17,7 @@ public class UserAuthenticator {
                 while ((s = reader.readLine()) != null) {
                     stringBuilder.append(s);
                 }
+
                 String jsonText = stringBuilder.toString();
 
                 GsonBuilder builder = new GsonBuilder();
@@ -41,6 +39,7 @@ public class UserAuthenticator {
                 while ((s = reader.readLine()) != null) {
                     stringBuilder.append(s);
                 }
+
                 String jsonText = stringBuilder.toString();
 
                 GsonBuilder builder = new GsonBuilder();
@@ -57,7 +56,7 @@ public class UserAuthenticator {
         } else {
             System.out.println("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.");
             System.exit(1);
+            return null;
         }
-        return null;
     }
 }

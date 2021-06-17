@@ -1,6 +1,7 @@
 package com.epam.homelibrary;
 
 import com.epam.homelibrary.databaseDAO.DBConnector;
+import com.epam.homelibrary.databaseDAO.LibraryDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,8 +27,8 @@ public class Main {
             logger.info("Password: ");
             String password = reader.readLine();
 
-            DBConnector.connect();
-            DBConnector.createTable();
+//            DBConnector.connect();
+//            DBConnector.createTable();
 
             Controller controller = new Controller();
             controller.operate(login, password);

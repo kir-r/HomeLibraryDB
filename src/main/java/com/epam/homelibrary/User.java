@@ -1,7 +1,10 @@
 package com.epam.homelibrary;
 
+import com.epam.homelibrary.databaseDAO.LibraryDAO;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,22 +13,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-public class User extends AbstractUser {
-    private String name;
-    private String login;
-    private String password;
-    private boolean isBlocked;
-    private Book book;
-    private String nameOfBook;
-    private ArrayList<Bookmark> listOfBookmarks = new ArrayList<Bookmark>();
-    private ArrayList<Book> listOfBooks = new ArrayList<Book>();
+public class User {
+    protected String name;
+    protected String login;
+    protected String password;
+    protected boolean isBlocked;
+    protected ArrayList<Bookmark> listOfBookmarks = new ArrayList<>();
+    protected ArrayList<Book> listOfBooks = new ArrayList<>();
+    protected LibraryDAO libraryDAO = new LibraryDAO();
 
     public String getName() {
         return name;
@@ -35,6 +30,7 @@ public class User extends AbstractUser {
         this.name = name;
     }
 
+
     public boolean isBlocked() {
         return isBlocked;
     }
@@ -43,7 +39,14 @@ public class User extends AbstractUser {
         isBlocked = blocked;
     }
 
-    @Override
+    public boolean isAdmin(String name) {
+        return false;
+    }
+
+    public String toString() {
+        return "user " + name;
+    }
+
     public boolean login(String login, String password) {
         if (login.equalsIgnoreCase(this.login) && password.equals(this.password)) {
             return true;
@@ -54,34 +57,15 @@ public class User extends AbstractUser {
         }
     }
 
-    @Override
-    public boolean isAdmin(String name) {
-        return false;
+    public void addBook(String addressJSON, Book book) throws IOException { //1
+//        listOfBooks.add(book);
+//        JSONLibraryRefresher.refresh(listOfBooks);
+        libraryDAO.addBook(book);
+
+//        Main.logger.info("List of books size: " + listOfBooks.size());
     }
 
-    @Override
-    public void addBook(String addressJSON) throws IOException {
-        book = new Book();
-        Main.logger.info("Set name of a book");
-        book.setName(Main.reader.readLine());
-        Main.logger.info("Set author");
-        book.setAuthor(Main.reader.readLine());
-        Main.logger.info("Set year");
-        book.setYear(Integer.parseInt(Main.reader.readLine()));
-        Main.logger.info("Set ISBN");
-        book.setISBN(Long.parseLong(Main.reader.readLine()));
-        Main.logger.info("Set number of pages");
-        book.setPages(Integer.parseInt(Main.reader.readLine()));
-        listOfBooks.add(book);
-        JSONLibraryRefresher.refresh(listOfBooks);
-        Main.logger.info("List of books size: " + listOfBooks.size());
-        Main.logger.info("New book " + book.toString() + "is created.");
-    }
-
-    @Override
-    public void removeBook(String addressJSON) throws IOException {
-        Main.logger.info("Type name of book you want to remove");
-        nameOfBook = Main.reader.readLine();
+    public void removeBook(String nameOfBook) throws IOException { //2
         Main.logger.info("List of books size: " + listOfBooks.size());
         Optional<Book> optionalBook = listOfBooks
                 .stream()
@@ -98,11 +82,8 @@ public class User extends AbstractUser {
         Main.logger.info("List of books size: " + listOfBooks.size());
     }
 
-    @Override
-    public void removeBookByAuthor(String addressJSON) throws IOException {
+    public void removeBookByAuthor(String nameOfAuthor) throws IOException { //3
         Main.logger.info("List of books before " + listOfBooks);
-        Main.logger.info("Type name of author whose books you want to remove");
-        String nameOfAuthor = Main.reader.readLine();
         Optional<Book> optionalBook = listOfBooks
                 .stream()
                 .filter(book -> book.getAuthor().equals(nameOfAuthor))
@@ -117,10 +98,8 @@ public class User extends AbstractUser {
         Main.logger.info("List of books after " + listOfBooks);
     }
 
-    @Override
-    public void addListOfBooks() {
-        Main.logger.info("Type address of books catalog");
-        try (BufferedReader reader = new BufferedReader(new FileReader(Main.reader.readLine()))) {
+    public void addListOfBooks(String addressOfBookCatalog) { //4
+        try (BufferedReader reader = new BufferedReader(new FileReader(addressOfBookCatalog))) {
             Gson gson = new Gson();
             Collection<Book> listOfBooksToAdd = gson.fromJson(reader, new TypeToken<List<Book>>() {
             }.getType());
@@ -131,10 +110,8 @@ public class User extends AbstractUser {
             e.printStackTrace();
         }
     }
-
-    @Override
-    public void addBookmark() throws IOException, NoSuchBookException {
-        Main.logger.info("listOfBookmarks " + listOfBookmarks);
+    public void addBookmark() throws IOException { //5
+       /* Main.logger.info("listOfBookmarks " + listOfBookmarks);
         Bookmark bookmark = new Bookmark();
         book = searchBookByName();
         Main.logger.info("Type number of page");
@@ -145,102 +122,68 @@ public class User extends AbstractUser {
         listOfBookmarks.add(bookmark);
         JSONLibraryRefresher.refresh(listOfBooks);
         Main.logger.info("listOfBookmarks " + listOfBookmarks);
-        Main.logger.info(book.getBookmark());
+        Main.logger.info(book.getBookmark());*/
+    }
+    public void removeBookmark(String bookName) throws IOException { //6
+//        Main.logger.info("Before - listOfBookmarks " + listOfBookmarks);
+//        book = searchBookByName(bookName);
+//        Optional<Book> optionalBook = listOfBooks
+//                .stream()
+//                .filter(b -> b.getName().equals(book.getName()))
+//                .findFirst();
+//        if (optionalBook.isPresent()) {
+//            listOfBookmarks.remove(optionalBook.get().getBookmark());
+//            optionalBook.get().setBookmark(null);
+//            optionalBook.get().setHasBookmark(false);
+//            Main.logger.info("Bookmark from " + optionalBook.get().getName() + " is removed");
+//            JSONLibraryRefresher.refresh(listOfBooks);
+//        } else {
+//            throw new NoSuchBookException("There is no such a book");
+//        }
+//        Main.logger.info("After - listOfBookmarks " + listOfBookmarks);
     }
 
-    @Override
-    public void removeBookmark() throws IOException, NoSuchBookException {
-        Main.logger.info("Before - listOfBookmarks " + listOfBookmarks);
-        book = searchBookByName();
-        Optional<Book> optionalBook = listOfBooks
-                .stream()
-                .filter(b -> b.getName().equals(book.getName()))
-                .findFirst();
-        if (optionalBook.isPresent()) {
-            listOfBookmarks.remove(optionalBook.get().getBookmark());
-            optionalBook.get().setBookmark(null);
-            optionalBook.get().setHasBookmark(false);
-            Main.logger.info("Bookmark from " + optionalBook.get().getName() + " is removed");
-            JSONLibraryRefresher.refresh(listOfBooks);
-        } else {
-            throw new NoSuchBookException("There is no such a book");
-        }
-        Main.logger.info("After - listOfBookmarks " + listOfBookmarks);
-    }
-
-    @Override
-    public Book searchBookByName() throws IOException, NoSuchBookException {
-        Main.logger.info("Type a name of a book");
-        String bookName = Main.reader.readLine();
+    public Book searchBookByName(String bookName) throws IOException { //7
         Optional<Book> optionalBook = listOfBooks
                 .stream()
                 .filter(book -> book.getName().equals(bookName))
                 .findFirst();
         if (optionalBook.isPresent()) {
-            Main.logger.info(optionalBook.get());
             return optionalBook.get();
         } else {
-            throw new NoSuchBookException("There is no such a book");
+            Main.logger.info("There is not such a book");
+            return null;
         }
     }
 
-    @Override
-    public ArrayList<Book> searchBookByAuthor() throws IOException, NoSuchBookException {
+    public List<Book> searchBookByAuthor(String authorName) throws IOException { //8
         ArrayList<Book> listBooksByAuthor = new ArrayList<>();
-        Main.logger.info("Type a name of an author");
-        String authorName = Main.reader.readLine();
         listOfBooks.stream()
                 .filter(book -> book.getAuthor().equals(authorName))
                 .forEach(listBooksByAuthor::add);
-        if (!listBooksByAuthor.isEmpty()) {
-            Main.logger.info(listBooksByAuthor);
-            return listBooksByAuthor;
-        } else {
-            throw new NoSuchBookException("There is no such a book");
-        }
+        return listBooksByAuthor;
     }
 
-    @Override
-    public Book searchBookByISBN() throws IOException, NoSuchBookException {
-        Main.logger.info("Type an ISBN");
-        long ISBN = Long.parseLong(Main.reader.readLine());
+    public Book searchBookByISBN(long ISBN) throws IOException { //9
         Optional<Book> optionalBook = listOfBooks.stream()
                 .filter(book -> book.getISBN() == ISBN)
                 .findFirst();
-        if (optionalBook.isPresent()) {
+        if (optionalBook.isPresent()) { //get without check - ?
             Main.logger.info(optionalBook.get());
             return optionalBook.get();
         } else {
-            throw new NoSuchBookException("There is no such a book");
+            Main.logger.info("There is not such a book");
+            return null;
         }
     }
 
-    @Override
-    public ArrayList<Book> searchBookInRangeOfYears() throws IOException, NoSuchBookException {
-        Main.logger.info("Type a year from");
-        int yearFrom = Integer.parseInt(Main.reader.readLine());
-        Main.logger.info("Type a year to");
-        int yearTo = Integer.parseInt(Main.reader.readLine());
-        List<Book> list = listOfBooks.stream()
+    public List<Book> searchBookInRangeOfYears(int yearFrom, int yearTo) throws IOException { //10
+        return listOfBooks.stream()
                 .filter(book -> yearFrom <= book.getYear() && yearTo >= book.getYear())
                 .collect(Collectors.toList());
-        if (!list.isEmpty()) {
-            ArrayList<Book> listBooksByAuthor = new ArrayList<>(list);
-            Main.logger.info(listBooksByAuthor);
-            return listBooksByAuthor;
-        } else {
-            throw new NoSuchBookException("There is no such a book");
-        }
     }
 
-    @Override
-    public Book searchBookByYearPagesName() throws NoSuchBookException, IOException {
-        Main.logger.info("Type name of a book");
-        String name = Main.reader.readLine();
-        Main.logger.info("Type a year");
-        int year = Integer.parseInt(Main.reader.readLine());
-        Main.logger.info("Type amount of pages");
-        int pages = Integer.parseInt(Main.reader.readLine());
+    public Book searchBookByYearPagesName(String name, int year, int pages) { //11
         Optional<Book> optionalBook = listOfBooks.stream()
                 .filter(book -> book.getName().equals(name))
                 .filter(book -> book.getYear() == year)
@@ -249,25 +192,20 @@ public class User extends AbstractUser {
         if (optionalBook.isPresent()) {
             Main.logger.info(optionalBook.get());
             return optionalBook.get();
+        } else {
+            Main.logger.info("There is not such a book");
+            return null;
         }
-        throw new NoSuchBookException("There is no such a book");
     }
 
-    @Override
-    public ArrayList<Book> searchBookWithBookmarks() throws NoSuchBookException {
-        List<Book> list = listOfBooks.stream()
-                .filter(book -> book.hasBookmark)
+    public List<Book> searchBookWithBookmarks() { //12
+        // работаем со списком закладок, фильтруем закладки у которых нет книг
+        // книги оставшихся закладок выводим
+
+        return listOfBookmarks.stream()
+                .filter(bookmark -> bookmark.getBook() != null)
+                .map(Bookmark::getBook)
                 .collect(Collectors.toList());
-        if (!list.isEmpty()) {
-            ArrayList<Book> booksWithBookmark = new ArrayList<>(list);
-            Main.logger.info(booksWithBookmark);
-            return booksWithBookmark;
-        }
-        throw new NoSuchBookException("There is no such a book");
-    }
-
-    @Override
-    public String toString() {
-        return "user " + name;
     }
 }
+

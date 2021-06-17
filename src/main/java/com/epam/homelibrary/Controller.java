@@ -1,26 +1,21 @@
 package com.epam.homelibrary;
 
-import com.google.gson.Gson;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
-
-import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
     Admin admin;
     User user;
-    AbstractUser visitor;
     String command;
     Book book;
 
     public final void operate(String login, String password) {
-        visitor = UserAuthenticator.authenticate(login, password);
-        if (visitor instanceof Admin) {
-            admin = (Admin) visitor;
+        user = UserAuthenticator.authenticate(login, password);
+        if (user instanceof Admin) {
+            admin = (Admin) user;
             adminOperates();
-        } else if (visitor instanceof User) {
-            user = (User) visitor;
+        } else if (user != null) {
             if (!user.isBlocked()) {
                 userOperates();
             }
@@ -40,53 +35,95 @@ public class Controller {
             while (!(command = Main.reader.readLine()).equalsIgnoreCase("exit")) {
                 switch (command) {
                     case ("1"):
-                        admin.createUser();
+                        Main.logger.info("Type username: ");
+                        String username = Main.reader.readLine();
+                        admin.createUser(username);
                         break;
                     case ("2"):
                         admin.blockUser();
                         break;
                     case ("3"):
-                        admin.addBook("resource\\homeLibrary.json");
+                        book = new Book();
+                        Main.logger.info("Set name of a book");
+                        book.setName(Main.reader.readLine());
+                        Main.logger.info("Set author");
+                        book.setAuthor(Main.reader.readLine());
+                        Main.logger.info("Set year");
+                        book.setYear(Integer.parseInt(Main.reader.readLine()));
+                        Main.logger.info("Set ISBN");
+                        book.setISBN(Long.parseLong(Main.reader.readLine()));
+                        Main.logger.info("Set number of pages");
+                        book.setPages(Integer.parseInt(Main.reader.readLine()));
+                        Main.logger.info("New book " + book.toString() + "is created.");
+                        admin.addBook("resource\\homeLibrary.json", book);
                         break;
                     case ("4"):
-                        admin.removeBook("resource\\homeLibrary.json");
+                        Main.logger.info("Type name of book you want to remove");
+                        String nameOfBook = Main.reader.readLine();
+                        admin.removeBook(nameOfBook);
                         break;
                     case ("5"):
-                        admin.removeBookByAuthor("resource\\homeLibrary.json");
+                        Main.logger.info("Type name of author whose books you want to remove");
+                        String nameOfAuthor = Main.reader.readLine();
+                        admin.removeBookByAuthor(nameOfAuthor);
                         break;
                     case ("6"):
-                        admin.addListOfBooks();
+                        Main.logger.info("Type address of books catalog");
+                        String addressOfBookCatalog = Main.reader.readLine();
+                        admin.addListOfBooks(addressOfBookCatalog);
                         break;
                     case ("7"):
                         admin.addBookmark();
                         break;
                     case ("8"):
-                        admin.removeBookmark();
+//                        admin.removeBookmark();
                         break;
                     case ("9"):
-                        admin.searchBookByName();
+                        Main.logger.info("Type a name of a book");
+                        String bookName = Main.reader.readLine();
+                        book = admin.searchBookByName(bookName);
+                        Main.logger.info(book);
                         break;
                     case ("10"):
-                        admin.searchBookByAuthor();
+                        Main.logger.info("Type a name of an author");
+                        String authorName = Main.reader.readLine();
+                        List<Book> listBooksByAuthor = admin.searchBookByAuthor(authorName);
+                        Main.logger.info(listBooksByAuthor);
                         break;
                     case ("11"):
-                        admin.searchBookByISBN();
+                        Main.logger.info("Type an ISBN");
+                        long ISBN = Long.parseLong(Main.reader.readLine());
+                        book = admin.searchBookByISBN(ISBN);
+                        Main.logger.info(book);
                         break;
                     case ("12"):
-                        admin.searchBookInRangeOfYears();
+                        Main.logger.info("Type a year from");
+                        int yearFrom = Integer.parseInt(Main.reader.readLine());
+                        Main.logger.info("Type a year to");
+                        int yearTo = Integer.parseInt(Main.reader.readLine());
+                        List<Book> listOfBookInRangeOfYears = admin.searchBookInRangeOfYears(yearFrom, yearTo);
+                        Main.logger.info(listOfBookInRangeOfYears);
                         break;
                     case ("13"):
-                        admin.searchBookByYearPagesName();
+                        Main.logger.info("Type name of a book");
+                        String name = Main.reader.readLine();
+                        Main.logger.info("Type a year");
+                        int year = Integer.parseInt(Main.reader.readLine());
+                        Main.logger.info("Type amount of pages");
+                        int pages = Integer.parseInt(Main.reader.readLine());
+                        book = admin.searchBookByYearPagesName(name, year, pages);
+                        Main.logger.info(book);
                         break;
                     case ("14"):
-                        admin.searchBookWithBookmarks();
+                        List<Book> listOfBookWithBookmarks = admin.searchBookWithBookmarks();
+                        Main.logger.info(listOfBookWithBookmarks);
                         break;
                     case ("15"):
                         admin.getUserLogHistory();
                         break;
                 }
             }
-        } catch (IOException | NoSuchBookException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -103,44 +140,84 @@ public class Controller {
             while (!(command = Main.reader.readLine()).equalsIgnoreCase("exit")) {
                 switch (command) {
                     case ("1"):
-                        user.addBook("resource\\homeLibrary.json");
+                        book = new Book();
+                        Main.logger.info("Set name of a book");
+                        book.setName(Main.reader.readLine());
+                        Main.logger.info("Set author");
+                        book.setAuthor(Main.reader.readLine());
+                        Main.logger.info("Set year");
+                        book.setYear(Integer.parseInt(Main.reader.readLine()));
+                        Main.logger.info("Set ISBN");
+                        book.setISBN(Long.parseLong(Main.reader.readLine()));
+                        Main.logger.info("Set number of pages");
+                        book.setPages(Integer.parseInt(Main.reader.readLine()));
+                        Main.logger.info("New book " + book.toString() + "is created.");
+                        user.addBook("resource\\homeLibrary.json", book);
                         break;
                     case ("2"):
-                        user.removeBook("resource\\homeLibrary.json");
+                        Main.logger.info("Type name of book you want to remove");
+                        String nameOfBook = Main.reader.readLine();
+                        user.removeBook(nameOfBook);
                         break;
                     case ("3"):
-                        user.removeBookByAuthor("resource\\homeLibrary.json");
+                        Main.logger.info("Type name of author whose books you want to remove");
+                        String nameOfAuthor = Main.reader.readLine();
+                        user.removeBookByAuthor(nameOfAuthor);
                         break;
                     case ("4"):
-                        user.addListOfBooks();
+                        Main.logger.info("Type address of books catalog");
+                        String addressOfBookCatalog = Main.reader.readLine();
+                        user.addListOfBooks(addressOfBookCatalog);
                         break;
                     case ("5"):
                         user.addBookmark();
                         break;
                     case ("6"):
-                        user.removeBookmark();
+//                        user.removeBookmark();
                         break;
                     case ("7"):
-                        user.searchBookByName();
+                        Main.logger.info("Type a name of a book");
+                        String bookName = Main.reader.readLine();
+                        book = user.searchBookByName(bookName);
+                        Main.logger.info(book);
                         break;
                     case ("8"):
-                        user.searchBookByAuthor();
+                        Main.logger.info("Type a name of an author");
+                        String authorName = Main.reader.readLine();
+                        List<Book> listBooksByAuthor = user.searchBookByAuthor(authorName);
+                        Main.logger.info(listBooksByAuthor);
                         break;
                     case ("9"):
-                        user.searchBookByISBN();
+                        Main.logger.info("Type an ISBN");
+                        long ISBN = Long.parseLong(Main.reader.readLine());
+                        book = user.searchBookByISBN(ISBN);
+                        Main.logger.info(book);
                         break;
                     case ("10"):
-                        user.searchBookInRangeOfYears();
+                        Main.logger.info("Type a year from");
+                        int yearFrom = Integer.parseInt(Main.reader.readLine());
+                        Main.logger.info("Type a year to");
+                        int yearTo = Integer.parseInt(Main.reader.readLine());
+                        List<Book> listOfBookInRangeOfYears = user.searchBookInRangeOfYears(yearFrom, yearTo);
+                        Main.logger.info(listOfBookInRangeOfYears);
                         break;
                     case ("11"):
-                        user.searchBookByYearPagesName();
+                        Main.logger.info("Type name of a book");
+                        String name = Main.reader.readLine();
+                        Main.logger.info("Type a year");
+                        int year = Integer.parseInt(Main.reader.readLine());
+                        Main.logger.info("Type amount of pages");
+                        int pages = Integer.parseInt(Main.reader.readLine());
+                        book = user.searchBookByYearPagesName(name, year, pages);
+                        Main.logger.info(book);
                         break;
                     case ("12"):
-                        user.searchBookWithBookmarks();
+                        List<Book> listOfBookWithBookmarks = user.searchBookWithBookmarks();
+                        Main.logger.info(listOfBookWithBookmarks);
                         break;
                 }
             }
-        } catch (IOException | NoSuchBookException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

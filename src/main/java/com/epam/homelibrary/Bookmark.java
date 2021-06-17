@@ -1,15 +1,26 @@
 package com.epam.homelibrary;
 
-public class Bookmark {
-    private Book book;
-    private int page;
-    private AbstractUser visitor;
+import javax.persistence.*;
 
-    public AbstractUser getVisitor() {
+@Entity
+@Table(name = "Bookmarks")
+public class Bookmark {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "page")
+    private int page;
+    @Transient                             //---?
+    private User visitor;
+    @JoinColumn(name = "book_id")
+    @OneToOne
+    private Book book;
+
+    public User getVisitor() {
         return visitor;
     }
 
-    public void setVisitor(AbstractUser visitor) {
+    public void setVisitor(User visitor) {
         this.visitor = visitor;
     }
 

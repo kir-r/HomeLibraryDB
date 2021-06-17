@@ -14,6 +14,10 @@ public class DBConnector {
     static String PASSWORD;
     static Connection connection;
 
+    public static Connection getConnection() {
+        return connection;
+    }
+
     public static void readProperties() {
         try (FileReader fileReader = new FileReader("src\\main\\resources\\configuration.properties")) {
             properties.load(fileReader);
@@ -24,7 +28,7 @@ public class DBConnector {
             Main.logger.error(e.getMessage());
         }
     }
-    public static void connect() {
+    public static void connect() {  //connect with H2 without hibernate?
         readProperties();
         Driver driver = new org.h2.Driver();
         try {
@@ -41,32 +45,26 @@ public class DBConnector {
         try {
             statement = connection.createStatement();
 
-            String homeLibrary = "CREATE TABLE Books (\n" +
-                    "    Id integer PRIMARY KEY AUTO_INCREMENT,\n" +
-                    "    Name varchar(255),\n" +
-                    "    Author varchar(255),\n" +
-                    "    Year integer,\n" +
+            String books = "CREATE TABLE Books (\n" +
+                    "    id integer PRIMARY KEY AUTO_INCREMENT,\n" +
+                    "    name varchar(255),\n" +
+                    "    author varchar(255),\n" +
+                    "    year integer,\n" +
                     "    ISBN long,\n" +
-                    "    Pages integer\n" +
+                    "    pages integer\n" +
                     ");";
 
-            statement.execute(homeLibrary);
+            statement.execute(books);
 
-            /*statement = connection.createStatement();
+            String bookmarks = "CREATE TABLE Bookmarks (\n" +
+                    "    id integer PRIMARY KEY AUTO_INCREMENT,\n" +
+                    "    page integer,\n" +
+                    "    book_id integer,\n" +
+                    "    FOREIGN KEY(book_id) REFERENCES Books(id)\n" +
+                    ");";
 
-            String values = "INSERT INTO CATALOGUE VALUES (111, 222, 'catalogue')";
 
-            statement.execute(values);
-
-            statement = connection.createStatement();
-            String resultSQL = "SELECT * FROM Books";
-            ResultSet resultSet = statement.executeQuery(resultSQL);
-
-            while (resultSet.next()) {
-                System.out.println(resultSet.getInt("ID") + ", "
-                        + resultSet.getInt("Pages")
-                        + ", " + resultSet.getString("Name"));
-            }*/
+            statement.execute(bookmarks);
 
         } catch (SQLException e) {
             Main.logger.error(e.getMessage());

@@ -18,25 +18,28 @@ public class Book {
     private long ISBN;
     @Column(name = "pages")
     private int pages;
-    private Bookmark bookmark;
-    protected boolean hasBookmark = false;
+//    @Column(name = "has_bookmark")
+//    protected boolean hasBookmark = false;
+//    @JoinColumn(name = "bookmark_id") //?
+//    private Bookmark bookmark;
+
 
     public int getId() {
         return id;
     }
 
-    public void setHasBookmark(boolean hasBookmark) {
-        this.hasBookmark = hasBookmark;
-    }
+//    public void setHasBookmark(boolean hasBookmark) {
+//        this.hasBookmark = hasBookmark;
+//    }
 
-    public void setBookmark(Bookmark bookmark) {
-        this.bookmark = bookmark;
-        hasBookmark = true;
-    }
-
-    public Bookmark getBookmark() {
-        return bookmark;
-    }
+//    public void setBookmark(Bookmark bookmark) {
+//        this.bookmark = bookmark;
+//        hasBookmark = true;
+//    }
+//
+//    public Bookmark getBookmark() {
+//        return bookmark;
+//    }
 
     public Book() {
     }
