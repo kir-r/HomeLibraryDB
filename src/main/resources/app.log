@@ -11897,3 +11897,6 @@ admin Irma Pince
 15 to get user log history
 
 12:02:26.413 [Hibernate Connection Pool Validation Thread] DEBUG org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - Connection pool now considered primed; min-size will be maintained
+12:16:00.006 [main] INFO  com.epam.homelibrary.Main - Welcome to Home Library!
+Please login
+Login: 
