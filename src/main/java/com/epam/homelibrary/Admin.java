@@ -10,12 +10,11 @@ import java.util.stream.Collectors;
 public class Admin extends User {
     private static ArrayList<User> listOfUsers = new ArrayList<User>();
 
-
     public static ArrayList<User> getListOfUsers() {
         return listOfUsers;
     }
 
-    public void createUser(String username) throws IOException {
+/*    public void createUser(String username) throws IOException {
         User user = new User();
         user.setName(username);
         user.setBlocked(false);
@@ -38,14 +37,14 @@ public class Admin extends User {
         } catch (IOException e) {
             Main.logger.error(e.getMessage());
         }
-    }
+    }*/
 
     @Override
     public boolean isAdmin(String name) {
         return true;
     }
 
-    public void getUserLogHistory() {
+/*    public void getUserLogHistory() {
         try (BufferedReader bufferedreader = new BufferedReader(new FileReader("src/main/resources/app.log"))) {
             while (bufferedreader.ready()) {
                 Main.logger.info(bufferedreader.readLine());
@@ -53,7 +52,7 @@ public class Admin extends User {
         } catch (IOException e) {
             Main.logger.error(e.getMessage());
         }
-    }
+    }*/
 
     @Override
     public String toString() {

@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class UserAuthenticator {
+
     public static User authenticate(String login, String password) {
         if (login.equalsIgnoreCase("Admin") && password.equals("qwerty")) {
             Admin admin = null;
@@ -54,8 +55,7 @@ public class UserAuthenticator {
             }
             return user;
         } else {
-            System.out.println("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.");
-            System.exit(1);
+            System.out.println("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.\n");
             return null;
         }
     }

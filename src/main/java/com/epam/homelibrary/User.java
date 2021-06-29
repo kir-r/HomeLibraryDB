@@ -1,26 +1,39 @@
 package com.epam.homelibrary;
 
-import com.epam.homelibrary.databaseDAO.LibraryDAO;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import javax.persistence.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
+@Entity
+@Table(name = "Visitor")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "name")
     protected String name;
+    @Column(name = "login")
     protected String login;
+    @Column(name = "password")
     protected String password;
-    protected boolean isBlocked;
+    @Column(name = "blocked", nullable = false)
+    protected boolean blocked;
+    @Transient
     protected ArrayList<Bookmark> listOfBookmarks = new ArrayList<>();
+    @Transient
     protected ArrayList<Book> listOfBooks = new ArrayList<>();
-    protected LibraryDAO libraryDAO = new LibraryDAO();
+
+    public int getId() {
+        return id;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -30,21 +43,30 @@ public class User {
         this.name = name;
     }
 
-
-    public boolean isBlocked() {
-        return isBlocked;
+    public boolean blocked() {
+        return blocked;
     }
 
     public void setBlocked(boolean blocked) {
-        isBlocked = blocked;
+        this.blocked = blocked;
     }
 
     public boolean isAdmin(String name) {
         return false;
     }
 
+//    public String toString() {
+//        return "user " + name;
+//    }
+
+    @Override
     public String toString() {
-        return "user " + name;
+        return "User{" +
+                "name='" + name + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", blocked=" + blocked +
+                '}';
     }
 
     public boolean login(String login, String password) {
@@ -57,15 +79,8 @@ public class User {
         }
     }
 
-    public void addBook(String addressJSON, Book book) throws IOException { //1
-//        listOfBooks.add(book);
-//        JSONLibraryRefresher.refresh(listOfBooks);
-        libraryDAO.addBook(book);
 
-//        Main.logger.info("List of books size: " + listOfBooks.size());
-    }
-
-    public void removeBook(String nameOfBook) throws IOException { //2
+    /*public void removeBook(String nameOfBook) throws IOException { //2
         Main.logger.info("List of books size: " + listOfBooks.size());
         Optional<Book> optionalBook = listOfBooks
                 .stream()
@@ -74,11 +89,14 @@ public class User {
         optionalBook.ifPresent(book -> listOfBooks.remove(book));
         if (optionalBook.isPresent()) {
             listOfBooks.remove(optionalBook.get());
-            Main.logger.info("Book " + nameOfBook + " is removed.");
+            Main.logger.info("Book " + nameOfBook + " is removed from list of books.");
+
+            libraryDataBaseDAO.removeBook(nameOfBook);
+
         } else {
             Main.logger.info("There is not such a book");
         }
-        JSONLibraryRefresher.refresh(listOfBooks);
+        UserJsonDAO.refresh(listOfBooks);
         Main.logger.info("List of books size: " + listOfBooks.size());
     }
 
@@ -94,7 +112,7 @@ public class User {
         } else {
             Main.logger.info("There is no book of this author");
         }
-        JSONLibraryRefresher.refresh(listOfBooks);
+        UserJsonDAO.refresh(listOfBooks);
         Main.logger.info("List of books after " + listOfBooks);
     }
 
@@ -104,14 +122,14 @@ public class User {
             Collection<Book> listOfBooksToAdd = gson.fromJson(reader, new TypeToken<List<Book>>() {
             }.getType());
 
-            JSONLibraryRefresher.refresh(new ArrayList<>(listOfBooksToAdd));
+            UserJsonDAO.refresh(new ArrayList<>(listOfBooksToAdd));
             Main.logger.info("Books from are added to Library.json");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     public void addBookmark() throws IOException { //5
-       /* Main.logger.info("listOfBookmarks " + listOfBookmarks);
+       *//* Main.logger.info("listOfBookmarks " + listOfBookmarks);
         Bookmark bookmark = new Bookmark();
         book = searchBookByName();
         Main.logger.info("Type number of page");
@@ -120,9 +138,9 @@ public class User {
         bookmark.setPage(Integer.parseInt(Main.reader.readLine()));
         book.setBookmark(bookmark);
         listOfBookmarks.add(bookmark);
-        JSONLibraryRefresher.refresh(listOfBooks);
+        UserJsonDAO.refresh(listOfBooks);
         Main.logger.info("listOfBookmarks " + listOfBookmarks);
-        Main.logger.info(book.getBookmark());*/
+        Main.logger.info(book.getBookmark());*//*
     }
     public void removeBookmark(String bookName) throws IOException { //6
 //        Main.logger.info("Before - listOfBookmarks " + listOfBookmarks);
@@ -136,7 +154,7 @@ public class User {
 //            optionalBook.get().setBookmark(null);
 //            optionalBook.get().setHasBookmark(false);
 //            Main.logger.info("Bookmark from " + optionalBook.get().getName() + " is removed");
-//            JSONLibraryRefresher.refresh(listOfBooks);
+//            UserJsonDAO.refresh(listOfBooks);
 //        } else {
 //            throw new NoSuchBookException("There is no such a book");
 //        }
@@ -207,5 +225,17 @@ public class User {
                 .map(Bookmark::getBook)
                 .collect(Collectors.toList());
     }
+
+    public List<Book> getListFromDB() {
+        return libraryDataBaseDAO.getListFromDB();
+    }
+
+    public void closeConnection() {
+        try {
+            libraryDataBaseDAO.closeConnection();
+        } catch (Exception e) {
+            Main.logger.error(e.getMessage());
+        }
+    }*/
 }
 

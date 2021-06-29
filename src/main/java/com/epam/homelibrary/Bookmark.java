@@ -3,7 +3,7 @@ package com.epam.homelibrary;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Bookmarks")
+@Table(name = "Bookmark")
 public class Bookmark {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +42,6 @@ public class Bookmark {
 
     @Override
     public String toString() {
-        return "Bookmark in book " + book.getName() + " on page " + page + " from user " + visitor;
+        return "Bookmark in book " + book.getName() + " on page " + page + " from " + getVisitor();
     }
 }
