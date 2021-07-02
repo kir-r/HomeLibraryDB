@@ -71,19 +71,4 @@
         <flyway.url>jdbc:h2:~/test</flyway.url>
     </properties>
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.flywaydb</groupId>-->
-<!--                <artifactId>flyway-maven-plugin</artifactId>-->
-<!--                <version>7.8.1</version>-->
-<!--                <configuration>-->
-<!--                    <user>sa</user>-->
-<!--                    <password>pwd</password>-->
-<!--                    <url>jdbc:h2:~/test</url>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
-
 </project>

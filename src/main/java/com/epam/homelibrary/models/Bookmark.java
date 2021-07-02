@@ -1,4 +1,4 @@
-package com.epam.homelibrary;
+package com.epam.homelibrary.models;
 
 import javax.persistence.*;
 

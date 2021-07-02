@@ -1,10 +1,9 @@
-package com.epam.homelibrary.DAO;
+package com.epam.homelibrary.DAO.impl;
 
-import com.epam.homelibrary.Book;
+import com.epam.homelibrary.models.Book;
 import com.epam.homelibrary.Main;
-import com.epam.homelibrary.User;
+import com.epam.homelibrary.models.User;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.io.*;
 import java.util.ArrayList;

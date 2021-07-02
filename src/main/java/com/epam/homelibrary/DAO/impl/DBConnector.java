@@ -1,8 +1,8 @@
-package com.epam.homelibrary.DAO;
+package com.epam.homelibrary.DAO.impl;
 
-import com.epam.homelibrary.Book;
-import com.epam.homelibrary.Bookmark;
-import com.epam.homelibrary.User;
+import com.epam.homelibrary.models.Book;
+import com.epam.homelibrary.models.Bookmark;
+import com.epam.homelibrary.models.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

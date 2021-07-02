@@ -1,12 +1,10 @@
-package com.epam.homelibrary.DAO;
+package com.epam.homelibrary.DAO.impl;
 
-import com.epam.homelibrary.Book;
-import com.epam.homelibrary.Bookmark;
+import com.epam.homelibrary.DAO.LibraryDAO;
+import com.epam.homelibrary.models.Book;
+import com.epam.homelibrary.models.Bookmark;
 import com.epam.homelibrary.Main;
-import com.epam.homelibrary.User;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import org.hibernate.Criteria;
+import com.epam.homelibrary.models.User;
 import org.hibernate.Session;
 
 
@@ -14,14 +12,9 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import javax.persistence.criteria.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-public class LibraryDataBaseDAO {
+public class LibraryDataBaseDAO implements LibraryDAO {
     private DBConnector dBConnector;
 
     public LibraryDataBaseDAO() {
@@ -64,19 +57,6 @@ public class LibraryDataBaseDAO {
             transaction.commit();
             Main.logger.info("Book by author " + nameOfAuthor + " is removed");
         }
-    }
-
-    public void addListOfBooks(String addressOfBookCatalog) { //4
-        /*try (BufferedReader reader = new BufferedReader(new FileReader(addressOfBookCatalog))) {
-            Gson gson = new Gson();
-            Collection<Book> listOfBooksToAdd = gson.fromJson(reader, new TypeToken<List<Book>>() {
-            }.getType());
-
-            UserJsonDAO.refresh(new ArrayList<>(listOfBooksToAdd));
-            Main.logger.info("Books from are added to Library.json");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     public void addBookmark(Bookmark bookmark) { //5

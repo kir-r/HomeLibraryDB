@@ -1,27 +1,24 @@
-package com.epam.homelibrary.DAO;
+package com.epam.homelibrary.DAO.impl;
 
-import com.epam.homelibrary.Book;
+import com.epam.homelibrary.DAO.UserDAO;
 import com.epam.homelibrary.Main;
-import com.epam.homelibrary.User;
-import com.google.gson.Gson;
+import com.epam.homelibrary.models.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.Root;
 import java.io.*;
 
-public class UserDataBaseDAO {
+public class UserDataBaseDAO implements UserDAO {
     private DBConnector dBConnector;
 
     public UserDataBaseDAO() {
         dBConnector = DBConnector.getDBConnector();
     }
 
-    public void createUser(User user) { //13
+    public void createUser(User user) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.save(user);
@@ -30,7 +27,7 @@ public class UserDataBaseDAO {
         }
     }
 
-    public void blockUser(String username) { //14
+    public void blockUser(String username) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaUpdate<User> criteriaUpdate = cb.createCriteriaUpdate(User.class);
@@ -45,7 +42,7 @@ public class UserDataBaseDAO {
         }
     }
 
-    public void getUserLogHistory() { //15
+    public void getUserLogHistory() {
         try (BufferedReader bufferedreader = new BufferedReader(new FileReader("src/main/resources/app.log"))) {
             while (bufferedreader.ready()) {
                 Main.logger.info(bufferedreader.readLine());

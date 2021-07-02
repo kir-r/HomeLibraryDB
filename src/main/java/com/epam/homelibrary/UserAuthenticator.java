@@ -1,5 +1,7 @@
 package com.epam.homelibrary;
 
+import com.epam.homelibrary.models.Admin;
+import com.epam.homelibrary.models.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

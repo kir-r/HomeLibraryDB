@@ -1,8 +1,12 @@
 package com.epam.homelibrary;
 
-import com.epam.homelibrary.DAO.UserDataBaseDAO;
-import com.epam.homelibrary.DAO.UserJsonDAO;
-import com.epam.homelibrary.DAO.LibraryDataBaseDAO;
+import com.epam.homelibrary.DAO.impl.UserDataBaseDAO;
+import com.epam.homelibrary.DAO.impl.UserJsonDAO;
+import com.epam.homelibrary.DAO.impl.LibraryDataBaseDAO;
+import com.epam.homelibrary.models.Admin;
+import com.epam.homelibrary.models.Book;
+import com.epam.homelibrary.models.Bookmark;
+import com.epam.homelibrary.models.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,10 +24,17 @@ public class Controller {
     private List<Book> listOfBooksFromDB;
     private List<Bookmark> listOfBookmarksFromDB;
     private List<User> listOfUsersFromDB;
-    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    protected LibraryDataBaseDAO libraryDataBaseDAO = new LibraryDataBaseDAO();
-    protected UserDataBaseDAO userDataBaseDAO = new UserDataBaseDAO();
-    protected UserJsonDAO userJsonDAO = new UserJsonDAO();
+    static BufferedReader reader;
+    protected LibraryDataBaseDAO libraryDataBaseDAO;
+    protected UserDataBaseDAO userDataBaseDAO;
+    protected UserJsonDAO userJsonDAO;
+
+    public Controller() {
+        reader = new BufferedReader(new InputStreamReader(System.in));
+        libraryDataBaseDAO = new LibraryDataBaseDAO();
+        userDataBaseDAO = new UserDataBaseDAO();
+        userJsonDAO = new UserJsonDAO();
+    }
 
     public void operate() {
         while (user == null) {
@@ -96,11 +107,9 @@ public class Controller {
                         String nameOfAuthor = reader.readLine();
                         libraryDataBaseDAO.removeBookByAuthor(nameOfAuthor);
                         break;
-                    case ("4"):
-                        Main.logger.info("Type address of books catalog");
-                        String addressOfBookCatalog = reader.readLine();
-                        libraryDataBaseDAO.addListOfBooks(addressOfBookCatalog);
-                        break;
+
+                        //TODO numbers, 4
+
                     case ("5"):
                         Bookmark bookmark = new Bookmark();
                         bookmark.setVisitor(user);
@@ -203,7 +212,6 @@ public class Controller {
                             Main.logger.info("Set a password: ");
                             String password = reader.readLine();
                             user.setLogin(login);
-
 
                             user.setPassword(password);
                             user.setName(username);
