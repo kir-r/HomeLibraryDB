@@ -22,5 +22,6 @@ id integer PRIMARY KEY AUTO_INCREMENT,
 name varchar(255),
 login varchar(255),
 password varchar(255),
+isAdmin bit(1),
 blocked bit(0)
 );

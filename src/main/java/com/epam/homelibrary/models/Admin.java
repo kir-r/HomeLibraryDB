@@ -10,8 +10,8 @@ public class Admin extends User {
     }
 
     @Override
-    public boolean isAdmin(String name) {
-        return true;
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
     @Override

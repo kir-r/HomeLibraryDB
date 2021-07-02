@@ -18,6 +18,8 @@ public class User {
     protected String login;
     @Column(name = "password")
     protected String password;
+    @Column(name = "isAdmin")
+    protected boolean isAdmin;
     @Column(name = "blocked", nullable = false)
     protected boolean blocked;
     @Transient
@@ -53,8 +55,12 @@ public class User {
         this.blocked = blocked;
     }
 
-    public boolean isAdmin(String name) {
-        return false;
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     @Override

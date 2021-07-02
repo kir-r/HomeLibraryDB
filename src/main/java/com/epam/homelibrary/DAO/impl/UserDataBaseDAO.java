@@ -5,10 +5,9 @@ import com.epam.homelibrary.Main;
 import com.epam.homelibrary.models.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaUpdate;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import java.io.*;
 
 public class UserDataBaseDAO implements UserDAO {
@@ -16,6 +15,26 @@ public class UserDataBaseDAO implements UserDAO {
 
     public UserDataBaseDAO() {
         dBConnector = DBConnector.getDBConnector();
+    }
+
+    public User authenticate(String login, String password) {
+        User user = null;
+        try (Session session = dBConnector.sessionFactory.openSession()) {
+            CriteriaBuilder cb = session.getCriteriaBuilder();
+            CriteriaQuery<User> criteriaQuery = cb.createQuery(User.class);
+            Root<User> root = criteriaQuery.from(User.class);
+
+            Predicate[] predicates = new Predicate[2];
+            predicates[0] = cb.equal(root.get("login"), login);
+            predicates[1] = cb.equal(root.get("password"), password);
+            criteriaQuery.select(root).where(predicates);
+
+            Query<User> query = session.createQuery(criteriaQuery);
+            if (!query.getResultList().isEmpty()) {
+                user = query.getResultList().get(0);
+            }
+            return user;
+        }
     }
 
     public void createUser(User user) {
@@ -39,6 +58,7 @@ public class UserDataBaseDAO implements UserDAO {
             Transaction transaction = session.beginTransaction();
             session.createQuery(criteriaUpdate).executeUpdate();
             transaction.commit();
+            Main.logger.info("User " + username + " is banned.");
         }
     }
 

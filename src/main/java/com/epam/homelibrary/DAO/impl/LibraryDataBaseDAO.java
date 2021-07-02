@@ -1,6 +1,7 @@
 package com.epam.homelibrary.DAO.impl;
 
 import com.epam.homelibrary.DAO.LibraryDAO;
+import com.epam.homelibrary.models.Admin;
 import com.epam.homelibrary.models.Book;
 import com.epam.homelibrary.models.Bookmark;
 import com.epam.homelibrary.Main;
@@ -12,6 +13,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import javax.persistence.criteria.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryDataBaseDAO implements LibraryDAO {
@@ -21,7 +23,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         dBConnector = DBConnector.getDBConnector();
     }
 
-    public void addBook(Book book) { //1
+    public void addBook(Book book) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.save(book);
@@ -29,7 +31,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public void removeBook(String nameOfBook) {     //2
+    public void removeBook(String nameOfBook) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
 
@@ -44,7 +46,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public void removeBookByAuthor(String nameOfAuthor)  { //3
+    public void removeBookByAuthor(String nameOfAuthor)  {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
 
@@ -59,7 +61,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public void addBookmark(Bookmark bookmark) { //5
+    public void addBookmark(Bookmark bookmark) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             session.save(bookmark);
@@ -68,7 +70,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public void removeBookmark(Book book) { //6
+    public void removeBookmark(Book book) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaDelete<Bookmark> criteriaDelete = cb.createCriteriaDelete(Bookmark.class);
@@ -83,7 +85,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public List<Book> searchBookByName(String bookName) { //7
+    public List<Book> searchBookByName(String bookName) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Book> criteriaQuery = cb.createQuery(Book.class);
@@ -95,7 +97,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public List<Book> searchBookByAuthor(String authorName) { //8
+    public List<Book> searchBookByAuthor(String authorName) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Book> criteriaQuery = cb.createQuery(Book.class);
@@ -106,7 +108,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public List<Book> searchBookByISBN(long ISBN) { //9
+    public List<Book> searchBookByISBN(long ISBN) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Book> criteriaQuery = cb.createQuery(Book.class);
@@ -117,7 +119,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public List<Book> searchBookInRangeOfYears(int yearFrom, int yearTo) { //10
+    public List<Book> searchBookInRangeOfYears(int yearFrom, int yearTo) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Book> criteriaQuery = cb.createQuery(Book.class);
@@ -128,7 +130,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public List<Book> searchBookByYearPagesName(String name, int year, int pages) { //11
+    public List<Book> searchBookByYearPagesName(String name, int year, int pages) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Book> criteriaQuery = cb.createQuery(Book.class);
@@ -145,13 +147,25 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public List<Book> searchBookWithBookmarks() { //12
+    public List<Book> searchBookWithBookmarks() {
         // работаем со списком закладок, фильтруем закладки у которых нет книг
         // книги оставшихся закладок выводим
+        List<Book> listOfBooksWithBookmarks = new ArrayList<>();
 
-        return null;
+        try (Session session = dBConnector.sessionFactory.openSession()) {
+            CriteriaBuilder cb = session.getCriteriaBuilder();
+            CriteriaQuery<Bookmark> criteriaQuery = cb.createQuery(Bookmark.class);
+            Root<Bookmark> root = criteriaQuery.from(Bookmark.class);
+
+            criteriaQuery.select(root).where(cb.notEqual(root.get("book_id"), 0));
+            Query<Bookmark> query = session.createQuery(criteriaQuery);
+            List<Bookmark> bookmarksWithBooks = query.getResultList();
+            for (Bookmark bookmark : bookmarksWithBooks) {
+                listOfBooksWithBookmarks.add(bookmark.getBook());
+            }
+        }
+        return listOfBooksWithBookmarks;
     }
-
 
     public List<Book> getListOfBooksFromDB() {
         List<Book> list;
