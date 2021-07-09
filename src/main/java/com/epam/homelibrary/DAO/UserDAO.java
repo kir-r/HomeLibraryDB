@@ -8,4 +8,6 @@ public interface UserDAO {
     void blockUser(String username);
 
     void getUserLogHistory();
+
+    User authenticate(String login, String password);
 }

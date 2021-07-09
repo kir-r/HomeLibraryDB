@@ -70,5 +70,14 @@
         <flyway.password>pwd</flyway.password>
         <flyway.url>jdbc:h2:~/test</flyway.url>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>7.8.1</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

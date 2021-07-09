@@ -1,5 +1,7 @@
 package com.epam.homelibrary;
 
+import com.epam.homelibrary.DAO.LibraryDAO;
+import com.epam.homelibrary.DAO.UserDAO;
 import com.epam.homelibrary.DAO.impl.UserDataBaseDAO;
 import com.epam.homelibrary.DAO.impl.UserJsonDAO;
 import com.epam.homelibrary.DAO.impl.LibraryDataBaseDAO;
@@ -16,37 +18,34 @@ import java.util.List;
 
 public class LibraryAPI {
     User user;
-    String command;
-    Book book;
-    List<Book> listOfBooksFromDB;
-    protected LibraryDataBaseDAO libraryDataBaseDAO;
-    protected UserDataBaseDAO userDataBaseDAO;
-    protected UserJsonDAO userJsonDAO;
-
+    private LibraryDAO libraryDAO;
+    private UserDAO userDAO;
+    private UserJsonDAO userJsonDAO;
+    private BufferedReader reader;
 
     public LibraryAPI() {
-        libraryDataBaseDAO = new LibraryDataBaseDAO();
-        userDataBaseDAO = new UserDataBaseDAO();
-        userJsonDAO = new UserJsonDAO();
+        libraryDAO = new LibraryDataBaseDAO();
+        userDAO = new UserDataBaseDAO();
+        reader = new BufferedReader(new InputStreamReader(System.in));
+        UserJsonDAO userJsonDAO = new UserJsonDAO();
     }
 
     public void operate() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             while (user == null) {
                 Main.logger.info("Welcome to Home Library!\nPlease login\nLogin: ");
                 String login = reader.readLine();
                 Main.logger.info("Password: ");
                 String password = reader.readLine();
-                user = userDataBaseDAO.authenticate(login, password);
+                user = userDAO.authenticate(login, password);
 //            user = userJsonDAO.authenticate(login, password);
                 if (user == null) {
                     System.out.println("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.\n");
-                }
-                if (!user.blocked()) {
+                } else if (!user.blocked()) {
                     userOperates();
                 } else {
                     Main.logger.info("Sorry, you have been banned");
-                    libraryDataBaseDAO.closeConnection();
+                    libraryDAO.closeConnection();
                 }
             }
         } catch (IOException e) {
@@ -78,9 +77,9 @@ public class LibraryAPI {
                 "or type \"exit\" to leave app");
         Main.logger.info(commands.toString());
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             while (true) {
-                command = reader.readLine();
+                String command = reader.readLine();
                 switch (command) {
                     case ("1"):
                         addBook();
@@ -134,7 +133,8 @@ public class LibraryAPI {
                         printUsers();
                         break;
                     case ("exit"):
-                        libraryDataBaseDAO.closeConnection();
+                        reader.close();
+                        libraryDAO.closeConnection();
                         return;
                 }
             }
@@ -144,7 +144,8 @@ public class LibraryAPI {
     }
 
     private void addBook() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
+            Book book;
             book = new Book();
             Main.logger.info("Set name of a book");
             book.setName(reader.readLine());
@@ -157,55 +158,57 @@ public class LibraryAPI {
             Main.logger.info("Set number of pages");
             book.setPages(Integer.parseInt(reader.readLine()));
             Main.logger.info("New book " + book.toString() + "is created.");
-            libraryDataBaseDAO.addBook(book);
+            libraryDAO.addBook(book);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void removeBook() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             Main.logger.info("Type name of book you want to remove");
             String bookName = reader.readLine();
-            libraryDataBaseDAO.removeBook(bookName);
+            libraryDAO.removeBook(bookName);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void removeBookByAuthor() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             Main.logger.info("Type name of author whose books you want to remove");
             String nameOfAuthor = reader.readLine();
-            libraryDataBaseDAO.removeBookByAuthor(nameOfAuthor);
+            libraryDAO.removeBookByAuthor(nameOfAuthor);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void addBookmark() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
+            List<Book> listOfBooksFromDB;
             Bookmark bookmark = new Bookmark();
             bookmark.setVisitor(user);
-            Main.logger.info("Type a name of a page");
+            Main.logger.info("Type a number of a page");
             bookmark.setPage(Integer.parseInt(reader.readLine()));
             Main.logger.info("Type a name of a book to add a bookmark");
             String bookName = reader.readLine();
-            listOfBooksFromDB = libraryDataBaseDAO.searchBookByName(bookName);
+            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
             bookmark.setBook(listOfBooksFromDB.get(0));
-            libraryDataBaseDAO.addBookmark(bookmark);
+            libraryDAO.addBookmark(bookmark);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private void removeBookmark() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
+            List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of a book to remove a bookmark");
             String bookName = reader.readLine();
-            listOfBooksFromDB = libraryDataBaseDAO.searchBookByName(bookName);
+            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
-                libraryDataBaseDAO.removeBookmark(listOfBooksFromDB.get(0));
+                libraryDAO.removeBookmark(listOfBooksFromDB.get(0));
             } else {
                 Main.logger.info("We don't have this book");
             }
@@ -215,10 +218,11 @@ public class LibraryAPI {
     }
 
     private void searchBookByName() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
+            List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of a book");
             String bookName = reader.readLine();
-            listOfBooksFromDB = libraryDataBaseDAO.searchBookByName(bookName);
+            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -232,10 +236,11 @@ public class LibraryAPI {
     }
 
     private void searchBookByAuthor() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
+            List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of an author");
             String authorName = reader.readLine();
-            listOfBooksFromDB = libraryDataBaseDAO.searchBookByAuthor(authorName);
+            listOfBooksFromDB = libraryDAO.searchBookByAuthor(authorName);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -249,10 +254,11 @@ public class LibraryAPI {
     }
 
     private void searchBookByISBN() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
+            List<Book> listOfBooksFromDB;
             Main.logger.info("Type an ISBN");
             long ISBN = Long.parseLong(reader.readLine());
-            listOfBooksFromDB = libraryDataBaseDAO.searchBookByISBN(ISBN);
+            listOfBooksFromDB = libraryDAO.searchBookByISBN(ISBN);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -266,13 +272,14 @@ public class LibraryAPI {
     }
 
     private void searchBookInRangeOfYears() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
+            List<Book> listOfBooksFromDB;
             Main.logger.info("Type a year from");
             int yearFrom = Integer.parseInt(reader.readLine());
             Main.logger.info("Type a year to");
             int yearTo = Integer.parseInt(reader.readLine());
             if (yearFrom <= yearTo) {
-                listOfBooksFromDB = libraryDataBaseDAO.searchBookInRangeOfYears(yearFrom, yearTo);
+                listOfBooksFromDB = libraryDAO.searchBookInRangeOfYears(yearFrom, yearTo);
                 if (!listOfBooksFromDB.isEmpty()) {
                     for (Book book : listOfBooksFromDB) {
                         System.out.println(book);
@@ -289,14 +296,15 @@ public class LibraryAPI {
     }
 
     private void searchBookByYearsPagesName() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
+            List<Book> listOfBooksFromDB;
             Main.logger.info("Type name of a book");
             String bookName = reader.readLine();
             Main.logger.info("Type a year");
             int year = Integer.parseInt(reader.readLine());
             Main.logger.info("Type amount of pages");
             int pages = Integer.parseInt(reader.readLine());
-            listOfBooksFromDB = libraryDataBaseDAO.searchBookByYearPagesName(bookName, year, pages);
+            listOfBooksFromDB = libraryDAO.searchBookByYearPagesName(bookName, year, pages);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -310,12 +318,12 @@ public class LibraryAPI {
     }
 
     private void searchBookWithBookmarks() {
-        List<Book> listOfBookWithBookmarks = libraryDataBaseDAO.searchBookWithBookmarks();
+        List<Book> listOfBookWithBookmarks = libraryDAO.searchBookWithBookmarks(user);
         Main.logger.info(listOfBookWithBookmarks);
     }
 
     private void createUser() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             if (user.isAdmin()) {
                 User user = new User();
                 Main.logger.info("Set a username: ");
@@ -330,7 +338,7 @@ public class LibraryAPI {
                 user.setAdmin(false);
                 user.setBlocked(false);
                 System.out.println(user);
-                userDataBaseDAO.createUser(user);
+                userDAO.createUser(user);
 //              userJsonDAO.createUser(username);
             } else {
                 Main.logger.info("Sorry, you don't have admin rights");
@@ -341,11 +349,11 @@ public class LibraryAPI {
     }
 
     private void blockUser() {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+        try {
             if (user.isAdmin()) {
                 Main.logger.info("Type a name of user you want to block: ");
                 String username = reader.readLine();
-                userDataBaseDAO.blockUser(username);
+                userDAO.blockUser(username);
 //              userJsonDAO.blockUser();
             } else {
                 Main.logger.info("Sorry, you don't have admin rights");
@@ -357,7 +365,7 @@ public class LibraryAPI {
 
     private void getUserLogHistory() {
         if (user.isAdmin()) {
-            userDataBaseDAO.getUserLogHistory();
+            userDAO.getUserLogHistory();
 //          userJsonDAO.getUserLogHistory();
         } else {
             Main.logger.info("Sorry, you don't have admin rights");
@@ -365,7 +373,8 @@ public class LibraryAPI {
     }
 
     private void printBooks() {
-        listOfBooksFromDB = libraryDataBaseDAO.getListOfBooksFromDB();
+        List<Book> listOfBooksFromDB;
+        listOfBooksFromDB = libraryDAO.getListOfBooksFromDB();
         if (!listOfBooksFromDB.isEmpty()) {
             for (Book book : listOfBooksFromDB) {
                 System.out.println(book);
@@ -376,7 +385,7 @@ public class LibraryAPI {
     }
 
     private void printBookmarks() {
-        List<Bookmark> listOfBookmarksFromDB = libraryDataBaseDAO.getListOfBookMarksFromDB();
+        List<Bookmark> listOfBookmarksFromDB = libraryDAO.getListOfBookMarksFromDB();
         if (!listOfBookmarksFromDB.isEmpty()) {
             for (Bookmark bm : listOfBookmarksFromDB) {
                 System.out.println(bm);
@@ -387,7 +396,7 @@ public class LibraryAPI {
     }
 
     private void printUsers() {
-        List<User> listOfUsersFromDB = libraryDataBaseDAO.getListOfUserFromDB();
+        List<User> listOfUsersFromDB = libraryDAO.getListOfUserFromDB();
         if (!listOfUsersFromDB.isEmpty()) {
             for (User user : listOfUsersFromDB) {
                 System.out.println(user);

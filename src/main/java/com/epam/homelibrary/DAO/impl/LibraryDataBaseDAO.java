@@ -147,9 +147,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public List<Book> searchBookWithBookmarks() {
-        // работаем со списком закладок, фильтруем закладки у которых нет книг
-        // книги оставшихся закладок выводим
+    public List<Book> searchBookWithBookmarks(User user) {
         List<Book> listOfBooksWithBookmarks = new ArrayList<>();
 
         try (Session session = dBConnector.sessionFactory.openSession()) {
@@ -157,7 +155,8 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             CriteriaQuery<Bookmark> criteriaQuery = cb.createQuery(Bookmark.class);
             Root<Bookmark> root = criteriaQuery.from(Bookmark.class);
 
-            criteriaQuery.select(root).where(cb.notEqual(root.get("book_id"), 0));
+            criteriaQuery.select(root).where(cb.equal(root.get("visitor"), user));
+
             Query<Bookmark> query = session.createQuery(criteriaQuery);
             List<Bookmark> bookmarksWithBooks = query.getResultList();
             for (Bookmark bookmark : bookmarksWithBooks) {

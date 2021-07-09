@@ -10,7 +10,8 @@ public class Bookmark {
     private int id;
     @Column(name = "page")
     private int page;
-    @Transient
+    @JoinColumn(name = "visitor_id")
+    @OneToOne
     private User visitor;
     @JoinColumn(name = "book_id")
     @OneToOne
