@@ -16,7 +16,6 @@
             <AppenderRef ref="Console" level="info"/>
         </Logger>
 
-        <!-- Root Logger -->
         <Root level="all">
             <AppenderRef ref="FILE"/>
         </Root>

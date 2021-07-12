@@ -1,16 +1,17 @@
-package com.epam.homelibrary;
+package com.epam.homelibrary.models;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Bookmarks")
+@Table(name = "Bookmark")
 public class Bookmark {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "page")
     private int page;
-    @Transient                             //---?
+    @JoinColumn(name = "visitor_id")
+    @OneToOne
     private User visitor;
     @JoinColumn(name = "book_id")
     @OneToOne
@@ -42,6 +43,6 @@ public class Bookmark {
 
     @Override
     public String toString() {
-        return "Bookmark in book " + book.getName() + " on page " + page + " from user " + visitor;
+        return "Bookmark in book " + book.getName() + " on page " + page + " from " + getVisitor();
     }
 }

@@ -1,9 +1,9 @@
-package com.epam.homelibrary;
+package com.epam.homelibrary.models;
 
 import javax.persistence.*;
 
 @Entity
-@Table (name = "Books")
+@Table (name = "Book")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,28 +18,6 @@ public class Book {
     private long ISBN;
     @Column(name = "pages")
     private int pages;
-//    @Column(name = "has_bookmark")
-//    protected boolean hasBookmark = false;
-//    @JoinColumn(name = "bookmark_id") //?
-//    private Bookmark bookmark;
-
-
-    public int getId() {
-        return id;
-    }
-
-//    public void setHasBookmark(boolean hasBookmark) {
-//        this.hasBookmark = hasBookmark;
-//    }
-
-//    public void setBookmark(Bookmark bookmark) {
-//        this.bookmark = bookmark;
-//        hasBookmark = true;
-//    }
-//
-//    public Bookmark getBookmark() {
-//        return bookmark;
-//    }
 
     public Book() {
     }
@@ -54,22 +32,6 @@ public class Book {
 
     public String getName() {
         return name;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public long getISBN() {
-        return ISBN;
-    }
-
-    public int getPages() {
-        return pages;
     }
 
     public void setName(String name) {
