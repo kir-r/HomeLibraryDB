@@ -7,9 +7,12 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import javax.jws.WebService;
+
 import javax.persistence.criteria.*;
 import java.io.*;
 
+@WebService(endpointInterface = "com.epam.homelibrary.DAO.UserDAO")
 public class UserDataBaseDAO implements UserDAO {
     private DBConnector dBConnector;
 

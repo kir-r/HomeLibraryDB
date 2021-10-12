@@ -8,14 +8,15 @@ import com.epam.homelibrary.Main;
 import com.epam.homelibrary.models.User;
 import org.hibernate.Session;
 
-
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import javax.jws.WebService;
 import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@WebService(endpointInterface = "com.epam.homelibrary.DAO.LibraryDAO")
 public class LibraryDataBaseDAO implements LibraryDAO {
     private DBConnector dBConnector;
 
