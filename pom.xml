@@ -125,7 +125,7 @@
                 </executions>
                 <configuration>
                     <wsdlDirectory>${project.basedir}/src/main/resources/</wsdlDirectory>
-                    <packageName>com.epam.homelibrary.DAO.LibraryDAO</packageName>
+                    <packageName>com.epam.homelibrary.server.DAO.LibraryDAO</packageName>
                     <sourceDestDir>
                         ${project.build.directory}/generated-sources/
                     </sourceDestDir>

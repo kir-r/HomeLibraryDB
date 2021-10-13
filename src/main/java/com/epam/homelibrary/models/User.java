@@ -1,6 +1,6 @@
 package com.epam.homelibrary.models;
 
-import com.epam.homelibrary.Main;
+import com.epam.homelibrary.client.Main;
 
 import javax.persistence.*;
 
