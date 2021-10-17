@@ -22,7 +22,7 @@ public class Facade {
 
     public Facade() throws Exception {
         url = new URL("http://localhost:9999/ws/LibraryWebService?wsdl");
-        qname = new QName("http://controller.server.homelibrary.epam.com/", "LibraryWebServiceImpl");
+        qname = new QName("http://controller.server.homelibrary.epam.com/", "LibraryWebServiceImplService");
         service = Service.create(url, qname);
         libraryWebService = service.getPort(LibraryWebService.class);
     }
@@ -40,8 +40,8 @@ public class Facade {
     void blockUser(String username) {
     }
 
-
     void addBook(Book book) {
+        libraryWebService.addBook(book);
     }
 
     void removeBook(String nameOfBook) {
@@ -81,14 +81,19 @@ public class Facade {
     }
 
     List<Book> getListOfBooksFromDB() {
-        return null;
+        System.out.println("facadelist:    " + libraryWebService.getListOfBooksFromDB());
+        return libraryWebService.getListOfBooksFromDB();
     }
 
     List<Bookmark> getListOfBookMarksFromDB() {
-        return null;
+        return libraryWebService.getListOfBookMarksFromDB();
     }
 
     List<User> getListOfUserFromDB() {
-        return null;
+        return libraryWebService.getListOfUserFromDB();
+    }
+
+    void closeConnection() {
+        libraryWebService.closeConnection();
     }
 }

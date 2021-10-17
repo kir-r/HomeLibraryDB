@@ -140,7 +140,8 @@ public class LibraryAPI {
                         break;
                     case ("exit"):
                         reader.close();
-                        libraryDAO.closeConnection();
+                        facade.closeConnection();
+//                        libraryDAO.closeConnection();
                         return;
                 }
             }
@@ -165,8 +166,7 @@ public class LibraryAPI {
             book.setPages(Integer.parseInt(reader.readLine()));
             Main.logger.info("New book " + book.toString() + "is created.");
 //            libraryDAO.addBook(book);
-
-//            !!facade.libraryWebService.addBook();
+            facade.addBook(book);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -382,7 +382,8 @@ public class LibraryAPI {
 
     private void printBooks() {
         List<Book> listOfBooksFromDB;
-        listOfBooksFromDB = libraryDAO.getListOfBooksFromDB();
+        listOfBooksFromDB =  facade.getListOfBooksFromDB();
+//        listOfBooksFromDB = libraryDAO.getListOfBooksFromDB();
         if (!listOfBooksFromDB.isEmpty()) {
             for (Book book : listOfBooksFromDB) {
                 System.out.println(book);
@@ -393,7 +394,8 @@ public class LibraryAPI {
     }
 
     private void printBookmarks() {
-        List<Bookmark> listOfBookmarksFromDB = libraryDAO.getListOfBookMarksFromDB();
+        List<Bookmark> listOfBookmarksFromDB = facade.getListOfBookMarksFromDB();
+//        List<Bookmark> listOfBookmarksFromDB = libraryDAO.getListOfBookMarksFromDB();
         if (!listOfBookmarksFromDB.isEmpty()) {
             for (Bookmark bm : listOfBookmarksFromDB) {
                 System.out.println(bm);
@@ -404,7 +406,8 @@ public class LibraryAPI {
     }
 
     private void printUsers() {
-        List<User> listOfUsersFromDB = libraryDAO.getListOfUserFromDB();
+        List<User> listOfUsersFromDB = facade.getListOfUserFromDB();
+//        List<User> listOfUsersFromDB = libraryDAO.getListOfUserFromDB();
         if (!listOfUsersFromDB.isEmpty()) {
             for (User user : listOfUsersFromDB) {
                 System.out.println(user);

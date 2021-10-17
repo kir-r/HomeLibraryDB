@@ -89,22 +89,23 @@ public class LibraryWebServiceImpl implements LibraryWebService {
 
     @Override
     public List<Book> getListOfBooksFromDB() {
-        return null;
+        System.out.println("LibWebServImpl list:   "+libraryDAO.getListOfBooksFromDB());
+        return libraryDAO.getListOfBooksFromDB();
     }
 
     @Override
     public List<Bookmark> getListOfBookMarksFromDB() {
-        return null;
+        return libraryDAO.getListOfBookMarksFromDB();
     }
 
     @Override
     public List<User> getListOfUserFromDB() {
-        return null;
+        return libraryDAO.getListOfUserFromDB();
     }
 
     @Override
     public void closeConnection() {
-
+        libraryDAO.closeConnection();
     }
 //    methods UserDAO + LibraryDAO
 }
