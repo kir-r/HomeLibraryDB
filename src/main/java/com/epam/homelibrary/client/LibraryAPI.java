@@ -87,8 +87,7 @@ public class LibraryAPI {
                 String command = reader.readLine();
                 switch (command) {
                     case ("1"):
-//                        call facade
-//                        facade.addBook();
+                        addBook();
                         break;
                     case ("2"):
                         removeBook();
@@ -176,7 +175,8 @@ public class LibraryAPI {
         try {
             Main.logger.info("Type name of book you want to remove");
             String bookName = reader.readLine();
-            libraryDAO.removeBook(bookName);
+//            libraryDAO.removeBook(bookName);
+            facade.removeBook(bookName);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -186,7 +186,8 @@ public class LibraryAPI {
         try {
             Main.logger.info("Type name of author whose books you want to remove");
             String nameOfAuthor = reader.readLine();
-            libraryDAO.removeBookByAuthor(nameOfAuthor);
+//            libraryDAO.removeBookByAuthor(nameOfAuthor);
+            facade.removeBookByAuthor(nameOfAuthor);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -201,9 +202,11 @@ public class LibraryAPI {
             bookmark.setPage(Integer.parseInt(reader.readLine()));
             Main.logger.info("Type a name of a book to add a bookmark");
             String bookName = reader.readLine();
-            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
+//            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
+            listOfBooksFromDB = facade.searchBookByName(bookName);
             bookmark.setBook(listOfBooksFromDB.get(0));
-            libraryDAO.addBookmark(bookmark);
+//            libraryDAO.addBookmark(bookmark);
+            facade.addBookmark(bookmark);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -214,9 +217,11 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of a book to remove a bookmark");
             String bookName = reader.readLine();
-            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
+//            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
+            listOfBooksFromDB = facade.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
-                libraryDAO.removeBookmark(listOfBooksFromDB.get(0));
+//                libraryDAO.removeBookmark(listOfBooksFromDB.get(0));
+                facade.removeBookmark(listOfBooksFromDB.get(0));
             } else {
                 Main.logger.info("We don't have this book");
             }
@@ -230,7 +235,8 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of a book");
             String bookName = reader.readLine();
-            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
+//            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
+            listOfBooksFromDB = facade.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -248,7 +254,8 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of an author");
             String authorName = reader.readLine();
-            listOfBooksFromDB = libraryDAO.searchBookByAuthor(authorName);
+//            listOfBooksFromDB = libraryDAO.searchBookByAuthor(authorName);
+            listOfBooksFromDB = facade.searchBookByAuthor(authorName);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -266,7 +273,8 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type an ISBN");
             long ISBN = Long.parseLong(reader.readLine());
-            listOfBooksFromDB = libraryDAO.searchBookByISBN(ISBN);
+//            listOfBooksFromDB = libraryDAO.searchBookByISBN(ISBN);
+            listOfBooksFromDB = facade.searchBookByISBN(ISBN);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -287,7 +295,8 @@ public class LibraryAPI {
             Main.logger.info("Type a year to");
             int yearTo = Integer.parseInt(reader.readLine());
             if (yearFrom <= yearTo) {
-                listOfBooksFromDB = libraryDAO.searchBookInRangeOfYears(yearFrom, yearTo);
+//                listOfBooksFromDB = libraryDAO.searchBookInRangeOfYears(yearFrom, yearTo);
+                listOfBooksFromDB = facade.searchBookInRangeOfYears(yearFrom, yearTo);
                 if (!listOfBooksFromDB.isEmpty()) {
                     for (Book book : listOfBooksFromDB) {
                         System.out.println(book);
@@ -312,7 +321,8 @@ public class LibraryAPI {
             int year = Integer.parseInt(reader.readLine());
             Main.logger.info("Type amount of pages");
             int pages = Integer.parseInt(reader.readLine());
-            listOfBooksFromDB = libraryDAO.searchBookByYearPagesName(bookName, year, pages);
+//            listOfBooksFromDB = libraryDAO.searchBookByYearPagesName(bookName, year, pages);
+            listOfBooksFromDB = facade.searchBookByYearPagesName(bookName, year, pages);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -326,7 +336,8 @@ public class LibraryAPI {
     }
 
     private void searchBookWithBookmarks() {
-        List<Book> listOfBookWithBookmarks = libraryDAO.searchBookWithBookmarks(user);
+//        List<Book> listOfBookWithBookmarks = libraryDAO.searchBookWithBookmarks(user);
+        List<Book> listOfBookWithBookmarks = facade.searchBookWithBookmarks(user);
         Main.logger.info(listOfBookWithBookmarks);
     }
 
@@ -346,7 +357,8 @@ public class LibraryAPI {
                 user.setAdmin(false);
                 user.setBlocked(false);
                 System.out.println(user);
-                userDAO.createUser(user);
+                facade.createUser(user);
+//                userDAO.createUser(user);
 //              userJsonDAO.createUser(username);
             } else {
                 Main.logger.info("Sorry, you don't have admin rights");
@@ -361,7 +373,8 @@ public class LibraryAPI {
             if (user.isAdmin()) {
                 Main.logger.info("Type a name of user you want to block: ");
                 String username = reader.readLine();
-                userDAO.blockUser(username);
+//              userDAO.blockUser(username);
+                facade.blockUser(username);
 //              userJsonDAO.blockUser();
             } else {
                 Main.logger.info("Sorry, you don't have admin rights");
@@ -373,7 +386,8 @@ public class LibraryAPI {
 
     private void getUserLogHistory() {
         if (user.isAdmin()) {
-            userDAO.getUserLogHistory();
+            facade.getUserLogHistory();
+//          userDAO.getUserLogHistory();
 //          userJsonDAO.getUserLogHistory();
         } else {
             Main.logger.info("Sorry, you don't have admin rights");
@@ -382,7 +396,7 @@ public class LibraryAPI {
 
     private void printBooks() {
         List<Book> listOfBooksFromDB;
-        listOfBooksFromDB =  facade.getListOfBooksFromDB();
+        listOfBooksFromDB = facade.getListOfBooksFromDB();
 //        listOfBooksFromDB = libraryDAO.getListOfBooksFromDB();
         if (!listOfBooksFromDB.isEmpty()) {
             for (Book book : listOfBooksFromDB) {
@@ -394,7 +408,7 @@ public class LibraryAPI {
     }
 
     private void printBookmarks() {
-        List<Bookmark> listOfBookmarksFromDB = facade.getListOfBookMarksFromDB();
+        List<Bookmark> listOfBookmarksFromDB = facade.getListOfBookmarksFromDB();
 //        List<Bookmark> listOfBookmarksFromDB = libraryDAO.getListOfBookMarksFromDB();
         if (!listOfBookmarksFromDB.isEmpty()) {
             for (Bookmark bm : listOfBookmarksFromDB) {

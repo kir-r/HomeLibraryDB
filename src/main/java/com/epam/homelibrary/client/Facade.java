@@ -27,17 +27,18 @@ public class Facade {
         libraryWebService = service.getPort(LibraryWebService.class);
     }
 
-//    methods UserDAO + LibraryDAO
-    //post request
+    //post request!!!
 
     User authenticate(String login, String password) {
         return libraryWebService.authenticate(login, password);
     }
 
     void createUser(User user) {
+        libraryWebService.createUser(user);
     }
 
     void blockUser(String username) {
+        libraryWebService.blockUser(username);
     }
 
     void addBook(Book book) {
@@ -45,48 +46,54 @@ public class Facade {
     }
 
     void removeBook(String nameOfBook) {
+        libraryWebService.removeBook(nameOfBook);
     }
 
     void removeBookByAuthor(String nameOfAuthor) {
+        libraryWebService.removeBookByAuthor(nameOfAuthor);
     }
 
     void addBookmark(Bookmark bookmark) {
+        libraryWebService.addBookmark(bookmark);
     }
 
     void removeBookmark(Book book) {
+        libraryWebService.removeBookmark(book);
     }
 
     List<Book> searchBookByName(String bookName) {
-        return null;
+        return libraryWebService.searchBookByName(bookName);
     }
 
     List<Book> searchBookByAuthor(String authorName) {
-        return null;
+        return libraryWebService.searchBookByAuthor(authorName);
     }
 
     List<Book> searchBookByISBN(long ISBN) {
-        return null;
+        return libraryWebService.searchBookByISBN(ISBN);
     }
 
     List<Book> searchBookInRangeOfYears(int yearFrom, int yearTo) {
-        return null;
+        return libraryWebService.searchBookInRangeOfYears(yearFrom, yearTo);
     }
 
     List<Book> searchBookByYearPagesName(String name, int year, int pages) {
-        return null;
+        return libraryWebService.searchBookByYearPagesName(name, year, pages);
     }
 
     List<Book> searchBookWithBookmarks(User user) {
-        return null;
+        return libraryWebService.searchBookWithBookmarks(user);
+    }
+
+    void getUserLogHistory() {
     }
 
     List<Book> getListOfBooksFromDB() {
-        System.out.println("facadelist:    " + libraryWebService.getListOfBooksFromDB());
         return libraryWebService.getListOfBooksFromDB();
     }
 
-    List<Bookmark> getListOfBookMarksFromDB() {
-        return libraryWebService.getListOfBookMarksFromDB();
+    List<Bookmark> getListOfBookmarksFromDB() {
+        return libraryWebService.getListOfBookmarksFromDB();
     }
 
     List<User> getListOfUserFromDB() {

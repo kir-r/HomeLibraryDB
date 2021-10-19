@@ -1,20 +1,35 @@
 package com.epam.homelibrary.models;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.*;
 
 @Entity
 @Table(name = "Bookmark")
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Bookmark", propOrder = {
+        "id",
+        "page",
+        "visitor",
+        "book"
+})
 public class Bookmark {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @XmlElement(name = "id", required = true)
     private int id;
     @Column(name = "page")
+    @XmlElement(name = "page", required = true)
     private int page;
     @JoinColumn(name = "visitor_id")
     @OneToOne
+    @XmlElement()
+//    @XmlTransient
     private User visitor;
     @JoinColumn(name = "book_id")
     @OneToOne
+    @XmlElement()
+//    @XmlTransient
     private Book book;
 
     public User getVisitor() {

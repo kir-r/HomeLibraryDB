@@ -173,7 +173,6 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             cr.select(root);
             Query<Book> query = session.createQuery(cr);
             list = query.getResultList();
-            System.out.println("DAO list:    "+list);
             return list;
         }
     }

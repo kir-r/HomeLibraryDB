@@ -60,7 +60,7 @@ public interface LibraryWebService {
     List<Book> getListOfBooksFromDB();
 
     @WebMethod
-    List<Bookmark> getListOfBookMarksFromDB();
+    List<Bookmark> getListOfBookmarksFromDB();
 
     @WebMethod
     List<User> getListOfUserFromDB();
