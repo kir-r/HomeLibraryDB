@@ -9,16 +9,45 @@ import com.epam.homelibrary.server.DAO.UserDAO;
 import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
 import com.epam.homelibrary.server.DAO.impl.UserDataBaseDAO;
 
+import javax.annotation.Resource;
 import javax.jws.WebService;
+import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.handler.MessageContext;
 import java.util.List;
+import java.util.Map;
 
 @WebService(endpointInterface = "com.epam.homelibrary.common.LibraryWebService")
 public class LibraryWebServiceImpl implements LibraryWebService {
     private LibraryDAO libraryDAO = new LibraryDataBaseDAO();
     private UserDAO userDAO = new UserDataBaseDAO();
 
+    @Resource
+    WebServiceContext wsctx;
+
     @Override
-    public User authenticate(String login, String password) {
+    public User authenticate() {
+        MessageContext mctx = wsctx.getMessageContext();
+
+        //get detail from request headers
+        Map http_headers = (Map) mctx.get(MessageContext.HTTP_REQUEST_HEADERS);
+        List userList = (List) http_headers.get("Username");
+        List passList = (List) http_headers.get("Password");
+
+        String login = null;
+        String password = null;
+
+        if (userList != null) {
+            //get username
+            login = userList.get(0).toString();
+        } else return null;
+
+        if (passList != null) {
+            //get password
+            password = passList.get(0).toString();
+        } else return null;
+
+        //Should validate username and password with database
+
         return userDAO.authenticate(login, password);
     }
 

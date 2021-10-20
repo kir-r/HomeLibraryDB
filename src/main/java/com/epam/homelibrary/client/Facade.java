@@ -10,18 +10,25 @@ import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
 import com.epam.homelibrary.server.DAO.impl.UserDataBaseDAO;
 
 import javax.xml.namespace.QName;
+import javax.xml.ws.BindingProvider;
 import javax.xml.ws.Service;
+import javax.xml.ws.handler.MessageContext;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Facade {
+    private static final String WS_URL = "http://localhost:9999/ws/LibraryWebService?wsdl";
     private URL url;
     private QName qname;
     private Service service;
     private LibraryWebService libraryWebService;
 
     public Facade() throws Exception {
-        url = new URL("http://localhost:9999/ws/LibraryWebService?wsdl");
+        url = new URL(WS_URL);
         qname = new QName("http://controller.server.homelibrary.epam.com/", "LibraryWebServiceImplService");
         service = Service.create(url, qname);
         libraryWebService = service.getPort(LibraryWebService.class);
@@ -29,8 +36,18 @@ public class Facade {
 
     //post request!!!
 
-    User authenticate(String login, String password) {
-        return libraryWebService.authenticate(login, password);
+    User authenticate(String login, String password) throws Exception {
+
+        Map<String, Object> req_ctx = ((BindingProvider)libraryWebService).getRequestContext();
+        req_ctx.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, WS_URL);
+
+        Map<String, List<String>> headers = new HashMap<String, List<String>>();
+        headers.put("Username", Collections.singletonList(login));
+        headers.put("Password", Collections.singletonList(password));
+        req_ctx.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
+
+        return libraryWebService.authenticate();
+
     }
 
     void createUser(User user) {

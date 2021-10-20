@@ -53,7 +53,7 @@ public class LibraryAPI {
                     libraryDAO.closeConnection();
                 }
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

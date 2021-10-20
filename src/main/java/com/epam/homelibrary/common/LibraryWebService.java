@@ -15,7 +15,7 @@ public interface LibraryWebService {
     //    methods UserDAO + LibraryDAO
 
     @WebMethod
-    User authenticate(String login, String password);
+    User authenticate();
 
     @WebMethod
     void createUser(User user);
