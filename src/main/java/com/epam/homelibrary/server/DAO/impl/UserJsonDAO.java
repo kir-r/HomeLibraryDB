@@ -29,6 +29,7 @@ public class UserJsonDAO {
                 Gson gson = builder.create();
 
                 admin = gson.fromJson(jsonText, Admin.class);
+
                 Main.logger.info("You have logged as admin\n" + admin);
             } catch (IOException e) {
                 e.printStackTrace();
