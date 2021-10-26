@@ -37,8 +37,7 @@ public class Facade {
     //post request!!!
 
     User authenticate(String login, String password) throws Exception {
-
-        Map<String, Object> req_ctx = ((BindingProvider)libraryWebService).getRequestContext();
+        Map<String, Object> req_ctx = ((BindingProvider) libraryWebService).getRequestContext();
         req_ctx.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, WS_URL);
 
         Map<String, List<String>> headers = new HashMap<String, List<String>>();
@@ -47,7 +46,6 @@ public class Facade {
         req_ctx.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
 
         return libraryWebService.authenticate();
-
     }
 
     void createUser(User user) {

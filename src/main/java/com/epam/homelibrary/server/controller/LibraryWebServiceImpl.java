@@ -28,25 +28,20 @@ public class LibraryWebServiceImpl implements LibraryWebService {
     public User authenticate() {
         MessageContext mctx = wsctx.getMessageContext();
 
-        //get detail from request headers
         Map http_headers = (Map) mctx.get(MessageContext.HTTP_REQUEST_HEADERS);
         List userList = (List) http_headers.get("Username");
         List passList = (List) http_headers.get("Password");
 
-        String login = null;
-        String password = null;
+        String login;
+        String password;
 
         if (userList != null) {
-            //get username
             login = userList.get(0).toString();
         } else return null;
 
         if (passList != null) {
-            //get password
             password = passList.get(0).toString();
         } else return null;
-
-        //Should validate username and password with database
 
         return userDAO.authenticate(login, password);
     }

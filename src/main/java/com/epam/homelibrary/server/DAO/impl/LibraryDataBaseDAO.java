@@ -44,7 +44,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public void removeBookByAuthor(String nameOfAuthor)  {
+    public void removeBookByAuthor(String nameOfAuthor) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
 
