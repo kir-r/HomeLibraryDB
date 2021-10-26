@@ -1,9 +1,9 @@
 package com.epam.homelibrary.server.controller;
 
 import com.epam.homelibrary.common.LibraryWebService;
-import com.epam.homelibrary.models.Book;
-import com.epam.homelibrary.models.Bookmark;
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.common.models.Book;
+import com.epam.homelibrary.common.models.Bookmark;
+import com.epam.homelibrary.common.models.User;
 import com.epam.homelibrary.server.DAO.LibraryDAO;
 import com.epam.homelibrary.server.DAO.UserDAO;
 import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
@@ -22,13 +22,13 @@ public class LibraryWebServiceImpl implements LibraryWebService {
     private UserDAO userDAO = new UserDataBaseDAO();
 
     @Resource
-    WebServiceContext wsctx;
+    WebServiceContext webServiceContext;
 
     @Override
     public User authenticate() {
-        MessageContext mctx = wsctx.getMessageContext();
+        MessageContext messageContext = webServiceContext.getMessageContext();
 
-        Map http_headers = (Map) mctx.get(MessageContext.HTTP_REQUEST_HEADERS);
+        Map http_headers = (Map) messageContext.get(MessageContext.HTTP_REQUEST_HEADERS);
         List userList = (List) http_headers.get("Username");
         List passList = (List) http_headers.get("Password");
 
@@ -124,6 +124,11 @@ public class LibraryWebServiceImpl implements LibraryWebService {
     @Override
     public List<User> getListOfUserFromDB() {
         return libraryDAO.getListOfUserFromDB();
+    }
+
+    @Override
+    public List<String> getUserLogHistory() {
+        return userDAO.getUserLogHistory();
     }
 
     @Override

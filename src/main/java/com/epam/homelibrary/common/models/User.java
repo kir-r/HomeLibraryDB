@@ -1,4 +1,4 @@
-package com.epam.homelibrary.models;
+package com.epam.homelibrary.common.models;
 
 import com.epam.homelibrary.client.Main;
 

@@ -1,8 +1,8 @@
 package com.epam.homelibrary.common;
 
-import com.epam.homelibrary.models.Book;
-import com.epam.homelibrary.models.Bookmark;
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.common.models.Book;
+import com.epam.homelibrary.common.models.Bookmark;
+import com.epam.homelibrary.common.models.User;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -12,8 +12,6 @@ import java.util.List;
 @WebService
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
 public interface LibraryWebService {
-    //    methods UserDAO + LibraryDAO
-
     @WebMethod
     User authenticate();
 
@@ -64,6 +62,9 @@ public interface LibraryWebService {
 
     @WebMethod
     List<User> getListOfUserFromDB();
+
+    @WebMethod
+    List<String> getUserLogHistory();
 
     void closeConnection();
 }

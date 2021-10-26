@@ -1,14 +1,9 @@
 package com.epam.homelibrary.client;
 
-import com.epam.homelibrary.server.DAO.LibraryDAO;
-import com.epam.homelibrary.server.DAO.UserDAO;
-import com.epam.homelibrary.server.DAO.impl.UserDataBaseDAO;
-import com.epam.homelibrary.server.DAO.impl.UserJsonDAO;
-import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
-import com.epam.homelibrary.models.Admin;
-import com.epam.homelibrary.models.Book;
-import com.epam.homelibrary.models.Bookmark;
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.common.models.Admin;
+import com.epam.homelibrary.common.models.Book;
+import com.epam.homelibrary.common.models.Bookmark;
+import com.epam.homelibrary.common.models.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,19 +14,12 @@ import java.util.List;
 
 public class LibraryAPI {
     User user;
-    private LibraryDAO libraryDAO;
-    private UserDAO userDAO;
-    private UserJsonDAO userJsonDAO;
     private BufferedReader reader;
-    private Facade facade;
+    private SOAPConnectionService SOAPConnectionService;
 
-    public LibraryAPI() throws Exception {
+    public LibraryAPI() {
         reader = new BufferedReader(new InputStreamReader(System.in));
-//        libraryDAO = new LibraryDataBaseDAO();
-//        userDAO = new UserDataBaseDAO();
-//        UserJsonDAO userJsonDAO = new UserJsonDAO();
-        facade = new Facade();
-//        !!connect to publisher
+        SOAPConnectionService = new SOAPConnectionService();
     }
 
     public void operate() {
@@ -41,19 +29,17 @@ public class LibraryAPI {
                 String login = reader.readLine();
                 Main.logger.info("Password: ");
                 String password = reader.readLine();
-                user = facade.authenticate(login, password);
-//              user = userDAO.authenticate(login, password);
-//              user = userJsonDAO.authenticate(login, password);
+                user = SOAPConnectionService.authenticate(login, password);
                 if (user == null) {
                     System.out.println("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.\n");
                 } else if (!user.blocked()) {
                     userOperates();
                 } else {
                     Main.logger.info("Sorry, you have been banned");
-                    libraryDAO.closeConnection();
+                    SOAPConnectionService.closeConnection();
                 }
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -139,8 +125,7 @@ public class LibraryAPI {
                         break;
                     case ("exit"):
                         reader.close();
-                        facade.closeConnection();
-//                        libraryDAO.closeConnection();
+                        SOAPConnectionService.closeConnection();
                         return;
                 }
             }
@@ -164,8 +149,7 @@ public class LibraryAPI {
             Main.logger.info("Set number of pages");
             book.setPages(Integer.parseInt(reader.readLine()));
             Main.logger.info("New book " + book.toString() + "is created.");
-//            libraryDAO.addBook(book);
-            facade.addBook(book);
+            SOAPConnectionService.addBook(book);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -175,8 +159,7 @@ public class LibraryAPI {
         try {
             Main.logger.info("Type name of book you want to remove");
             String bookName = reader.readLine();
-//            libraryDAO.removeBook(bookName);
-            facade.removeBook(bookName);
+            SOAPConnectionService.removeBook(bookName);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -186,8 +169,7 @@ public class LibraryAPI {
         try {
             Main.logger.info("Type name of author whose books you want to remove");
             String nameOfAuthor = reader.readLine();
-//            libraryDAO.removeBookByAuthor(nameOfAuthor);
-            facade.removeBookByAuthor(nameOfAuthor);
+            SOAPConnectionService.removeBookByAuthor(nameOfAuthor);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -202,11 +184,9 @@ public class LibraryAPI {
             bookmark.setPage(Integer.parseInt(reader.readLine()));
             Main.logger.info("Type a name of a book to add a bookmark");
             String bookName = reader.readLine();
-//            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
-            listOfBooksFromDB = facade.searchBookByName(bookName);
+            listOfBooksFromDB = SOAPConnectionService.searchBookByName(bookName);
             bookmark.setBook(listOfBooksFromDB.get(0));
-//            libraryDAO.addBookmark(bookmark);
-            facade.addBookmark(bookmark);
+            SOAPConnectionService.addBookmark(bookmark);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -217,11 +197,9 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of a book to remove a bookmark");
             String bookName = reader.readLine();
-//            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
-            listOfBooksFromDB = facade.searchBookByName(bookName);
+            listOfBooksFromDB = SOAPConnectionService.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
-//                libraryDAO.removeBookmark(listOfBooksFromDB.get(0));
-                facade.removeBookmark(listOfBooksFromDB.get(0));
+                SOAPConnectionService.removeBookmark(listOfBooksFromDB.get(0));
             } else {
                 Main.logger.info("We don't have this book");
             }
@@ -235,8 +213,7 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of a book");
             String bookName = reader.readLine();
-//            listOfBooksFromDB = libraryDAO.searchBookByName(bookName);
-            listOfBooksFromDB = facade.searchBookByName(bookName);
+            listOfBooksFromDB = SOAPConnectionService.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -254,8 +231,7 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of an author");
             String authorName = reader.readLine();
-//            listOfBooksFromDB = libraryDAO.searchBookByAuthor(authorName);
-            listOfBooksFromDB = facade.searchBookByAuthor(authorName);
+            listOfBooksFromDB = SOAPConnectionService.searchBookByAuthor(authorName);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -273,8 +249,7 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type an ISBN");
             long ISBN = Long.parseLong(reader.readLine());
-//            listOfBooksFromDB = libraryDAO.searchBookByISBN(ISBN);
-            listOfBooksFromDB = facade.searchBookByISBN(ISBN);
+            listOfBooksFromDB = SOAPConnectionService.searchBookByISBN(ISBN);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -295,8 +270,7 @@ public class LibraryAPI {
             Main.logger.info("Type a year to");
             int yearTo = Integer.parseInt(reader.readLine());
             if (yearFrom <= yearTo) {
-//                listOfBooksFromDB = libraryDAO.searchBookInRangeOfYears(yearFrom, yearTo);
-                listOfBooksFromDB = facade.searchBookInRangeOfYears(yearFrom, yearTo);
+                listOfBooksFromDB = SOAPConnectionService.searchBookInRangeOfYears(yearFrom, yearTo);
                 if (!listOfBooksFromDB.isEmpty()) {
                     for (Book book : listOfBooksFromDB) {
                         System.out.println(book);
@@ -321,8 +295,7 @@ public class LibraryAPI {
             int year = Integer.parseInt(reader.readLine());
             Main.logger.info("Type amount of pages");
             int pages = Integer.parseInt(reader.readLine());
-//            listOfBooksFromDB = libraryDAO.searchBookByYearPagesName(bookName, year, pages);
-            listOfBooksFromDB = facade.searchBookByYearPagesName(bookName, year, pages);
+            listOfBooksFromDB = SOAPConnectionService.searchBookByYearPagesName(bookName, year, pages);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -336,8 +309,7 @@ public class LibraryAPI {
     }
 
     private void searchBookWithBookmarks() {
-//        List<Book> listOfBookWithBookmarks = libraryDAO.searchBookWithBookmarks(user);
-        List<Book> listOfBookWithBookmarks = facade.searchBookWithBookmarks(user);
+        List<Book> listOfBookWithBookmarks = SOAPConnectionService.searchBookWithBookmarks(user);
         Main.logger.info(listOfBookWithBookmarks);
     }
 
@@ -357,9 +329,7 @@ public class LibraryAPI {
                 user.setAdmin(false);
                 user.setBlocked(false);
                 System.out.println(user);
-                facade.createUser(user);
-//                userDAO.createUser(user);
-//              userJsonDAO.createUser(username);
+                SOAPConnectionService.createUser(user);
             } else {
                 Main.logger.info("Sorry, you don't have admin rights");
             }
@@ -373,9 +343,7 @@ public class LibraryAPI {
             if (user.isAdmin()) {
                 Main.logger.info("Type a name of user you want to block: ");
                 String username = reader.readLine();
-//              userDAO.blockUser(username);
-                facade.blockUser(username);
-//              userJsonDAO.blockUser();
+                SOAPConnectionService.blockUser(username);
             } else {
                 Main.logger.info("Sorry, you don't have admin rights");
             }
@@ -386,9 +354,9 @@ public class LibraryAPI {
 
     private void getUserLogHistory() {
         if (user.isAdmin()) {
-            facade.getUserLogHistory();
-//          userDAO.getUserLogHistory();
-//          userJsonDAO.getUserLogHistory();
+            for (String logString : SOAPConnectionService.getUserLogHistory()) {
+                System.out.println(logString);
+            }
         } else {
             Main.logger.info("Sorry, you don't have admin rights");
         }
@@ -396,8 +364,7 @@ public class LibraryAPI {
 
     private void printBooks() {
         List<Book> listOfBooksFromDB;
-        listOfBooksFromDB = facade.getListOfBooksFromDB();
-//        listOfBooksFromDB = libraryDAO.getListOfBooksFromDB();
+        listOfBooksFromDB = SOAPConnectionService.getListOfBooksFromDB();
         if (!listOfBooksFromDB.isEmpty()) {
             for (Book book : listOfBooksFromDB) {
                 System.out.println(book);
@@ -408,8 +375,7 @@ public class LibraryAPI {
     }
 
     private void printBookmarks() {
-        List<Bookmark> listOfBookmarksFromDB = facade.getListOfBookmarksFromDB();
-//        List<Bookmark> listOfBookmarksFromDB = libraryDAO.getListOfBookMarksFromDB();
+        List<Bookmark> listOfBookmarksFromDB = SOAPConnectionService.getListOfBookmarksFromDB();
         if (!listOfBookmarksFromDB.isEmpty()) {
             for (Bookmark bm : listOfBookmarksFromDB) {
                 System.out.println(bm);
@@ -420,8 +386,7 @@ public class LibraryAPI {
     }
 
     private void printUsers() {
-        List<User> listOfUsersFromDB = facade.getListOfUserFromDB();
-//        List<User> listOfUsersFromDB = libraryDAO.getListOfUserFromDB();
+        List<User> listOfUsersFromDB = SOAPConnectionService.getListOfUserFromDB();
         if (!listOfUsersFromDB.isEmpty()) {
             for (User user : listOfUsersFromDB) {
                 System.out.println(user);

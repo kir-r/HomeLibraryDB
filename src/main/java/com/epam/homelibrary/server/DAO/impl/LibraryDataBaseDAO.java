@@ -1,16 +1,19 @@
 package com.epam.homelibrary.server.DAO.impl;
 
 import com.epam.homelibrary.server.DAO.LibraryDAO;
-import com.epam.homelibrary.models.Book;
-import com.epam.homelibrary.models.Bookmark;
+import com.epam.homelibrary.common.models.Book;
+import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.client.Main;
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.common.models.User;
 import org.hibernate.Session;
 
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import javax.persistence.criteria.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

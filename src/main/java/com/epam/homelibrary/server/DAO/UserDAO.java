@@ -1,6 +1,8 @@
 package com.epam.homelibrary.server.DAO;
 
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.common.models.User;
+
+import java.util.List;
 
 public interface UserDAO {
     void createUser(User user);
@@ -9,5 +11,5 @@ public interface UserDAO {
 
     User authenticate(String login, String password);
 
-    void getUserLogHistory();
+    List<String> getUserLogHistory();
 }

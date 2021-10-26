@@ -1,13 +1,9 @@
 package com.epam.homelibrary.client;
 
 import com.epam.homelibrary.common.LibraryWebService;
-import com.epam.homelibrary.models.Book;
-import com.epam.homelibrary.models.Bookmark;
-import com.epam.homelibrary.models.User;
-import com.epam.homelibrary.server.DAO.LibraryDAO;
-import com.epam.homelibrary.server.DAO.UserDAO;
-import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
-import com.epam.homelibrary.server.DAO.impl.UserDataBaseDAO;
+import com.epam.homelibrary.common.models.Book;
+import com.epam.homelibrary.common.models.Bookmark;
+import com.epam.homelibrary.common.models.User;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
@@ -20,23 +16,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Facade {
+public class SOAPConnectionService {
     private static final String WS_URL = "http://localhost:9999/ws/LibraryWebService?wsdl";
-    private URL url;
-    private QName qname;
-    private Service service;
+    private static final String nameSpaceURI = "http://controller.server.homelibrary.epam.com/";
     private LibraryWebService libraryWebService;
 
-    public Facade() throws Exception {
-        url = new URL(WS_URL);
-        qname = new QName("http://controller.server.homelibrary.epam.com/", "LibraryWebServiceImplService");
-        service = Service.create(url, qname);
-        libraryWebService = service.getPort(LibraryWebService.class);
+    public SOAPConnectionService() {
+        try {
+            URL url = new URL(WS_URL);
+            QName qname = new QName(nameSpaceURI, "LibraryWebServiceImplService");
+            Service factoryOfProxiesForTargetServiceEndpoint = Service.create(url, qname);
+            libraryWebService = factoryOfProxiesForTargetServiceEndpoint.getPort(LibraryWebService.class);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
-    //post request!!!
-
-    User authenticate(String login, String password) throws Exception {
+    User authenticate(String login, String password) {
         Map<String, Object> req_ctx = ((BindingProvider) libraryWebService).getRequestContext();
         req_ctx.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, WS_URL);
 
@@ -100,7 +96,8 @@ public class Facade {
         return libraryWebService.searchBookWithBookmarks(user);
     }
 
-    void getUserLogHistory() {
+    List<String> getUserLogHistory() {
+        return libraryWebService.getUserLogHistory();
     }
 
     List<Book> getListOfBooksFromDB() {

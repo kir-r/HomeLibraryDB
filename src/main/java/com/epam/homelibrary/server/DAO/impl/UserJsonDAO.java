@@ -1,9 +1,9 @@
 package com.epam.homelibrary.server.DAO.impl;
 
-import com.epam.homelibrary.models.Admin;
-import com.epam.homelibrary.models.Book;
+import com.epam.homelibrary.common.models.Admin;
+import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.client.Main;
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.common.models.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

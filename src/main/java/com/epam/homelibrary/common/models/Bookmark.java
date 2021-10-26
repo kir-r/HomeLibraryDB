@@ -1,4 +1,4 @@
-package com.epam.homelibrary.models;
+package com.epam.homelibrary.common.models;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -24,12 +24,10 @@ public class Bookmark {
     @JoinColumn(name = "visitor_id")
     @OneToOne
     @XmlElement()
-//    @XmlTransient
     private User visitor;
     @JoinColumn(name = "book_id")
     @OneToOne
     @XmlElement()
-//    @XmlTransient
     private Book book;
 
     public User getVisitor() {
