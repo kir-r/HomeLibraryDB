@@ -4,6 +4,7 @@ import com.epam.homelibrary.common.LibraryWebService;
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.User;
+import com.epam.homelibrary.server.DAO.HistoryManager;
 import com.epam.homelibrary.server.DAO.LibraryDAO;
 import com.epam.homelibrary.server.DAO.UserDAO;
 import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
@@ -43,6 +44,7 @@ public class LibraryWebServiceImpl implements LibraryWebService {
             password = passList.get(0).toString();
         } else return null;
 
+        HistoryManager.authenticate(login);
         return userDAO.authenticate(login, password);
     }
 
@@ -128,11 +130,12 @@ public class LibraryWebServiceImpl implements LibraryWebService {
 
     @Override
     public List<String> getUserLogHistory() {
-        return userDAO.getUserLogHistory();
+        return HistoryManager.read();
     }
 
     @Override
     public void closeConnection() {
+        HistoryManager.cleanUp();
         libraryDAO.closeConnection();
     }
 }

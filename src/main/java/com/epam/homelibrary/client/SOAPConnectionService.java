@@ -4,6 +4,7 @@ import com.epam.homelibrary.common.LibraryWebService;
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.User;
+import com.epam.homelibrary.server.DAO.HistoryManager;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
