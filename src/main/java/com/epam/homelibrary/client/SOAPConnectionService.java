@@ -25,8 +25,8 @@ public class SOAPConnectionService {
         try {
             URL url = new URL(WS_URL);
             QName qname = new QName(nameSpaceURI, "LibraryWebServiceImplService");
-            Service factoryOfProxiesForTargetServiceEndpoint = Service.create(url, qname);
-            libraryWebService = factoryOfProxiesForTargetServiceEndpoint.getPort(LibraryWebService.class);
+            Service proxiesForEndpoint = Service.create(url, qname);
+            libraryWebService = proxiesForEndpoint.getPort(LibraryWebService.class);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
