@@ -1,10 +1,12 @@
-package com.epam.homelibrary.DAO;
+package com.epam.homelibrary.server.DAO;
 
-import com.epam.homelibrary.models.Book;
-import com.epam.homelibrary.models.Bookmark;
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.common.models.Book;
+import com.epam.homelibrary.common.models.Bookmark;
+import com.epam.homelibrary.common.models.User;
+
 
 import java.util.List;
+
 
 public interface LibraryDAO {
 

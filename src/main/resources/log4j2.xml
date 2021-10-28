@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="INFO">
 
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
@@ -16,7 +16,7 @@
             <AppenderRef ref="Console" level="info"/>
         </Logger>
 
-        <Root level="all">
+        <Root level="INFO">
             <AppenderRef ref="FILE"/>
         </Root>
     </Loggers>

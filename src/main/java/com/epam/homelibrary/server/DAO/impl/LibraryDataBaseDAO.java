@@ -1,13 +1,12 @@
-package com.epam.homelibrary.DAO.impl;
+package com.epam.homelibrary.server.DAO.impl;
 
-import com.epam.homelibrary.DAO.LibraryDAO;
-import com.epam.homelibrary.models.Admin;
-import com.epam.homelibrary.models.Book;
-import com.epam.homelibrary.models.Bookmark;
-import com.epam.homelibrary.Main;
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.server.DAO.HistoryManager;
+import com.epam.homelibrary.server.DAO.LibraryDAO;
+import com.epam.homelibrary.common.models.Book;
+import com.epam.homelibrary.common.models.Bookmark;
+import com.epam.homelibrary.client.Main;
+import com.epam.homelibrary.common.models.User;
 import org.hibernate.Session;
-
 
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -28,6 +27,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             Transaction transaction = session.beginTransaction();
             session.save(book);
             transaction.commit();
+            HistoryManager.write("added new book " + book.toString());
         }
     }
 
@@ -42,11 +42,11 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             Transaction transaction = session.beginTransaction();
             session.createQuery(criteriaDelete).executeUpdate();
             transaction.commit();
-            Main.logger.info("Book \"" + nameOfBook + "\" is removed");
+            HistoryManager.write("Book \"" + nameOfBook + "\" is removed");
         }
     }
 
-    public void removeBookByAuthor(String nameOfAuthor)  {
+    public void removeBookByAuthor(String nameOfAuthor) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
 
@@ -57,7 +57,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             Transaction transaction = session.beginTransaction();
             session.createQuery(criteriaDelete).executeUpdate();
             transaction.commit();
-            Main.logger.info("Book by author " + nameOfAuthor + " is removed");
+            HistoryManager.write("Book by author " + nameOfAuthor + " is removed");
         }
     }
 
@@ -66,7 +66,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             Transaction transaction = session.beginTransaction();
             session.save(bookmark);
             transaction.commit();
-            Main.logger.info(bookmark + " is added");
+            HistoryManager.write(bookmark + " is added");
         }
     }
 
@@ -80,7 +80,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             Transaction transaction = session.beginTransaction();
             session.createQuery(criteriaDelete).executeUpdate();
             transaction.commit();
-            Main.logger.info("Bookmark from \"" + book.getName() + "\" is removed");
+            HistoryManager.write("Bookmark from \"" + book.getName() + "\" is removed");
 
         }
     }

@@ -1,14 +1,16 @@
-package com.epam.homelibrary.DAO.impl;
+package com.epam.homelibrary.server.DAO.impl;
 
-import com.epam.homelibrary.DAO.UserDAO;
-import com.epam.homelibrary.Main;
-import com.epam.homelibrary.models.User;
+import com.epam.homelibrary.server.DAO.UserDAO;
+import com.epam.homelibrary.client.Main;
+import com.epam.homelibrary.common.models.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import javax.persistence.criteria.*;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDataBaseDAO implements UserDAO {
     private DBConnector dBConnector;
@@ -62,13 +64,15 @@ public class UserDataBaseDAO implements UserDAO {
         }
     }
 
-    public void getUserLogHistory() {
+    public List<String> getUserLogHistory() {
+        List<String> listOfUserLogs = new ArrayList<>();
         try (BufferedReader bufferedreader = new BufferedReader(new FileReader("src/main/resources/app.log"))) {
             while (bufferedreader.ready()) {
-                Main.logger.info(bufferedreader.readLine());
+                listOfUserLogs.add(bufferedreader.readLine());
             }
         } catch (IOException e) {
             Main.logger.error(e.getMessage());
         }
+        return listOfUserLogs;
     }
 }

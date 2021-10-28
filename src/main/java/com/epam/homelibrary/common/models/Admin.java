@@ -1,4 +1,4 @@
-package com.epam.homelibrary.models;
+package com.epam.homelibrary.common.models;
 
 import java.util.*;
 

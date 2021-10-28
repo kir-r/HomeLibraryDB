@@ -1,26 +1,48 @@
-package com.epam.homelibrary.models;
+package com.epam.homelibrary.common.models;
 
-import com.epam.homelibrary.Main;
+import com.epam.homelibrary.client.Main;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 import java.util.ArrayList;
 
 @Entity
 @Table(name = "Visitor")
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "User", propOrder = {
+        "id",
+        "name",
+        "login",
+        "password",
+        "isAdmin",
+        "blocked",
+        "listOfBookmarks",
+        "listOfBooks"
+})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @XmlElement(name = "id", required = true)
     private int id;
     @Column(name = "name")
+    @XmlElement(name = "name", required = true)
     protected String name;
     @Column(name = "login")
+    @XmlElement(name = "login", required = true)
     protected String login;
     @Column(name = "password")
+    @XmlElement(name = "password", required = true)
     protected String password;
     @Column(name = "isAdmin")
+    @XmlElement(name = "isAdmin", required = true)
     protected boolean isAdmin;
     @Column(name = "blocked", nullable = false)
+    @XmlElement(name = "blocked", required = true)
     protected boolean blocked;
     @Transient
     protected ArrayList<Bookmark> listOfBookmarks = new ArrayList<>();
