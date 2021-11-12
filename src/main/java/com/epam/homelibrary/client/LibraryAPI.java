@@ -15,11 +15,13 @@ import java.util.List;
 public class LibraryAPI {
     User user;
     private BufferedReader reader;
-    private SOAPConnectionService SOAPConnectionService;
+//    private SOAPConnectionService SOAPConnectionService;
+    private RESTConnectionService RESTConnectionService;
 
     public LibraryAPI() {
         reader = new BufferedReader(new InputStreamReader(System.in));
-        SOAPConnectionService = new SOAPConnectionService();
+//        SOAPConnectionService = new SOAPConnectionService();
+        RESTConnectionService = new RESTConnectionService();
     }
 
     public void operate() {
@@ -29,14 +31,14 @@ public class LibraryAPI {
                 String login = reader.readLine();
                 Main.logger.info("Password: ");
                 String password = reader.readLine();
-                user = SOAPConnectionService.authenticate(login, password);
+                user = RESTConnectionService.authenticate(login, password);
                 if (user == null) {
                     System.out.println("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.\n");
                 } else if (!user.blocked()) {
                     userOperates();
                 } else {
                     Main.logger.info("Sorry, you have been banned");
-                    SOAPConnectionService.closeConnection();
+                    RESTConnectionService.closeConnection();
                 }
             }
         } catch (IOException e) {
@@ -125,7 +127,7 @@ public class LibraryAPI {
                         break;
                     case ("exit"):
                         reader.close();
-                        SOAPConnectionService.closeConnection();
+                        RESTConnectionService.closeConnection();
                         return;
                 }
             }
@@ -149,7 +151,7 @@ public class LibraryAPI {
             Main.logger.info("Set number of pages");
             book.setPages(Integer.parseInt(reader.readLine()));
             Main.logger.info("New book " + book.toString() + "is created.");
-            SOAPConnectionService.addBook(book);
+            RESTConnectionService.addBook(book);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -159,7 +161,7 @@ public class LibraryAPI {
         try {
             Main.logger.info("Type name of book you want to remove");
             String bookName = reader.readLine();
-            SOAPConnectionService.removeBook(bookName);
+            RESTConnectionService.removeBook(bookName);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -169,7 +171,7 @@ public class LibraryAPI {
         try {
             Main.logger.info("Type name of author whose books you want to remove");
             String nameOfAuthor = reader.readLine();
-            SOAPConnectionService.removeBookByAuthor(nameOfAuthor);
+            RESTConnectionService.removeBookByAuthor(nameOfAuthor);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -184,9 +186,9 @@ public class LibraryAPI {
             bookmark.setPage(Integer.parseInt(reader.readLine()));
             Main.logger.info("Type a name of a book to add a bookmark");
             String bookName = reader.readLine();
-            listOfBooksFromDB = SOAPConnectionService.searchBookByName(bookName);
+            listOfBooksFromDB = RESTConnectionService.searchBookByName(bookName);
             bookmark.setBook(listOfBooksFromDB.get(0));
-            SOAPConnectionService.addBookmark(bookmark);
+            RESTConnectionService.addBookmark(bookmark);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -197,9 +199,9 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of a book to remove a bookmark");
             String bookName = reader.readLine();
-            listOfBooksFromDB = SOAPConnectionService.searchBookByName(bookName);
+            listOfBooksFromDB = RESTConnectionService.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
-                SOAPConnectionService.removeBookmark(listOfBooksFromDB.get(0));
+                RESTConnectionService.removeBookmark(listOfBooksFromDB.get(0));
             } else {
                 Main.logger.info("We don't have this book");
             }
@@ -213,7 +215,7 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of a book");
             String bookName = reader.readLine();
-            listOfBooksFromDB = SOAPConnectionService.searchBookByName(bookName);
+            listOfBooksFromDB = RESTConnectionService.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -231,7 +233,7 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type a name of an author");
             String authorName = reader.readLine();
-            listOfBooksFromDB = SOAPConnectionService.searchBookByAuthor(authorName);
+            listOfBooksFromDB = RESTConnectionService.searchBookByAuthor(authorName);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -249,7 +251,7 @@ public class LibraryAPI {
             List<Book> listOfBooksFromDB;
             Main.logger.info("Type an ISBN");
             long ISBN = Long.parseLong(reader.readLine());
-            listOfBooksFromDB = SOAPConnectionService.searchBookByISBN(ISBN);
+            listOfBooksFromDB = RESTConnectionService.searchBookByISBN(ISBN);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -270,7 +272,7 @@ public class LibraryAPI {
             Main.logger.info("Type a year to");
             int yearTo = Integer.parseInt(reader.readLine());
             if (yearFrom <= yearTo) {
-                listOfBooksFromDB = SOAPConnectionService.searchBookInRangeOfYears(yearFrom, yearTo);
+                listOfBooksFromDB = RESTConnectionService.searchBookInRangeOfYears(yearFrom, yearTo);
                 if (!listOfBooksFromDB.isEmpty()) {
                     for (Book book : listOfBooksFromDB) {
                         System.out.println(book);
@@ -295,7 +297,7 @@ public class LibraryAPI {
             int year = Integer.parseInt(reader.readLine());
             Main.logger.info("Type amount of pages");
             int pages = Integer.parseInt(reader.readLine());
-            listOfBooksFromDB = SOAPConnectionService.searchBookByYearPagesName(bookName, year, pages);
+            listOfBooksFromDB = RESTConnectionService.searchBookByYearPagesName(bookName, year, pages);
             if (!listOfBooksFromDB.isEmpty()) {
                 for (Book book : listOfBooksFromDB) {
                     System.out.println(book);
@@ -309,7 +311,7 @@ public class LibraryAPI {
     }
 
     private void searchBookWithBookmarks() {
-        List<Book> listOfBookWithBookmarks = SOAPConnectionService.searchBookWithBookmarks(user);
+        List<Book> listOfBookWithBookmarks = RESTConnectionService.searchBookWithBookmarks(user);
         Main.logger.info(listOfBookWithBookmarks);
     }
 
@@ -329,7 +331,7 @@ public class LibraryAPI {
                 user.setAdmin(false);
                 user.setBlocked(false);
                 System.out.println(user);
-                SOAPConnectionService.createUser(user);
+                RESTConnectionService.createUser(user);
             } else {
                 Main.logger.info("Sorry, you don't have admin rights");
             }
@@ -343,7 +345,7 @@ public class LibraryAPI {
             if (user.isAdmin()) {
                 Main.logger.info("Type a name of user you want to block: ");
                 String username = reader.readLine();
-                SOAPConnectionService.blockUser(username);
+                RESTConnectionService.blockUser(username);
             } else {
                 Main.logger.info("Sorry, you don't have admin rights");
             }
@@ -354,7 +356,7 @@ public class LibraryAPI {
 
     private void getUserLogHistory() {
         if (user.isAdmin()) {
-            for (String logString : SOAPConnectionService.getUserLogHistory()) {
+            for (String logString : RESTConnectionService.getUserLogHistory()) {
                 System.out.println(logString);
             }
         } else {
@@ -364,7 +366,7 @@ public class LibraryAPI {
 
     private void printBooks() {
         List<Book> listOfBooksFromDB;
-        listOfBooksFromDB = SOAPConnectionService.getListOfBooksFromDB();
+        listOfBooksFromDB = RESTConnectionService.getListOfBooksFromDB();
         if (!listOfBooksFromDB.isEmpty()) {
             for (Book book : listOfBooksFromDB) {
                 System.out.println(book);
@@ -375,7 +377,7 @@ public class LibraryAPI {
     }
 
     private void printBookmarks() {
-        List<Bookmark> listOfBookmarksFromDB = SOAPConnectionService.getListOfBookmarksFromDB();
+        List<Bookmark> listOfBookmarksFromDB = RESTConnectionService.getListOfBookmarksFromDB();
         if (!listOfBookmarksFromDB.isEmpty()) {
             for (Bookmark bm : listOfBookmarksFromDB) {
                 System.out.println(bm);
@@ -386,7 +388,7 @@ public class LibraryAPI {
     }
 
     private void printUsers() {
-        List<User> listOfUsersFromDB = SOAPConnectionService.getListOfUserFromDB();
+        List<User> listOfUsersFromDB = RESTConnectionService.getListOfUserFromDB();
         if (!listOfUsersFromDB.isEmpty()) {
             for (User user : listOfUsersFromDB) {
                 System.out.println(user);

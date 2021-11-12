@@ -504,3 +504,115 @@ type "print books" to see books in data base,
 type "print bookmarks" to see books in data base,
 or type "exit" to leave app
 19:48:01.095 [pool-2-thread-1] INFO  org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:h2:~/test]
+17:52:50.736 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:52:55.460 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:53:00.110 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:53:06.446 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:53:06.974 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:53:13.408 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:53:14.718 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:56:36.573 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:56:41.296 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:58:57.750 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:59:41.724 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:59:47.078 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:03:11.372 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:03:25.708 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:03:29.321 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:04:14.894 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:04:24.883 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:04:28.469 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:05:29.088 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:06:01.510 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:10:00.336 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:10:03.546 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:10:17.113 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:13:09.062 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:13:12.970 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:19:47.727 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:20:21.674 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:21:15.475 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:21:51.349 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:21:55.316 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:26:23.900 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:26:27.903 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:26:34.955 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:32:10.016 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:32:17.936 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:32:21.876 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:33:59.289 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:34:04.016 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:35:56.878 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:36:01.736 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:39:47.196 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:40:03.185 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:42:11.910 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:42:15.215 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:54:56.729 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:55:11.364 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:58:07.490 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:58:12.543 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+19:01:26.628 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+19:01:30.233 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+19:02:45.033 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+19:03:09.723 [main] INFO  com.epam.homelibrary.client.Main - Password: 
