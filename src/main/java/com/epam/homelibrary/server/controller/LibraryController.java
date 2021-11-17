@@ -6,6 +6,7 @@ import com.epam.homelibrary.common.models.User;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class LibraryController { //RESTful Service
     private LibraryWebServiceImpl libraryWebServiceImpl;
 
     @GET
+    @Produces({MediaType.APPLICATION_JSON})
     @Path("users/authorization")
     public Response authenticate(@HeaderParam("login") String login, @HeaderParam("password") String password) {
         User user = libraryWebServiceImpl.authenticate(login, password);

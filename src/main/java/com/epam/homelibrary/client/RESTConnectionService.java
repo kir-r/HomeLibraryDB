@@ -21,7 +21,7 @@ RESTConnectionService {
     public User authenticate(String login, String password) {
         Response response = client.target(REST_URI)
                 .path("users/authorization")
-                .request(MediaType.TEXT_PLAIN)
+                .request(MediaType.APPLICATION_JSON)
                 .header("login", login)
                 .header("password", password)
                 .get();

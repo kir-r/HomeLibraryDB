@@ -50,6 +50,9 @@ public class User {
     @Transient
     protected ArrayList<Book> listOfBooks = new ArrayList<>();
 
+    public User() {
+    }
+
     public int getId() {
         return id;
     }
