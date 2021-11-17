@@ -8,6 +8,9 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Response;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Path("/")
 public class LibraryController { //RESTful Service
 
@@ -20,13 +23,16 @@ public class LibraryController { //RESTful Service
     @Path("users/authorization")
     public Response authenticate(@HeaderParam("login") String login, @HeaderParam("password") String password) {
         User user = libraryWebServiceImpl.authenticate(login, password);
-        System.out.println(user);
+        System.out.println("user: " + user);
+//        List<User> userList = new ArrayList<>();
         if (user != null) {
+//            userList.add(user);
             return Response
                     .status(Response.Status.OK)
                     //jwt token add to cookie
                     .entity(user)
                     .build();
+
         } else return Response.status(401).build();
 
         //all except auth - annotate @Logged

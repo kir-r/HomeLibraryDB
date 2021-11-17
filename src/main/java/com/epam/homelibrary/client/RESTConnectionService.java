@@ -25,7 +25,7 @@ RESTConnectionService {
                 .header("login", login)
                 .header("password", password)
                 .get();
-
+        System.out.println("response.hasEntity(): " + response.hasEntity());
         return response.readEntity(User.class);
     }
 

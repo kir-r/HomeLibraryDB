@@ -142,11 +142,19 @@
         </dependency>
 <!--finish!!!-->
 
+
+<!--        <dependency>-->
+<!--            <groupId>org.glassfish.jersey.media</groupId>-->
+<!--            <artifactId>jersey-media-moxy</artifactId>-->
+<!--            <version>3.0.2</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-moxy</artifactId>
-            <version>3.0.2</version>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>3.0.3</version>
         </dependency>
+
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
