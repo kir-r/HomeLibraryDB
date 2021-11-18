@@ -5,6 +5,7 @@ import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.User;
 import com.epam.homelibrary.server.TokenManager.TokenManager;
 import com.epam.homelibrary.server.filter.AuthenticationFilter;
+import com.epam.homelibrary.server.filter.Logged;
 import com.sun.xml.ws.client.RequestContext;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Path;
@@ -57,11 +58,9 @@ public class LibraryController { //RESTful Service
 
     @POST
     @Path("books/add")
+    @Logged
     public Response addBook(Book book) {
-        authenticationFilter.filter(RequestContext);     //Из чего извлекать?
-
         libraryWebServiceImpl.addBook(book);
-
         return Response
                 .status(Response.Status.OK)
                 .entity(book)

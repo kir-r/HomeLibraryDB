@@ -1437,3 +1437,46 @@ ISBN - 1
 pages - 1
 is created.
 19:52:24.319 [main] INFO  com.epam.homelibrary.client.Main - Type name of book you want to remove
+21:09:14.438 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+21:09:19.532 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+21:09:26.348 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+21:09:28.187 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+21:09:28.502 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+21:09:28.507 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+21:09:28.507 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+21:09:28.507 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+21:09:28.517 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+21:09:29.248 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+21:09:31.958 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21:09:33.487 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+21:09:40.748 [main] INFO  com.epam.homelibrary.client.Main - Set name of a book
+21:09:43.847 [main] INFO  com.epam.homelibrary.client.Main - Set author
+21:09:44.888 [main] INFO  com.epam.homelibrary.client.Main - Set year
+21:09:45.848 [main] INFO  com.epam.homelibrary.client.Main - Set ISBN
+21:09:46.457 [main] INFO  com.epam.homelibrary.client.Main - Set number of pages
+21:09:47.597 [main] INFO  com.epam.homelibrary.client.Main - New book "q"
+by q
+year 1
+ISBN - 1
+pages - 1
+is created.
+21:09:59.573 [main] INFO  com.epam.homelibrary.client.Main - Type name of book you want to remove
