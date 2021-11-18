@@ -13,6 +13,7 @@ import java.util.List;
 
 public class RESTConnectionService {
     private static final String REST_URI = "http://localhost:9999/library/";
+    private String jwtToken;
 
     private Client client = ClientBuilder.newClient();
 
@@ -24,6 +25,8 @@ public class RESTConnectionService {
                 .header("password", password)
                 .get();
         System.out.println("authenticate response status: " + response.getStatus());
+        response.getCookies().get("token").getValue();
+        System.out.println("jwtToken: " + jwtToken);
         return response.readEntity(User.class);
     }
 
@@ -41,6 +44,7 @@ public class RESTConnectionService {
         Response response = client.target(REST_URI)
                 .path("books/add")
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .post(Entity.entity(book, MediaType.APPLICATION_JSON));
         System.out.println("addBook response status: " + response.getStatus());
     }

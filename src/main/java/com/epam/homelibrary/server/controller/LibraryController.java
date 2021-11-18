@@ -3,17 +3,25 @@ package com.epam.homelibrary.server.controller;
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.User;
+import com.epam.homelibrary.server.TokenManager.TokenManager;
+import com.epam.homelibrary.server.filter.AuthenticationFilter;
+import com.sun.xml.ws.client.RequestContext;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+
+
+import jakarta.ws.rs.core.NewCookie;
 import jakarta.ws.rs.core.Response;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Path("/")
 public class LibraryController { //RESTful Service
+
+    private final TokenManager tokenManager = new TokenManager();
+    private final AuthenticationFilter authenticationFilter = new AuthenticationFilter();
 
     //Priority annotation
 
@@ -26,9 +34,11 @@ public class LibraryController { //RESTful Service
     public Response authenticate(@HeaderParam("login") String login, @HeaderParam("password") String password) {
         User user = libraryWebServiceImpl.authenticate(login, password);
         if (user != null) {
+            String token = tokenManager.encodeToken(login);
             return Response
                     .status(Response.Status.OK)
                     //jwt token add to cookie
+                    .cookie(new NewCookie("token", token))
                     .entity(user)
                     .build();
         } else return Response.status(401).build();
@@ -44,10 +54,14 @@ public class LibraryController { //RESTful Service
         return null;
     }
 
+
     @POST
     @Path("books/add")
     public Response addBook(Book book) {
+        authenticationFilter.filter(RequestContext);     //Из чего извлекать?
+
         libraryWebServiceImpl.addBook(book);
+
         return Response
                 .status(Response.Status.OK)
                 .entity(book)
