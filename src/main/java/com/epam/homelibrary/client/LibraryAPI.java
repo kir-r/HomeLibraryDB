@@ -365,15 +365,17 @@ public class LibraryAPI {
     }
 
     private void printBooks() {
-        List<Book> listOfBooksFromDB;
-        listOfBooksFromDB = RESTConnectionService.getListOfBooksFromDB();
-        if (!listOfBooksFromDB.isEmpty()) {
-            for (Book book : listOfBooksFromDB) {
-                System.out.println(book);
-            }
-        } else {
-            Main.logger.info("Database is empty");
-        }
+//        List<Book> listOfBooksFromDB;
+        String booksFromDB;
+        booksFromDB = RESTConnectionService.getListOfBooksFromDB();
+        System.out.println(booksFromDB);
+//        if (!listOfBooksFromDB.isEmpty()) {
+//            for (Book book : listOfBooksFromDB) {
+//                System.out.println(book);
+//            }
+//        } else {
+//            Main.logger.info("Database is empty");
+//        }
     }
 
     private void printBookmarks() {

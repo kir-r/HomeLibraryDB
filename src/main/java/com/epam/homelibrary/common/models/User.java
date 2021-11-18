@@ -1,19 +1,15 @@
 package com.epam.homelibrary.common.models;
 
 import com.epam.homelibrary.client.Main;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 @Entity
 @Table(name = "Visitor")
-@XmlRootElement //?
-
-//@JsonIgnoreProperties(ignoreUnknown = true)
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "User", propOrder = {
         "id",

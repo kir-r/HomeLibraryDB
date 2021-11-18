@@ -25,16 +25,12 @@ public class LibraryController { //RESTful Service
     @Path("users/authorization")
     public Response authenticate(@HeaderParam("login") String login, @HeaderParam("password") String password) {
         User user = libraryWebServiceImpl.authenticate(login, password);
-        System.out.println("user: " + user);
-//        List<User> userList = new ArrayList<>();
         if (user != null) {
-//            userList.add(user);
             return Response
                     .status(Response.Status.OK)
                     //jwt token add to cookie
                     .entity(user)
                     .build();
-
         } else return Response.status(401).build();
 
         //all except auth - annotate @Logged
@@ -48,13 +44,22 @@ public class LibraryController { //RESTful Service
         return null;
     }
 
+    @POST
+    @Path("books/add")
     public Response addBook(Book book) {
-        return null;
+        libraryWebServiceImpl.addBook(book);
+        return Response
+                .status(Response.Status.OK)
+                .entity(book)
+                .build();
     }
 
-
-    public Response removeBook(String nameOfBook) {
-        return null;
+    @DELETE
+    @Path("books/remove{nameOfBook}")
+    public Response removeBook(@PathParam("nameOfBook") String nameOfBook) {
+        System.out.println("nameOfBook to remove: " + nameOfBook);
+        libraryWebServiceImpl.removeBook(nameOfBook);
+        return Response.status(200).build();
     }
 
     public Response removeBookByAuthor(String nameOfAuthor) {
@@ -100,9 +105,17 @@ public class LibraryController { //RESTful Service
         return null;
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("books/get-books")
     public Response getListOfBooksFromDB() {
-        libraryWebServiceImpl.getListOfBooksFromDB();
-        return null;
+        List<Book> listOfBooks = libraryWebServiceImpl.getListOfBooksFromDB();
+        if (listOfBooks != null) {
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(listOfBooks)
+                    .build();
+        } else return Response.status(401).build();
     }
 
     public Response getListOfBookmarksFromDB() {

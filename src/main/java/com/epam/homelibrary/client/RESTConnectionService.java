@@ -11,9 +11,7 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
-public class
-
-RESTConnectionService {
+public class RESTConnectionService {
     private static final String REST_URI = "http://localhost:9999/library/";
 
     private Client client = ClientBuilder.newClient();
@@ -25,7 +23,7 @@ RESTConnectionService {
                 .header("login", login)
                 .header("password", password)
                 .get();
-        System.out.println("response.hasEntity(): " + response.hasEntity());
+        System.out.println("authenticate response status: " + response.getStatus());
         return response.readEntity(User.class);
     }
 
@@ -40,12 +38,20 @@ RESTConnectionService {
 
 
     public void addBook(Book book) {
-
+        Response response = client.target(REST_URI)
+                .path("books/add")
+                .request(MediaType.APPLICATION_JSON)
+                .post(Entity.entity(book, MediaType.APPLICATION_JSON));
+        System.out.println("addBook response status: " + response.getStatus());
     }
 
 
     public void removeBook(String nameOfBook) {
-
+        Response response = client.target(REST_URI)
+                .path("books/remove" + nameOfBook)
+                .request(MediaType.TEXT_PLAIN)
+                .delete();
+        System.out.println("removeBook response status: " + response.getStatus());
     }
 
 
@@ -94,8 +100,12 @@ RESTConnectionService {
     }
 
 
-    public List<Book> getListOfBooksFromDB() {
-        return null;
+    public String getListOfBooksFromDB() {
+        Response response = client.target(REST_URI)
+                .path("books/get-books")
+                .request(MediaType.APPLICATION_JSON)
+                .get();
+        return response.readEntity(String.class);
     }
 
 
