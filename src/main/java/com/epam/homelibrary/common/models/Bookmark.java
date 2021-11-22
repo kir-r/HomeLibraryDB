@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.*;
 @Table(name = "Bookmark")
 
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 @XmlType(name = "Bookmark", propOrder = {
         "id",
         "page",

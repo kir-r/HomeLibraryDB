@@ -2,6 +2,7 @@ package com.epam.homelibrary.client;
 
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
+import com.epam.homelibrary.common.models.BookListWrapper;
 import com.epam.homelibrary.common.models.User;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
@@ -25,9 +26,12 @@ public class RESTConnectionService {
                 .header("password", password)
                 .get();
         System.out.println("authenticate response status: " + response.getStatus());
-        response.getCookies().get("token").getValue();
+        User user = response.readEntity(User.class);
+        if (user != null) {
+            jwtToken = response.getCookies().get("token").getValue();
+        }
         System.out.println("jwtToken: " + jwtToken);
-        return response.readEntity(User.class);
+        return user;
     }
 
     public void createUser(User user) {
@@ -54,28 +58,53 @@ public class RESTConnectionService {
         Response response = client.target(REST_URI)
                 .path("books/remove" + nameOfBook)
                 .request(MediaType.TEXT_PLAIN)
+                .cookie("token", jwtToken)
                 .delete();
         System.out.println("removeBook response status: " + response.getStatus());
     }
 
 
     public void removeBookByAuthor(String nameOfAuthor) {
-
+        Response response = client.target(REST_URI)
+                .path("books/remove" + nameOfAuthor)
+                .request(MediaType.TEXT_PLAIN)
+                .cookie("token", jwtToken)
+                .delete();
+        System.out.println("removeBookByAuthor response status: " + response.getStatus());
     }
 
 
     public void addBookmark(Bookmark bookmark) {
+        Response response = client.target(REST_URI)
+                .path("books/addBookmark")
+                .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
+                .post(Entity.entity(bookmark, MediaType.APPLICATION_JSON));
+        System.out.println("addBookmark response status: " + response.getStatus());
 
     }
-
 
     public void removeBookmark(Book book) {
-
+        Response response = client.target(REST_URI)
+                .path("books/remove")
+                .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
+                .delete();
+        System.out.println("removeBookmark response status: " + response.getStatus());
     }
 
-
     public List<Book> searchBookByName(String bookName) {
-        return null;
+        Response response = client.target(REST_URI)
+                .path("books/search" + bookName)
+                .request(MediaType.APPLICATION_JSON)
+                .get();
+        List<Book> listofbooks = response
+                .readEntity(BookListWrapper.class)
+                .getList();
+
+
+
+        return listofbooks;
     }
 
 

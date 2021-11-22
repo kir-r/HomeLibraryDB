@@ -2,11 +2,11 @@ package com.epam.homelibrary.server.controller;
 
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
+import com.epam.homelibrary.common.models.BookListWrapper;
 import com.epam.homelibrary.common.models.User;
 import com.epam.homelibrary.server.TokenManager.TokenManager;
 import com.epam.homelibrary.server.filter.AuthenticationFilter;
 import com.epam.homelibrary.server.filter.Logged;
-import com.sun.xml.ws.client.RequestContext;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.*;
@@ -43,8 +43,6 @@ public class LibraryController { //RESTful Service
                     .entity(user)
                     .build();
         } else return Response.status(401).build();
-
-        //all except auth - annotate @Logged
     }
 
     public Response createUser(User user) {
@@ -69,28 +67,51 @@ public class LibraryController { //RESTful Service
 
     @DELETE
     @Path("books/remove{nameOfBook}")
+    @Logged
     public Response removeBook(@PathParam("nameOfBook") String nameOfBook) {
         System.out.println("nameOfBook to remove: " + nameOfBook);
         libraryWebServiceImpl.removeBook(nameOfBook);
         return Response.status(200).build();
     }
 
+    @DELETE
+    @Path("books/remove{nameOfAuthor}")
+    @Logged
     public Response removeBookByAuthor(String nameOfAuthor) {
-        return null;
+        libraryWebServiceImpl.removeBookByAuthor(nameOfAuthor);
+        return Response.status(200).build();
     }
 
+    @POST
+    @Path("books/addBookmark")
+    @Logged
     public Response addBookmark(Bookmark bookmark) {
-        return null;
+        libraryWebServiceImpl.addBookmark(bookmark);
+        return Response.status(200).build();
     }
 
-
+    @DELETE
+    @Path("books/remove")
+    @Logged
     public Response removeBookmark(Book book) {
-        return null;
+        libraryWebServiceImpl.removeBookmark(book);
+        return Response.status(200).build();
     }
 
-    public Response searchBookByName(String bookName) {
-        libraryWebServiceImpl.searchBookByName(bookName);
-        return null;
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("books/search{bookName}")
+    @Logged
+    public Response searchBookByName(@PathParam("bookName") String bookName) {
+        System.out.println(bookName);
+        List<Book> listOfBooks = libraryWebServiceImpl.searchBookByName(bookName);
+        System.out.println(listOfBooks);
+        BookListWrapper bookListWrapper = new BookListWrapper();
+        bookListWrapper.setList(listOfBooks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookListWrapper)
+                    .build();
     }
 
     public Response searchBookByAuthor(String authorName) {
