@@ -116,8 +116,8 @@ public class LibraryWebServiceImpl {
     }
 
 
-    public List<Book> searchBookWithBookmarks(User user) {
-        return libraryDAO.searchBookWithBookmarks(user);
+    public List<Book> searchBookWithBookmarks(int id) {
+        return libraryDAO.searchBookWithBookmarks(id);
     }
 
 

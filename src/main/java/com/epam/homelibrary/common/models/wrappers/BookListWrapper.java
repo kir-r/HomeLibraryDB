@@ -1,4 +1,6 @@
-package com.epam.homelibrary.common.models;
+package com.epam.homelibrary.common.models.wrappers;
+
+import com.epam.homelibrary.common.models.Book;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -21,5 +23,4 @@ public class BookListWrapper {
     public void setList(List<Book> list) {
         this.list = list;
     }
-
 }

@@ -257,7 +257,7 @@ public class LibraryAPI {
                     System.out.println(book);
                 }
             } else {
-                Main.logger.info("We don't have books by this author");
+                Main.logger.info("We don't have books with this ISBN");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -311,7 +311,7 @@ public class LibraryAPI {
     }
 
     private void searchBookWithBookmarks() {
-        List<Book> listOfBookWithBookmarks = RESTConnectionService.searchBookWithBookmarks(user);
+        List<Book> listOfBookWithBookmarks = RESTConnectionService.searchBookWithBookmarks(user.getId());
         Main.logger.info(listOfBookWithBookmarks);
     }
 

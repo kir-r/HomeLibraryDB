@@ -30,7 +30,7 @@ public interface LibraryDAO {
 
     List<Book> searchBookByYearPagesName(String name, int year, int pages);
 
-    List<Book> searchBookWithBookmarks(User user);
+    List<Book> searchBookWithBookmarks(int id);
 
     List<Book> getListOfBooksFromDB();
 

@@ -2,8 +2,12 @@ package com.epam.homelibrary.server.controller;
 
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
-import com.epam.homelibrary.common.models.BookListWrapper;
+import com.epam.homelibrary.common.models.wrappers.BookListWrapper;
 import com.epam.homelibrary.common.models.User;
+import com.epam.homelibrary.common.models.wrappers.BookmarkListWrapper;
+import com.epam.homelibrary.common.models.wrappers.UserListWrapper;
+import com.epam.homelibrary.server.DAO.HistoryManager;
+import com.epam.homelibrary.server.DAO.LibraryDAO;
 import com.epam.homelibrary.server.TokenManager.TokenManager;
 import com.epam.homelibrary.server.filter.AuthenticationFilter;
 import com.epam.homelibrary.server.filter.Logged;
@@ -28,29 +32,46 @@ public class LibraryController { //RESTful Service
 
     @Inject
     private LibraryWebServiceImpl libraryWebServiceImpl;
+//    @Inject
+//    private LibraryDAO libraryDAO;
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("users/authorization")
     public Response authenticate(@HeaderParam("login") String login, @HeaderParam("password") String password) {
+        System.out.println(login + " " + password);
         User user = libraryWebServiceImpl.authenticate(login, password);
+        System.out.println(user);
         if (user != null) {
             String token = tokenManager.encodeToken(login);
             return Response
                     .status(Response.Status.OK)
-                    //jwt token add to cookie
                     .cookie(new NewCookie("token", token))
                     .entity(user)
                     .build();
         } else return Response.status(401).build();
     }
 
+    @POST
+    @Path("users/addUser")
+    @Logged
     public Response createUser(User user) {
-        return null;
+        libraryWebServiceImpl.createUser(user);
+        return Response
+                .status(Response.Status.OK)
+                .entity(user)
+                .build();
     }
 
-    public Response blockUser(String username) {
-        return null;
+    @POST
+    @Path("users/blockUser{username}")
+    @Logged
+    public Response blockUser(@PathParam("username") String username) {
+        libraryWebServiceImpl.blockUser(username);
+        return Response
+                .status(Response.Status.OK)
+                .entity(username)
+                .build();
     }
 
 
@@ -75,7 +96,7 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/remove{nameOfAuthor}")
+    @Path("books/removeBookByAuthor{nameOfAuthor}")
     @Logged
     public Response removeBookByAuthor(String nameOfAuthor) {
         libraryWebServiceImpl.removeBookByAuthor(nameOfAuthor);
@@ -91,7 +112,7 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/remove")
+    @Path("books/removeBookmark")
     @Logged
     public Response removeBookmark(Book book) {
         libraryWebServiceImpl.removeBookmark(book);
@@ -100,43 +121,87 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/search{bookName}")
+    @Path("books/searchBookByName{bookName}")
     @Logged
     public Response searchBookByName(@PathParam("bookName") String bookName) {
-        System.out.println(bookName);
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByName(bookName);
-        System.out.println(listOfBooks);
         BookListWrapper bookListWrapper = new BookListWrapper();
         bookListWrapper.setList(listOfBooks);
-            return Response
-                    .status(Response.Status.OK)
-                    .entity(bookListWrapper)
-                    .build();
+        return Response
+                .status(Response.Status.OK)
+                .entity(bookListWrapper)
+                .build();
     }
 
-    public Response searchBookByAuthor(String authorName) {
-        libraryWebServiceImpl.searchBookByAuthor(authorName);
-        return null;
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("books/searchBookByAuthor{authorName}")
+    @Logged
+    public Response searchBookByAuthor(@PathParam("authorName") String authorName) {
+        List<Book> listOfBooks = libraryWebServiceImpl.searchBookByAuthor(authorName);
+        BookListWrapper bookListWrapper = new BookListWrapper();
+        bookListWrapper.setList(listOfBooks);
+        return Response
+                .status(Response.Status.OK)
+                .entity(bookListWrapper)
+                .build();
     }
 
-    public Response searchBookByISBN(long ISBN) {
-        libraryWebServiceImpl.searchBookByISBN(ISBN);
-        return null;
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("books/searchBookByISBN{ISBN}")
+    @Logged
+    public Response searchBookByISBN(@PathParam("ISBN") long ISBN) {
+        List<Book> listOfBooks = libraryWebServiceImpl.searchBookByISBN(ISBN);
+        BookListWrapper bookListWrapper = new BookListWrapper();
+        bookListWrapper.setList(listOfBooks);
+        return Response
+                .status(Response.Status.OK)
+                .entity(bookListWrapper)
+                .build();
     }
 
-    public Response searchBookInRangeOfYears(int yearFrom, int yearTo) {
-        libraryWebServiceImpl.searchBookInRangeOfYears(yearFrom, yearTo);
-        return null;
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("books/searchBookInRangeOfYears{yearFrom}/{yearTo}")
+    @Logged
+    public Response searchBookInRangeOfYears(@PathParam("yearFrom") int yearFrom, @PathParam("yearTo") int yearTo) {
+        List<Book> listOfBooks = libraryWebServiceImpl.searchBookInRangeOfYears(yearFrom, yearTo);
+        BookListWrapper bookListWrapper = new BookListWrapper();
+        bookListWrapper.setList(listOfBooks);
+        return Response
+                .status(Response.Status.OK)
+                .entity(bookListWrapper)
+                .build();
     }
 
-    public Response searchBookByYearPagesName(String name, int year, int pages) {
-        libraryWebServiceImpl.searchBookByYearPagesName(name, year, pages);
-        return null;
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("books/searchBookByYearPagesName{name}/{year}/{pages}")
+    @Logged
+    public Response searchBookByYearPagesName(@PathParam("name") String name,
+                                              @PathParam("year") int year,
+                                              @PathParam("pages") int pages) {
+        List<Book> listOfBooks = libraryWebServiceImpl.searchBookByYearPagesName(name, year, pages);
+        BookListWrapper bookListWrapper = new BookListWrapper();
+        bookListWrapper.setList(listOfBooks);
+        return Response
+                .status(Response.Status.OK)
+                .entity(bookListWrapper)
+                .build();
     }
 
-    public Response searchBookWithBookmarks(User user) {
-        libraryWebServiceImpl.searchBookWithBookmarks(user);
-        return null;
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("books/searchBookWithBookmarks{visitorId}")
+    public Response searchBookWithBookmarks(@PathParam ("visitorId") int visitorId) {
+        List<Book> listOfBooks = libraryWebServiceImpl.searchBookWithBookmarks(visitorId);;
+        BookListWrapper bookListWrapper = new BookListWrapper();
+        bookListWrapper.setList(listOfBooks);
+        return Response
+                .status(Response.Status.OK)
+                .entity(listOfBooks)
+                .build();
     }
 
     @GET
@@ -144,31 +209,52 @@ public class LibraryController { //RESTful Service
     @Path("books/get-books")
     public Response getListOfBooksFromDB() {
         List<Book> listOfBooks = libraryWebServiceImpl.getListOfBooksFromDB();
-        if (listOfBooks != null) {
+        BookListWrapper bookListWrapper = new BookListWrapper();
+        bookListWrapper.setList(listOfBooks);
             return Response
                     .status(Response.Status.OK)
                     .entity(listOfBooks)
                     .build();
-        } else return Response.status(401).build();
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("books/get-bookmarks")
     public Response getListOfBookmarksFromDB() {
-        libraryWebServiceImpl.getListOfBookmarksFromDB();
-        return null;
+        List<Bookmark> listOfBookmarks = libraryWebServiceImpl.getListOfBookmarksFromDB();
+        BookmarkListWrapper bookmarkListWrapper = new BookmarkListWrapper();
+        bookmarkListWrapper.setList(listOfBookmarks);
+        return Response
+                .status(Response.Status.OK)
+                .entity(listOfBookmarks)
+                .build();
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("users/get-users")
     public Response getListOfUserFromDB() {
-        libraryWebServiceImpl.getListOfUserFromDB();
-        return null;
+        List<User> listOfUsers = libraryWebServiceImpl.getListOfUserFromDB();
+        UserListWrapper userListWrapper = new UserListWrapper();
+        userListWrapper.setList(listOfUsers);
+        return Response
+                .status(Response.Status.OK)
+                .entity(listOfUsers)
+                .build();
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("users/get-logs")
     public Response getUserLogHistory() {
-//        return HistoryManager.read();
-        return null;
+        return Response
+                .status(Response.Status.OK)
+                .entity(HistoryManager.read())
+                .build();
     }
 
     public void closeConnection() {
-//        HistoryManager.cleanUp();
+        HistoryManager.cleanUp();
 //        libraryDAO.closeConnection();
     }
 }

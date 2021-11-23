@@ -147,7 +147,26 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public List<Book> searchBookWithBookmarks(User user) {
+//    public List<Book> searchBookWithBookmarks(User user) { //change to new
+//        List<Book> listOfBooksWithBookmarks = new ArrayList<>();
+//
+//        try (Session session = dBConnector.sessionFactory.openSession()) {
+//            CriteriaBuilder cb = session.getCriteriaBuilder();
+//            CriteriaQuery<Bookmark> criteriaQuery = cb.createQuery(Bookmark.class);
+//            Root<Bookmark> root = criteriaQuery.from(Bookmark.class);
+//
+//            criteriaQuery.select(root).where(cb.equal(root.get("visitor"), user));
+//
+//            Query<Bookmark> query = session.createQuery(criteriaQuery);
+//            List<Bookmark> bookmarksWithBooks = query.getResultList();
+//            for (Bookmark bookmark : bookmarksWithBooks) {
+//                listOfBooksWithBookmarks.add(bookmark.getBook());
+//            }
+//        }
+//        return listOfBooksWithBookmarks;
+//    }
+
+    public List<Book> searchBookWithBookmarks(int visitorId) { //new one
         List<Book> listOfBooksWithBookmarks = new ArrayList<>();
 
         try (Session session = dBConnector.sessionFactory.openSession()) {
@@ -155,7 +174,9 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             CriteriaQuery<Bookmark> criteriaQuery = cb.createQuery(Bookmark.class);
             Root<Bookmark> root = criteriaQuery.from(Bookmark.class);
 
-            criteriaQuery.select(root).where(cb.equal(root.get("visitor"), user));
+            Predicate[] predicates = new Predicate[1];
+            predicates[0] = cb.equal(root.get("visitor_id"), visitorId);
+            criteriaQuery.select(root).where(predicates);
 
             Query<Bookmark> query = session.createQuery(criteriaQuery);
             List<Bookmark> bookmarksWithBooks = query.getResultList();
