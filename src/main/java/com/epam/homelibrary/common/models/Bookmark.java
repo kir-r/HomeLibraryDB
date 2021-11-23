@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.*;
 @XmlType(name = "Bookmark", propOrder = {
         "id",
         "page",
-        "visitor",
+        "visitor_id",
         "book"
 })
 public class Bookmark {

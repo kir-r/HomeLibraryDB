@@ -198,9 +198,10 @@ public class LibraryController { //RESTful Service
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookWithBookmarks(visitorId);;
         BookListWrapper bookListWrapper = new BookListWrapper();
         bookListWrapper.setList(listOfBooks);
+        System.out.println(listOfBooks);
         return Response
                 .status(Response.Status.OK)
-                .entity(listOfBooks)
+                .entity(bookListWrapper)
                 .build();
     }
 
@@ -213,7 +214,7 @@ public class LibraryController { //RESTful Service
         bookListWrapper.setList(listOfBooks);
             return Response
                     .status(Response.Status.OK)
-                    .entity(listOfBooks)
+                    .entity(bookListWrapper)
                     .build();
     }
 
@@ -226,7 +227,7 @@ public class LibraryController { //RESTful Service
         bookmarkListWrapper.setList(listOfBookmarks);
         return Response
                 .status(Response.Status.OK)
-                .entity(listOfBookmarks)
+                .entity(bookmarkListWrapper)
                 .build();
     }
 

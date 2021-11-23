@@ -174,9 +174,10 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             CriteriaQuery<Bookmark> criteriaQuery = cb.createQuery(Bookmark.class);
             Root<Bookmark> root = criteriaQuery.from(Bookmark.class);
 
-            Predicate[] predicates = new Predicate[1];
-            predicates[0] = cb.equal(root.get("visitor_id"), visitorId);
-            criteriaQuery.select(root).where(predicates);
+            criteriaQuery
+                    .select(root)
+                    .where(cb.equal(root
+                            .get("visitor_id"), visitorId));
 
             Query<Bookmark> query = session.createQuery(criteriaQuery);
             List<Bookmark> bookmarksWithBooks = query.getResultList();

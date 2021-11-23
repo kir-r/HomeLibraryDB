@@ -162,12 +162,14 @@ public class RESTConnectionService {
     }
 
 
-    public String getListOfBooksFromDB() {
+    public List<Book> getListOfBooksFromDB() {
         Response response = client.target(REST_URI)
                 .path("books/get-books")
                 .request(MediaType.APPLICATION_JSON)
                 .get();
-        return response.readEntity(String.class);
+        return response
+                .readEntity(BookListWrapper.class)
+                .getList();
     }
 
 
