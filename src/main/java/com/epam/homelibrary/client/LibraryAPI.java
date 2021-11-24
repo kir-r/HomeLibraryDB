@@ -15,7 +15,7 @@ import java.util.List;
 public class LibraryAPI {
     User user;
     private BufferedReader reader;
-//    private SOAPConnectionService SOAPConnectionService;
+    //    private SOAPConnectionService SOAPConnectionService;
     private RESTConnectionService RESTConnectionService;
 
     public LibraryAPI() {
@@ -193,7 +193,7 @@ public class LibraryAPI {
             e.printStackTrace();
         }
     }
-
+//Harry Potter Chamber of Secrets
     private void removeBookmark() {
         try {
             List<Book> listOfBooksFromDB;
@@ -201,7 +201,7 @@ public class LibraryAPI {
             String bookName = reader.readLine();
             listOfBooksFromDB = RESTConnectionService.searchBookByName(bookName);
             if (!listOfBooksFromDB.isEmpty()) {
-                RESTConnectionService.removeBookmark(listOfBooksFromDB.get(0));
+                RESTConnectionService.removeBookmark(listOfBooksFromDB.get(0).getId());
             } else {
                 Main.logger.info("We don't have this book");
             }
@@ -312,7 +312,13 @@ public class LibraryAPI {
 
     private void searchBookWithBookmarks() {
         List<Book> listOfBookWithBookmarks = RESTConnectionService.searchBookWithBookmarks(user.getId());
-        Main.logger.info(listOfBookWithBookmarks);
+        if (!listOfBookWithBookmarks.isEmpty()) {
+            for (Book book : listOfBookWithBookmarks) {
+                System.out.println(book);
+            }
+        } else {
+            System.out.println("There are no books with bookmarks");
+        }
     }
 
     private void createUser() {

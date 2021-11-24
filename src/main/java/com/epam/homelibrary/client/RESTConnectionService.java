@@ -92,9 +92,9 @@ public class RESTConnectionService {
 
     }
 
-    public void removeBookmark(Book book) {
+    public void removeBookmark(int bookId) {
         Response response = client.target(REST_URI)
-                .path("books/removeBookmark" + book)
+                .path("books/removeBookmark" + bookId)
                 .request(MediaType.APPLICATION_JSON)
                 .cookie("token", jwtToken)
                 .delete();

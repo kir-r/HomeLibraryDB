@@ -7,7 +7,6 @@ import com.epam.homelibrary.common.models.User;
 import com.epam.homelibrary.common.models.wrappers.BookmarkListWrapper;
 import com.epam.homelibrary.common.models.wrappers.UserListWrapper;
 import com.epam.homelibrary.server.DAO.HistoryManager;
-import com.epam.homelibrary.server.DAO.LibraryDAO;
 import com.epam.homelibrary.server.TokenManager.TokenManager;
 import com.epam.homelibrary.server.filter.AuthenticationFilter;
 import com.epam.homelibrary.server.filter.Logged;
@@ -28,12 +27,8 @@ public class LibraryController { //RESTful Service
     private final TokenManager tokenManager = new TokenManager();
     private final AuthenticationFilter authenticationFilter = new AuthenticationFilter();
 
-    //Priority annotation
-
     @Inject
     private LibraryWebServiceImpl libraryWebServiceImpl;
-//    @Inject
-//    private LibraryDAO libraryDAO;
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -112,10 +107,10 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/removeBookmark")
+    @Path("books/removeBookmark{bookId}")
     @Logged
-    public Response removeBookmark(Book book) {
-        libraryWebServiceImpl.removeBookmark(book);
+    public Response removeBookmark(@PathParam("bookId") int bookId) {
+        libraryWebServiceImpl.removeBookmark(bookId);
         return Response.status(200).build();
     }
 
@@ -194,11 +189,11 @@ public class LibraryController { //RESTful Service
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("books/searchBookWithBookmarks{visitorId}")
-    public Response searchBookWithBookmarks(@PathParam ("visitorId") int visitorId) {
-        List<Book> listOfBooks = libraryWebServiceImpl.searchBookWithBookmarks(visitorId);;
+    public Response searchBookWithBookmarks(@PathParam("visitorId") int visitorId) {
+        List<Book> listOfBooks = libraryWebServiceImpl.searchBookWithBookmarks(visitorId);
         BookListWrapper bookListWrapper = new BookListWrapper();
         bookListWrapper.setList(listOfBooks);
-        System.out.println(listOfBooks);
+        System.out.println("searchBookWithBookmarks listOfBooks " + listOfBooks);
         return Response
                 .status(Response.Status.OK)
                 .entity(bookListWrapper)
@@ -212,10 +207,10 @@ public class LibraryController { //RESTful Service
         List<Book> listOfBooks = libraryWebServiceImpl.getListOfBooksFromDB();
         BookListWrapper bookListWrapper = new BookListWrapper();
         bookListWrapper.setList(listOfBooks);
-            return Response
-                    .status(Response.Status.OK)
-                    .entity(bookListWrapper)
-                    .build();
+        return Response
+                .status(Response.Status.OK)
+                .entity(bookListWrapper)
+                .build();
     }
 
     @GET
@@ -240,7 +235,7 @@ public class LibraryController { //RESTful Service
         userListWrapper.setList(listOfUsers);
         return Response
                 .status(Response.Status.OK)
-                .entity(listOfUsers)
+                .entity(userListWrapper)
                 .build();
     }
 

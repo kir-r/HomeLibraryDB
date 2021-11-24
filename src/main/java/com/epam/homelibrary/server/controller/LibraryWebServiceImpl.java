@@ -86,8 +86,8 @@ public class LibraryWebServiceImpl {
     }
 
 
-    public void removeBookmark(Book book) {
-        libraryDAO.removeBookmark(book);
+    public void removeBookmark(int bookId) {
+        libraryDAO.removeBookmark(bookId);
     }
 
 

@@ -3190,3 +3190,639 @@ Login:
 type "print books" to see books in data base,
 type "print bookmarks" to see books in data base,
 or type "exit" to leave app
+16:08:41.177 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:10:18.892 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:10:26.013 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+16:10:28.230 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:10:28.580 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+16:10:28.590 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+16:10:28.591 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+16:10:28.592 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+16:10:28.600 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+16:10:29.453 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:10:32.352 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:10:33.481 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:10:37.223 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:10:41.405 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+16:13:25.603 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:13:28.403 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:13:36.120 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+16:13:37.993 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:13:38.340 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+16:13:38.349 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+16:13:38.350 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+16:13:38.351 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+16:13:38.360 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+16:13:39.458 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:13:42.132 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:13:43.604 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+16:14:47.771 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:14:51.319 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:15:03.924 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+16:15:07.745 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:15:08.700 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+16:15:08.720 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+16:15:08.722 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+16:15:08.722 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+16:15:08.741 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+16:15:10.089 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:15:16.253 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:15:19.688 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+16:22:56.144 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:22:59.006 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:23:11.629 [grizzly-http-server-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+16:23:17.666 [grizzly-http-server-1] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:23:18.921 [grizzly-http-server-1] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+16:23:18.942 [grizzly-http-server-1] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+16:23:18.943 [grizzly-http-server-1] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+16:23:18.944 [grizzly-http-server-1] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+16:23:18.966 [grizzly-http-server-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+16:23:20.481 [grizzly-http-server-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:23:26.836 [grizzly-http-server-1] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:23:32.209 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+16:23:38.505 [main] INFO  com.epam.homelibrary.client.Main - Type an ISBN
+16:23:53.756 [main] INFO  com.epam.homelibrary.client.Main - We don't have books with this ISBN
+16:24:25.198 [main] INFO  com.epam.homelibrary.client.Main - Type an ISBN
+16:37:29.053 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:37:31.714 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:37:37.150 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+16:37:38.970 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:37:39.282 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+16:37:39.291 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+16:37:39.292 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+16:37:39.293 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+16:37:39.301 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+16:37:40.277 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:37:43.007 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:37:43.990 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:37:47.265 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:37:49.682 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+16:48:01.378 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:48:08.529 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:48:14.753 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+16:48:16.870 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:48:17.335 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+16:48:17.347 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+16:48:17.348 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+16:48:17.349 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+16:48:17.360 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+16:48:18.184 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:48:20.667 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:48:21.768 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:48:24.320 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:48:27.053 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+16:48:49.648 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+16:49:07.223 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+16:49:16.791 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+16:57:34.494 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:58:19.434 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:58:25.916 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+16:58:27.885 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:58:28.198 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+16:58:28.209 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+16:58:28.210 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+16:58:28.211 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+16:58:28.221 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+16:58:29.021 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:58:32.503 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:58:33.478 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+16:58:37.531 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+16:58:39.346 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+17:08:26.488 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:08:32.323 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:08:38.739 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+17:08:40.516 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:08:40.802 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+17:08:40.807 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+17:08:40.807 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+17:08:40.812 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+17:08:40.816 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+17:08:41.653 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+17:08:44.159 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:08:45.641 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+17:23:42.353 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:23:48.183 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:23:54.193 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+17:23:55.963 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:23:56.348 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+17:23:56.358 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+17:23:56.358 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+17:23:56.358 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+17:23:56.368 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+17:23:57.239 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+17:23:59.693 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:24:01.593 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+17:24:04.108 [main] INFO  com.epam.homelibrary.client.Main - ["The Silmarillion"
+by J.R.R.Tolkien
+year 1977
+ISBN - 1242131
+pages - 365
+]
+17:36:38.298 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:36:41.958 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:36:48.903 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+17:36:50.768 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:36:51.083 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+17:36:51.094 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+17:36:51.094 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+17:36:51.094 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+17:36:51.113 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+17:36:51.889 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+17:36:54.633 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:36:57.121 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+17:37:31.658 [main] INFO  com.epam.homelibrary.client.Main - Type a number of a page
+17:37:35.258 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to add a bookmark
+17:38:03.563 [main] INFO  com.epam.homelibrary.client.Main - ["The Silmarillion"
+by J.R.R.Tolkien
+year 1977
+ISBN - 1242131
+pages - 365
+, "Harry Potter Chamber of Secrets"
+by J. K. Rowling
+year 1998
+ISBN - 12345678
+pages - 475
+]
+17:38:15.159 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+17:38:29.713 [main] INFO  com.epam.homelibrary.client.Main - ["The Silmarillion"
+by J.R.R.Tolkien
+year 1977
+ISBN - 1242131
+pages - 365
+, "Harry Potter Chamber of Secrets"
+by J. K. Rowling
+year 1998
+ISBN - 12345678
+pages - 475
+]
+17:38:42.358 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+17:45:16.040 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:45:20.758 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:45:30.541 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+17:45:33.994 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:45:34.842 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+17:45:34.861 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+17:45:34.863 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+17:45:34.863 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+17:45:34.882 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+17:45:36.256 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+17:45:41.071 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:45:44.088 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+17:46:42.719 [main] INFO  com.epam.homelibrary.client.Main - ["The Silmarillion"
+by J.R.R.Tolkien
+year 1977
+ISBN - 1242131
+pages - 365
+, "Harry Potter Chamber of Secrets"
+by J. K. Rowling
+year 1998
+ISBN - 12345678
+pages - 475
+]
+17:47:06.868 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+17:48:57.938 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:49:07.808 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:49:19.392 [grizzly-http-server-1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+17:49:23.004 [grizzly-http-server-1] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:49:23.869 [grizzly-http-server-1] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+17:49:23.890 [grizzly-http-server-1] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+17:49:23.892 [grizzly-http-server-1] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+17:49:23.892 [grizzly-http-server-1] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+17:49:23.912 [grizzly-http-server-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+17:49:25.345 [grizzly-http-server-1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+17:49:30.401 [grizzly-http-server-1] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:49:33.490 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+17:49:35.662 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+17:51:02.716 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+17:52:31.545 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:53:16.238 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:53:25.780 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+17:53:29.541 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:53:30.520 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+17:53:30.541 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+17:53:30.543 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+17:53:30.543 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+17:53:30.563 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+17:53:31.960 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+17:53:36.710 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:53:40.113 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+17:53:42.195 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+17:56:27.175 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:56:31.325 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+17:56:40.960 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+17:56:44.090 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:56:44.875 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+17:56:44.895 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+17:56:44.895 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+17:56:44.895 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+17:56:44.915 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+17:56:46.165 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+17:56:50.845 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:56:53.750 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+17:57:09.095 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+17:59:50.678 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+17:59:55.145 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:00:00.615 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+18:00:02.310 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+18:00:02.605 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18:00:02.615 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+18:00:02.615 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+18:00:02.615 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+18:00:02.625 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+18:00:03.455 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+18:00:05.640 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18:00:07.746 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+18:00:10.705 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+18:01:53.796 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:02:02.055 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:02:08.476 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+18:02:10.145 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+18:02:10.570 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18:02:10.581 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+18:02:10.581 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+18:02:10.581 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+18:02:10.591 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+18:02:11.380 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+18:02:14.381 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18:02:16.105 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+18:02:18.820 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+18:02:27.590 [main] INFO  com.epam.homelibrary.client.Main - ["The Silmarillion"
+by J.R.R.Tolkien
+year 1977
+ISBN - 1242131
+pages - 365
+]
+18:02:40.135 [main] INFO  com.epam.homelibrary.client.Main - Type a number of a page
+18:02:43.566 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to add a bookmark
+18:04:10.841 [main] INFO  com.epam.homelibrary.client.Main - Type a name of a book to remove a bookmark
+18:04:21.375 [main] INFO  com.epam.homelibrary.client.Main - ["The Silmarillion"
+by J.R.R.Tolkien
+year 1977
+ISBN - 1242131
+pages - 365
+]
+18:07:01.446 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:07:06.306 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:07:12.785 [grizzly-http-server-0] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.30.Final
+18:07:14.390 [grizzly-http-server-0] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+18:07:14.700 [grizzly-http-server-0] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+18:07:14.711 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [org.h2.Driver] at URL [jdbc:h2:~/test]
+18:07:14.711 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=sa}
+18:07:14.711 [grizzly-http-server-0] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+18:07:14.721 [grizzly-http-server-0] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+18:07:15.511 [grizzly-http-server-0] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+18:07:18.966 [grizzly-http-server-0] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+18:07:20.311 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app
+18:07:52.830 [main] INFO  com.epam.homelibrary.client.Main - Welcome to Home Library!
+Please login
+Login: 
+18:07:56.016 [main] INFO  com.epam.homelibrary.client.Main - Password: 
+18:07:59.931 [main] INFO  com.epam.homelibrary.client.Main - Please type some of these commands:
+1 to add a new book
+2 to remove a book
+3 to remove a book by author
+4 to add a bookmark
+5 to remove a bookmark
+6 to search a book by name
+7 to search a book by author
+8 to search a book by ISBN
+9 to search a book in range of years
+10 to search a book by years pages name
+11 to search a book with bookmarks
+12 to create a user
+13 to block a user
+14 to get user log history
+type "print books" to see books in data base,
+type "print bookmarks" to see books in data base,
+or type "exit" to leave app

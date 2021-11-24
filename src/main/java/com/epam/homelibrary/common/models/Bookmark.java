@@ -33,6 +33,10 @@ public class Bookmark {
     public Bookmark() {
     }
 
+    public int getId() {
+        return id;
+    }
+
     public User getVisitor() {
         return visitor;
     }

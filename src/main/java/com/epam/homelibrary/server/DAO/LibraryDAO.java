@@ -18,7 +18,7 @@ public interface LibraryDAO {
 
     void addBookmark(Bookmark bookmark);
 
-    void removeBookmark(Book book);
+    void removeBookmark(int bookId);
 
     List<Book> searchBookByName(String bookName);
 

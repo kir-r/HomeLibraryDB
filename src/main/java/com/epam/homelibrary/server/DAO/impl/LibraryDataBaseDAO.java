@@ -70,17 +70,18 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-    public void removeBookmark(Book book) {
+    public void removeBookmark(int bookId) {
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaDelete<Bookmark> criteriaDelete = cb.createCriteriaDelete(Bookmark.class);
             Root<Bookmark> root = criteriaDelete.from(Bookmark.class);
-            criteriaDelete.where(cb.equal(root.get("book"), book));
+
+            criteriaDelete.where(cb.equal(root.get("book").get("id"), bookId));
 
             Transaction transaction = session.beginTransaction();
             session.createQuery(criteriaDelete).executeUpdate();
             transaction.commit();
-            HistoryManager.write("Bookmark from \"" + book.getName() + "\" is removed");
+            HistoryManager.write("Bookmark from book with ID \"" + bookId + "\" is removed");
 
         }
     }
@@ -147,28 +148,8 @@ public class LibraryDataBaseDAO implements LibraryDAO {
         }
     }
 
-//    public List<Book> searchBookWithBookmarks(User user) { //change to new
-//        List<Book> listOfBooksWithBookmarks = new ArrayList<>();
-//
-//        try (Session session = dBConnector.sessionFactory.openSession()) {
-//            CriteriaBuilder cb = session.getCriteriaBuilder();
-//            CriteriaQuery<Bookmark> criteriaQuery = cb.createQuery(Bookmark.class);
-//            Root<Bookmark> root = criteriaQuery.from(Bookmark.class);
-//
-//            criteriaQuery.select(root).where(cb.equal(root.get("visitor"), user));
-//
-//            Query<Bookmark> query = session.createQuery(criteriaQuery);
-//            List<Bookmark> bookmarksWithBooks = query.getResultList();
-//            for (Bookmark bookmark : bookmarksWithBooks) {
-//                listOfBooksWithBookmarks.add(bookmark.getBook());
-//            }
-//        }
-//        return listOfBooksWithBookmarks;
-//    }
-
     public List<Book> searchBookWithBookmarks(int visitorId) { //new one
         List<Book> listOfBooksWithBookmarks = new ArrayList<>();
-
         try (Session session = dBConnector.sessionFactory.openSession()) {
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Bookmark> criteriaQuery = cb.createQuery(Bookmark.class);
@@ -177,7 +158,7 @@ public class LibraryDataBaseDAO implements LibraryDAO {
             criteriaQuery
                     .select(root)
                     .where(cb.equal(root
-                            .get("visitor_id"), visitorId));
+                            .get("visitor").get("id"), visitorId));
 
             Query<Bookmark> query = session.createQuery(criteriaQuery);
             List<Bookmark> bookmarksWithBooks = query.getResultList();
