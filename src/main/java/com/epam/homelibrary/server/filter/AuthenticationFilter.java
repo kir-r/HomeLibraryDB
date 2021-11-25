@@ -15,7 +15,7 @@ import java.io.IOException;
 
 @Provider
 @Logged
-@PreMatching
+//@PreMatching //?
 @Priority(Priorities.AUTHENTICATION)
 public class AuthenticationFilter implements ContainerRequestFilter {
     private final TokenManager tokenManager = new TokenManager();

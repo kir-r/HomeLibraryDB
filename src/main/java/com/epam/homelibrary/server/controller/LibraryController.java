@@ -15,7 +15,6 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
-
 import jakarta.ws.rs.core.NewCookie;
 import jakarta.ws.rs.core.Response;
 
