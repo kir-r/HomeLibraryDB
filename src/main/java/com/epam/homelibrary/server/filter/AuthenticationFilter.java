@@ -24,15 +24,18 @@ public class AuthenticationFilter implements ContainerRequestFilter {
     public void filter(ContainerRequestContext containerRequestContext) throws IOException {
         String jwtToken = containerRequestContext.getCookies().get("token").getValue();
 
-        if (!tokenManager.decodeToken(jwtToken)) {
-            Response response = Response
-                    .status(Response.Status.FORBIDDEN)
-                    .build();
-            containerRequestContext.abortWith(response);
+        if (jwtToken != null) {
+            if (!tokenManager.decodeToken(jwtToken)) {
+                Response response = Response
+                        .status(Response.Status.FORBIDDEN)
+                        .build();
+                containerRequestContext.abortWith(response);
+            }
+        } else {
+            System.out.println("AuthenticationFilter: jwtToken == null");
         }
 
-
-        //containerRequestContext get cookie, verify token!
-//Из реквеста достаю куки, из куки токен, verify
+        //containerRequestContext get cookie, verify token
+        //Из реквеста достаю куки, из куки токен, verify
     }
 }

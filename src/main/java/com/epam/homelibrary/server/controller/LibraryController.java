@@ -43,7 +43,9 @@ public class LibraryController { //RESTful Service
                     .cookie(new NewCookie("token", token))
                     .entity(user)
                     .build();
-        } else return Response.status(401).build();
+        } else {
+            return Response.status(401).build();
+        }
     }
 
     @POST
@@ -58,7 +60,7 @@ public class LibraryController { //RESTful Service
     }
 
     @POST
-    @Path("users/blockUser{username}")
+    @Path("users/blockUser/{username}")
     @Logged
     public Response blockUser(@PathParam("username") String username) {
         libraryWebServiceImpl.blockUser(username);
@@ -81,7 +83,7 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/remove{nameOfBook}")
+    @Path("books/remove/{nameOfBook}")
     @Logged
     public Response removeBook(@PathParam("nameOfBook") String nameOfBook) {
         System.out.println("nameOfBook to remove: " + nameOfBook);
@@ -90,7 +92,7 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/removeBookByAuthor{nameOfAuthor}")
+    @Path("books/removeBookByAuthor/{nameOfAuthor}")
     @Logged
     public Response removeBookByAuthor(String nameOfAuthor) {
         libraryWebServiceImpl.removeBookByAuthor(nameOfAuthor);
@@ -106,7 +108,7 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/removeBookmark{bookId}")
+    @Path("books/removeBookmark/{bookId}")
     @Logged
     public Response removeBookmark(@PathParam("bookId") int bookId) {
         libraryWebServiceImpl.removeBookmark(bookId);
@@ -115,9 +117,10 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookByName{bookName}")
+    @Path("books/searchBookByName/{bookName}")
     @Logged
     public Response searchBookByName(@PathParam("bookName") String bookName) {
+        System.out.println(bookName);
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByName(bookName);
         BookListWrapper bookListWrapper = new BookListWrapper();
         bookListWrapper.setList(listOfBooks);
@@ -129,7 +132,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookByAuthor{authorName}")
+    @Path("books/searchBookByAuthor/{authorName}")
     @Logged
     public Response searchBookByAuthor(@PathParam("authorName") String authorName) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByAuthor(authorName);
@@ -143,7 +146,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookByISBN{ISBN}")
+    @Path("books/searchBookByISBN/{ISBN}")
     @Logged
     public Response searchBookByISBN(@PathParam("ISBN") long ISBN) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByISBN(ISBN);
@@ -157,7 +160,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookInRangeOfYears{yearFrom}/{yearTo}")
+    @Path("books/searchBookInRangeOfYears/{yearFrom}/{yearTo}")
     @Logged
     public Response searchBookInRangeOfYears(@PathParam("yearFrom") int yearFrom, @PathParam("yearTo") int yearTo) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookInRangeOfYears(yearFrom, yearTo);
@@ -171,7 +174,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookByYearPagesName{name}/{year}/{pages}")
+    @Path("books/searchBookByYearPagesName/{name}/{year}/{pages}")
     @Logged
     public Response searchBookByYearPagesName(@PathParam("name") String name,
                                               @PathParam("year") int year,
@@ -187,7 +190,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookWithBookmarks{visitorId}")
+    @Path("books/searchBookWithBookmarks/{visitorId}")
     public Response searchBookWithBookmarks(@PathParam("visitorId") int visitorId) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookWithBookmarks(visitorId);
         BookListWrapper bookListWrapper = new BookListWrapper();
@@ -202,6 +205,7 @@ public class LibraryController { //RESTful Service
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("books/get-books")
+    @Logged
     public Response getListOfBooksFromDB() {
         List<Book> listOfBooks = libraryWebServiceImpl.getListOfBooksFromDB();
         BookListWrapper bookListWrapper = new BookListWrapper();

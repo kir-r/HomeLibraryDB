@@ -38,7 +38,7 @@ public class RESTConnectionService {
 
     public void createUser(User user) {
         Response response = client.target(REST_URI)
-                .path("users/addUser")
+                .path("users/addUser+")
                 .request(MediaType.APPLICATION_JSON)
                 .cookie("token", jwtToken)
                 .post(Entity.entity(user, MediaType.APPLICATION_JSON));
@@ -65,7 +65,7 @@ public class RESTConnectionService {
 
     public void removeBook(String nameOfBook) {
         Response response = client.target(REST_URI)
-                .path("books/remove" + nameOfBook)
+                .path("books/remove/" + nameOfBook)
                 .request(MediaType.TEXT_PLAIN)
                 .cookie("token", jwtToken)
                 .delete();
@@ -74,7 +74,7 @@ public class RESTConnectionService {
 
     public void removeBookByAuthor(String nameOfAuthor) {
         Response response = client.target(REST_URI)
-                .path("books/removeBookByAuthor" + nameOfAuthor)
+                .path("books/removeBookByAuthor/" + nameOfAuthor)
                 .request(MediaType.TEXT_PLAIN)
                 .cookie("token", jwtToken)
                 .delete();
@@ -94,7 +94,7 @@ public class RESTConnectionService {
 
     public void removeBookmark(int bookId) {
         Response response = client.target(REST_URI)
-                .path("books/removeBookmark" + bookId)
+                .path("books/removeBookmark/" + bookId)
                 .request(MediaType.APPLICATION_JSON)
                 .cookie("token", jwtToken)
                 .delete();
@@ -103,8 +103,9 @@ public class RESTConnectionService {
 
     public List<Book> searchBookByName(String bookName) {
         Response response = client.target(REST_URI)
-                .path("books/searchBookByName" + bookName)
+                .path("books/searchBookByName/" + bookName)
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response
                 .readEntity(BookListWrapper.class)
@@ -113,8 +114,9 @@ public class RESTConnectionService {
 
     public List<Book> searchBookByAuthor(String authorName) {
         Response response = client.target(REST_URI)
-                .path("books/searchBookByAuthor" + authorName)
+                .path("books/searchBookByAuthor/" + authorName)
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response
                 .readEntity(BookListWrapper.class)
@@ -123,8 +125,9 @@ public class RESTConnectionService {
 
     public List<Book> searchBookByISBN(long ISBN) {
         Response response = client.target(REST_URI)
-                .path("books/searchBookByISBN" + ISBN)
+                .path("books/searchBookByISBN/" + ISBN)
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response
                 .readEntity(BookListWrapper.class)
@@ -133,8 +136,9 @@ public class RESTConnectionService {
 
     public List<Book> searchBookInRangeOfYears(int yearFrom, int yearTo) {
         Response response = client.target(REST_URI)
-                .path("books/searchBookInRangeOfYears" + yearFrom + "/" + yearTo)
+                .path("books/searchBookInRangeOfYears/" + yearFrom + "/" + yearTo)
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response
                 .readEntity(BookListWrapper.class)
@@ -143,8 +147,9 @@ public class RESTConnectionService {
 
     public List<Book> searchBookByYearPagesName(String name, int year, int pages) {
         Response response = client.target(REST_URI)
-                .path("books/searchBookByYearPagesName" + name + "/" + year + "/" + pages)
+                .path("books/searchBookByYearPagesName/" + name + "/" + year + "/" + pages)
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response
                 .readEntity(BookListWrapper.class)
@@ -153,8 +158,9 @@ public class RESTConnectionService {
 
     public List<Book> searchBookWithBookmarks(int visitorId) {
         Response response = client.target(REST_URI)
-                .path("books/searchBookWithBookmarks" + visitorId)
+                .path("books/searchBookWithBookmarks/" + visitorId)
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response
                 .readEntity(BookListWrapper.class)
@@ -166,6 +172,7 @@ public class RESTConnectionService {
         Response response = client.target(REST_URI)
                 .path("books/get-books")
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response
                 .readEntity(BookListWrapper.class)
@@ -177,6 +184,7 @@ public class RESTConnectionService {
         Response response = client.target(REST_URI)
                 .path("books/get-bookmarks")
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response
                 .readEntity(BookmarkListWrapper.class)
@@ -187,6 +195,7 @@ public class RESTConnectionService {
         Response response = client.target(REST_URI)
                 .path("users/get-users")
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response.readEntity(UserListWrapper.class).getList();
     }
@@ -195,6 +204,7 @@ public class RESTConnectionService {
         Response response = client.target(REST_URI)
                 .path("users/get-logs")
                 .request(MediaType.APPLICATION_JSON)
+                .cookie("token", jwtToken)
                 .get();
         return response.readEntity(List.class);
     }

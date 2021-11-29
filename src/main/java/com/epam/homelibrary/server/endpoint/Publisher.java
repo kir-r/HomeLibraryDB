@@ -9,8 +9,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import java.net.URI;
 
 public class Publisher {
-    public static void main(String[] args) {
-        ResourceConfig resourceConfig = new ResourceConfig();
+    public static void main(String[] args) {        ResourceConfig resourceConfig = new ResourceConfig();
 //        resourceConfig.register(MultiPartFeature.class); //?
                 resourceConfig.register(AutoScanFeature.class); //?
         resourceConfig.register(AuthenticationFilter.class);
