@@ -3,76 +3,27 @@ package com.epam.homelibrary.server.controller;
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.wrappers.BookListWrapper;
-import com.epam.homelibrary.common.models.User;
 import com.epam.homelibrary.common.models.wrappers.BookmarkListWrapper;
-import com.epam.homelibrary.common.models.wrappers.UserListWrapper;
 import com.epam.homelibrary.server.DAO.HistoryManager;
-import com.epam.homelibrary.server.TokenManager.TokenManager;
-import com.epam.homelibrary.server.filter.AuthenticationFilter;
 import com.epam.homelibrary.server.filter.Logged;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
-import jakarta.ws.rs.core.NewCookie;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
-@Path("/")
-public class LibraryController { //RESTful Service
 
-    private final TokenManager tokenManager = new TokenManager();
-    private final AuthenticationFilter authenticationFilter = new AuthenticationFilter();
+@Path("/books")
+public class LibraryController { //RESTful Service
 
     @Inject
     private LibraryWebServiceImpl libraryWebServiceImpl;
 
-    @GET
-    @Produces({MediaType.APPLICATION_JSON})
-    @Path("users/authorization")
-    public Response authenticate(@HeaderParam("login") String login, @HeaderParam("password") String password) {
-        System.out.println(login + " " + password);
-        User user = libraryWebServiceImpl.authenticate(login, password);
-        System.out.println(user);
-        if (user != null) {
-            String token = tokenManager.encodeToken(login);
-            return Response
-                    .status(Response.Status.OK)
-                    .cookie(new NewCookie("token", token))
-                    .entity(user)
-                    .build();
-        } else {
-            return Response.status(401).build();
-        }
-    }
-
     @POST
-    @Path("users/addUser")
-    @Logged
-    public Response createUser(User user) {
-        libraryWebServiceImpl.createUser(user);
-        return Response
-                .status(Response.Status.OK)
-                .entity(user)
-                .build();
-    }
-
-    @POST
-    @Path("users/blockUser/{username}")
-    @Logged
-    public Response blockUser(@PathParam("username") String username) {
-        libraryWebServiceImpl.blockUser(username);
-        return Response
-                .status(Response.Status.OK)
-                .entity(username)
-                .build();
-    }
-
-
-    @POST
-    @Path("books/add")
+    @Path("/add")
     @Logged
     public Response addBook(Book book) {
         libraryWebServiceImpl.addBook(book);
@@ -83,7 +34,7 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/remove/{nameOfBook}")
+    @Path("/remove/{nameOfBook}")
     @Logged
     public Response removeBook(@PathParam("nameOfBook") String nameOfBook) {
         System.out.println("nameOfBook to remove: " + nameOfBook);
@@ -92,7 +43,7 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/removeBookByAuthor/{nameOfAuthor}")
+    @Path("/removeBookByAuthor/{nameOfAuthor}")
     @Logged
     public Response removeBookByAuthor(String nameOfAuthor) {
         libraryWebServiceImpl.removeBookByAuthor(nameOfAuthor);
@@ -100,7 +51,7 @@ public class LibraryController { //RESTful Service
     }
 
     @POST
-    @Path("books/addBookmark")
+    @Path("/addBookmark")
     @Logged
     public Response addBookmark(Bookmark bookmark) {
         libraryWebServiceImpl.addBookmark(bookmark);
@@ -108,7 +59,7 @@ public class LibraryController { //RESTful Service
     }
 
     @DELETE
-    @Path("books/removeBookmark/{bookId}")
+    @Path("/removeBookmark/{bookId}")
     @Logged
     public Response removeBookmark(@PathParam("bookId") int bookId) {
         libraryWebServiceImpl.removeBookmark(bookId);
@@ -117,7 +68,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookByName/{bookName}")
+    @Path("/searchBookByName/{bookName}")
     @Logged
     public Response searchBookByName(@PathParam("bookName") String bookName) {
         System.out.println(bookName);
@@ -132,7 +83,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookByAuthor/{authorName}")
+    @Path("/searchBookByAuthor/{authorName}")
     @Logged
     public Response searchBookByAuthor(@PathParam("authorName") String authorName) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByAuthor(authorName);
@@ -146,7 +97,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookByISBN/{ISBN}")
+    @Path("/searchBookByISBN/{ISBN}")
     @Logged
     public Response searchBookByISBN(@PathParam("ISBN") long ISBN) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByISBN(ISBN);
@@ -160,7 +111,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookInRangeOfYears/{yearFrom}/{yearTo}")
+    @Path("/searchBookInRangeOfYears/{yearFrom}/{yearTo}")
     @Logged
     public Response searchBookInRangeOfYears(@PathParam("yearFrom") int yearFrom, @PathParam("yearTo") int yearTo) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookInRangeOfYears(yearFrom, yearTo);
@@ -174,7 +125,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookByYearPagesName/{name}/{year}/{pages}")
+    @Path("/searchBookByYearPagesName/{name}/{year}/{pages}")
     @Logged
     public Response searchBookByYearPagesName(@PathParam("name") String name,
                                               @PathParam("year") int year,
@@ -190,7 +141,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/searchBookWithBookmarks/{visitorId}")
+    @Path("/searchBookWithBookmarks/{visitorId}")
     public Response searchBookWithBookmarks(@PathParam("visitorId") int visitorId) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookWithBookmarks(visitorId);
         BookListWrapper bookListWrapper = new BookListWrapper();
@@ -204,7 +155,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/get-books")
+    @Path("/get-books")
     @Logged
     public Response getListOfBooksFromDB() {
         List<Book> listOfBooks = libraryWebServiceImpl.getListOfBooksFromDB();
@@ -218,7 +169,7 @@ public class LibraryController { //RESTful Service
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("books/get-bookmarks")
+    @Path("/get-bookmarks")
     public Response getListOfBookmarksFromDB() {
         List<Bookmark> listOfBookmarks = libraryWebServiceImpl.getListOfBookmarksFromDB();
         BookmarkListWrapper bookmarkListWrapper = new BookmarkListWrapper();
@@ -226,29 +177,6 @@ public class LibraryController { //RESTful Service
         return Response
                 .status(Response.Status.OK)
                 .entity(bookmarkListWrapper)
-                .build();
-    }
-
-    @GET
-    @Produces({MediaType.APPLICATION_JSON})
-    @Path("users/get-users")
-    public Response getListOfUserFromDB() {
-        List<User> listOfUsers = libraryWebServiceImpl.getListOfUserFromDB();
-        UserListWrapper userListWrapper = new UserListWrapper();
-        userListWrapper.setList(listOfUsers);
-        return Response
-                .status(Response.Status.OK)
-                .entity(userListWrapper)
-                .build();
-    }
-
-    @GET
-    @Produces({MediaType.APPLICATION_JSON})
-    @Path("users/get-logs")
-    public Response getUserLogHistory() {
-        return Response
-                .status(Response.Status.OK)
-                .entity(HistoryManager.read())
                 .build();
     }
 
