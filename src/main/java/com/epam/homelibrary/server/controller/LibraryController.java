@@ -15,7 +15,6 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
-
 @Path("/books")
 public class LibraryController { //RESTful Service
 
@@ -73,12 +72,16 @@ public class LibraryController { //RESTful Service
     public Response searchBookByName(@PathParam("bookName") String bookName) {
         System.out.println(bookName);
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByName(bookName);
-        BookListWrapper bookListWrapper = new BookListWrapper();
-        bookListWrapper.setList(listOfBooks);
-        return Response
-                .status(Response.Status.OK)
-                .entity(bookListWrapper)
-                .build();
+        if (listOfBooks.size() != 0) {
+            BookListWrapper bookListWrapper = new BookListWrapper();
+            bookListWrapper.setList(listOfBooks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookListWrapper)
+                    .build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     @GET
@@ -87,12 +90,16 @@ public class LibraryController { //RESTful Service
     @Logged
     public Response searchBookByAuthor(@PathParam("authorName") String authorName) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByAuthor(authorName);
-        BookListWrapper bookListWrapper = new BookListWrapper();
-        bookListWrapper.setList(listOfBooks);
-        return Response
-                .status(Response.Status.OK)
-                .entity(bookListWrapper)
-                .build();
+        if (listOfBooks.size() != 0) {
+            BookListWrapper bookListWrapper = new BookListWrapper();
+            bookListWrapper.setList(listOfBooks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookListWrapper)
+                    .build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     @GET
@@ -101,12 +108,16 @@ public class LibraryController { //RESTful Service
     @Logged
     public Response searchBookByISBN(@PathParam("ISBN") long ISBN) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByISBN(ISBN);
-        BookListWrapper bookListWrapper = new BookListWrapper();
-        bookListWrapper.setList(listOfBooks);
-        return Response
-                .status(Response.Status.OK)
-                .entity(bookListWrapper)
-                .build();
+        if (listOfBooks.size() != 0) {
+            BookListWrapper bookListWrapper = new BookListWrapper();
+            bookListWrapper.setList(listOfBooks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookListWrapper)
+                    .build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     @GET
@@ -115,12 +126,16 @@ public class LibraryController { //RESTful Service
     @Logged
     public Response searchBookInRangeOfYears(@PathParam("yearFrom") int yearFrom, @PathParam("yearTo") int yearTo) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookInRangeOfYears(yearFrom, yearTo);
-        BookListWrapper bookListWrapper = new BookListWrapper();
-        bookListWrapper.setList(listOfBooks);
-        return Response
-                .status(Response.Status.OK)
-                .entity(bookListWrapper)
-                .build();
+        if (listOfBooks.size() != 0) {
+            BookListWrapper bookListWrapper = new BookListWrapper();
+            bookListWrapper.setList(listOfBooks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookListWrapper)
+                    .build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     @GET
@@ -131,12 +146,16 @@ public class LibraryController { //RESTful Service
                                               @PathParam("year") int year,
                                               @PathParam("pages") int pages) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookByYearPagesName(name, year, pages);
-        BookListWrapper bookListWrapper = new BookListWrapper();
-        bookListWrapper.setList(listOfBooks);
-        return Response
-                .status(Response.Status.OK)
-                .entity(bookListWrapper)
-                .build();
+        if (listOfBooks.size() != 0) {
+            BookListWrapper bookListWrapper = new BookListWrapper();
+            bookListWrapper.setList(listOfBooks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookListWrapper)
+                    .build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     @GET
@@ -144,13 +163,17 @@ public class LibraryController { //RESTful Service
     @Path("/searchBookWithBookmarks/{visitorId}")
     public Response searchBookWithBookmarks(@PathParam("visitorId") int visitorId) {
         List<Book> listOfBooks = libraryWebServiceImpl.searchBookWithBookmarks(visitorId);
-        BookListWrapper bookListWrapper = new BookListWrapper();
-        bookListWrapper.setList(listOfBooks);
-        System.out.println("searchBookWithBookmarks listOfBooks " + listOfBooks);
-        return Response
-                .status(Response.Status.OK)
-                .entity(bookListWrapper)
-                .build();
+        if (listOfBooks.size() != 0) {
+            BookListWrapper bookListWrapper = new BookListWrapper();
+            bookListWrapper.setList(listOfBooks);
+            System.out.println("searchBookWithBookmarks listOfBooks " + listOfBooks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookListWrapper)
+                    .build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     @GET
@@ -159,12 +182,16 @@ public class LibraryController { //RESTful Service
     @Logged
     public Response getListOfBooksFromDB() {
         List<Book> listOfBooks = libraryWebServiceImpl.getListOfBooksFromDB();
-        BookListWrapper bookListWrapper = new BookListWrapper();
-        bookListWrapper.setList(listOfBooks);
-        return Response
-                .status(Response.Status.OK)
-                .entity(bookListWrapper)
-                .build();
+        if (listOfBooks.size() != 0) {
+            BookListWrapper bookListWrapper = new BookListWrapper();
+            bookListWrapper.setList(listOfBooks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookListWrapper)
+                    .build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     @GET
@@ -172,12 +199,16 @@ public class LibraryController { //RESTful Service
     @Path("/get-bookmarks")
     public Response getListOfBookmarksFromDB() {
         List<Bookmark> listOfBookmarks = libraryWebServiceImpl.getListOfBookmarksFromDB();
-        BookmarkListWrapper bookmarkListWrapper = new BookmarkListWrapper();
-        bookmarkListWrapper.setList(listOfBookmarks);
-        return Response
-                .status(Response.Status.OK)
-                .entity(bookmarkListWrapper)
-                .build();
+        if (listOfBookmarks.size() != 0) {
+            BookmarkListWrapper bookmarkListWrapper = new BookmarkListWrapper();
+            bookmarkListWrapper.setList(listOfBookmarks);
+            return Response
+                    .status(Response.Status.OK)
+                    .entity(bookmarkListWrapper)
+                    .build();
+        } else {
+            return Response.status(404).build();
+        }
     }
 
     public void closeConnection() {

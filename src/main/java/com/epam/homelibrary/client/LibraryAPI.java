@@ -1,5 +1,8 @@
 package com.epam.homelibrary.client;
 
+import com.epam.homelibrary.client.exception.BookNotFoundException;
+import com.epam.homelibrary.client.exception.BookmarkNotFoundException;
+import com.epam.homelibrary.client.exception.UnauthorizedUserException;
 import com.epam.homelibrary.common.models.Admin;
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
@@ -31,7 +34,11 @@ public class LibraryAPI {
                 String login = reader.readLine();
                 Main.logger.info("Password: ");
                 String password = reader.readLine();
-                user = RESTConnectionService.authenticate(login, password);
+                try {
+                    user = RESTConnectionService.authenticate(login, password);
+                } catch (UnauthorizedUserException e) {
+                    e.printStackTrace();
+                }
                 if (user == null) {
                     System.out.println("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.\n");
                 } else if (!user.blocked()) {
@@ -189,11 +196,12 @@ public class LibraryAPI {
             listOfBooksFromDB = RESTConnectionService.searchBookByName(bookName);
             bookmark.setBook(listOfBooksFromDB.get(0));
             RESTConnectionService.addBookmark(bookmark);
-        } catch (IOException e) {
+        } catch (IOException | BookNotFoundException e) {
             e.printStackTrace();
         }
     }
-//Harry Potter Chamber of Secrets
+
+    //Harry Potter Chamber of Secrets
     private void removeBookmark() {
         try {
             List<Book> listOfBooksFromDB;
@@ -205,7 +213,7 @@ public class LibraryAPI {
             } else {
                 Main.logger.info("We don't have this book");
             }
-        } catch (IOException e) {
+        } catch (IOException | BookNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -223,7 +231,7 @@ public class LibraryAPI {
             } else {
                 Main.logger.info("We don't have this book");
             }
-        } catch (IOException e) {
+        } catch (IOException | BookNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -241,7 +249,7 @@ public class LibraryAPI {
             } else {
                 Main.logger.info("We don't have books by this author");
             }
-        } catch (IOException e) {
+        } catch (IOException | BookNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -259,7 +267,7 @@ public class LibraryAPI {
             } else {
                 Main.logger.info("We don't have books with this ISBN");
             }
-        } catch (IOException e) {
+        } catch (IOException | BookNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -283,7 +291,7 @@ public class LibraryAPI {
             } else {
                 Main.logger.info("Range of years seems to be incorrect");
             }
-        } catch (IOException e) {
+        } catch (IOException | BookNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -305,19 +313,24 @@ public class LibraryAPI {
             } else {
                 Main.logger.info("We don't have books with this parameters");
             }
-        } catch (IOException e) {
+        } catch (IOException | BookNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     private void searchBookWithBookmarks() {
-        List<Book> listOfBookWithBookmarks = RESTConnectionService.searchBookWithBookmarks(user.getId());
-        if (!listOfBookWithBookmarks.isEmpty()) {
-            for (Book book : listOfBookWithBookmarks) {
-                System.out.println(book);
+        List<Book> listOfBookWithBookmarks = null;
+        try {
+            listOfBookWithBookmarks = RESTConnectionService.searchBookWithBookmarks(user.getId());
+            if (!listOfBookWithBookmarks.isEmpty()) {
+                for (Book book : listOfBookWithBookmarks) {
+                    System.out.println(book);
+                }
+            } else {
+                System.out.println("There are no books with bookmarks");
             }
-        } else {
-            System.out.println("There are no books with bookmarks");
+        } catch (BookNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
@@ -371,24 +384,34 @@ public class LibraryAPI {
     }
 
     private void printBooks() {
-        List<Book> listOfBooksFromDB = RESTConnectionService.getListOfBooksFromDB();
-        if (!listOfBooksFromDB.isEmpty()) {
-            for (Book book : listOfBooksFromDB) {
-                System.out.println(book);
+        List<Book> listOfBooksFromDB = null;
+        try {
+            listOfBooksFromDB = RESTConnectionService.getListOfBooksFromDB();
+            if (!listOfBooksFromDB.isEmpty()) {
+                for (Book book : listOfBooksFromDB) {
+                    System.out.println(book);
+                }
+            } else {
+                Main.logger.info("Database is empty");
             }
-        } else {
-            Main.logger.info("Database is empty");
+        } catch (BookNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
     private void printBookmarks() {
-        List<Bookmark> listOfBookmarksFromDB = RESTConnectionService.getListOfBookmarksFromDB();
-        if (!listOfBookmarksFromDB.isEmpty()) {
-            for (Bookmark bm : listOfBookmarksFromDB) {
-                System.out.println(bm);
+        List<Bookmark> listOfBookmarksFromDB = null;
+        try {
+            listOfBookmarksFromDB = RESTConnectionService.getListOfBookmarksFromDB();
+            if (!listOfBookmarksFromDB.isEmpty()) {
+                for (Bookmark bm : listOfBookmarksFromDB) {
+                    System.out.println(bm);
+                }
+            } else {
+                Main.logger.info("Database is empty");
             }
-        } else {
-            Main.logger.info("Database is empty");
+        } catch (BookmarkNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
