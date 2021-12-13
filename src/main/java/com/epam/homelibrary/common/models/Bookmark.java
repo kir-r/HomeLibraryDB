@@ -5,12 +5,12 @@ import javax.xml.bind.annotation.*;
 
 @Entity
 @Table(name = "Bookmark")
-
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Bookmark", propOrder = {
         "id",
         "page",
-        "visitor",
+        "visitor_id",
         "book"
 })
 public class Bookmark {
@@ -29,6 +29,13 @@ public class Bookmark {
     @OneToOne
     @XmlElement()
     private Book book;
+
+    public Bookmark() {
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public User getVisitor() {
         return visitor;

@@ -2,14 +2,11 @@ package com.epam.homelibrary.common.models;
 
 import javax.persistence.*;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 @Entity
 @Table (name = "Book")
-
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Book", propOrder = {
         "id",
@@ -51,6 +48,10 @@ public class Book {
         this.pages = pages;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
@@ -84,3 +85,4 @@ public class Book {
                 "pages - " + pages +"\n";
     }
 }
+

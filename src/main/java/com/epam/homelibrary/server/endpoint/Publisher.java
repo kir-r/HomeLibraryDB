@@ -1,11 +1,25 @@
 package com.epam.homelibrary.server.endpoint;
 
-import com.epam.homelibrary.server.controller.LibraryWebServiceImpl;
+import com.epam.homelibrary.server.controller.LibraryController;
+import com.epam.homelibrary.server.controller.UserController;
+import com.epam.homelibrary.server.filter.AuthenticationFilter;
+import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
+import org.glassfish.jersey.server.ResourceConfig;
 
-import javax.xml.ws.Endpoint;
+import java.net.URI;
 
 public class Publisher {
     public static void main(String[] args) {
-        Endpoint.publish("http://localhost:9999/ws/LibraryWebService", new LibraryWebServiceImpl());
+        ResourceConfig resourceConfig = new ResourceConfig();
+//        resourceConfig.register(MultiPartFeature.class); //?
+        resourceConfig.register(AutoScanFeature.class); //?
+        resourceConfig.register(AuthenticationFilter.class);
+        resourceConfig.register(LibraryController.class);
+        resourceConfig.register(UserController.class);
+        HttpServer server = GrizzlyHttpServerFactory
+                .createHttpServer(URI
+                        .create("http://localhost:9999/library/"), resourceConfig);
     }
 }

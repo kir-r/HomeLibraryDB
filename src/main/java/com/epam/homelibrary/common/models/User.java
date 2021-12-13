@@ -3,16 +3,13 @@ package com.epam.homelibrary.common.models;
 import com.epam.homelibrary.client.Main;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 import java.util.ArrayList;
 
 @Entity
 @Table(name = "Visitor")
-
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "User", propOrder = {
         "id",
@@ -48,6 +45,9 @@ public class User {
     protected ArrayList<Bookmark> listOfBookmarks = new ArrayList<>();
     @Transient
     protected ArrayList<Book> listOfBooks = new ArrayList<>();
+
+    public User() {
+    }
 
     public int getId() {
         return id;
