@@ -18,12 +18,10 @@ import java.util.List;
 public class LibraryAPI {
     User user;
     private BufferedReader reader;
-    //    private SOAPConnectionService SOAPConnectionService;
     private RESTConnectionService RESTConnectionService;
 
     public LibraryAPI() {
         reader = new BufferedReader(new InputStreamReader(System.in));
-//        SOAPConnectionService = new SOAPConnectionService();
         RESTConnectionService = new RESTConnectionService();
     }
 
@@ -201,7 +199,6 @@ public class LibraryAPI {
         }
     }
 
-    //Harry Potter Chamber of Secrets
     private void removeBookmark() {
         try {
             List<Book> listOfBooksFromDB;
