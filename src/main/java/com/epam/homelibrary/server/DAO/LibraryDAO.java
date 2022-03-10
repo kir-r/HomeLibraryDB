@@ -3,12 +3,16 @@ package com.epam.homelibrary.server.DAO;
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 
-
-public interface LibraryDAO {
+@Repository
+public interface LibraryDAO extends JpaRepository {
 
     void addBook(Book book);
 
@@ -32,7 +36,10 @@ public interface LibraryDAO {
 
     List<Book> searchBookWithBookmarks(int id);
 
-    List<Book> getListOfBooksFromDB();
+    List<Book> getListOfBooksFromDB(); //TODO delete?
+
+    List<Book> findAll(); //TODO correct?
+
 
     List<Bookmark> getListOfBookMarksFromDB();
 

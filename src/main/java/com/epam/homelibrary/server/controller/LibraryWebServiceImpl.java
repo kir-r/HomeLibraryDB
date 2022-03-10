@@ -8,12 +8,13 @@ import com.epam.homelibrary.common.models.User;
 import com.epam.homelibrary.server.DAO.HistoryManager;
 import com.epam.homelibrary.server.DAO.LibraryDAO;
 import com.epam.homelibrary.server.DAO.UserDAO;
-import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
+//import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
 import com.epam.homelibrary.server.DAO.impl.UserDataBaseDAO;
 
 //import org.glassfish.jersey.spi.Contract; //?
 import org.jvnet.hk2.annotations.Contract; //?
 import org.jvnet.hk2.annotations.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 //import javax.annotation.Resource;
 import javax.jws.WebService;
@@ -27,7 +28,10 @@ import java.util.Map;
 //@Contract
 @Service
 public class LibraryWebServiceImpl {
-    private LibraryDAO libraryDAO = new LibraryDataBaseDAO();
+//    private LibraryDAO libraryDAO = new LibraryDataBaseDAO();
+
+    @Autowired
+    private LibraryDAO libraryDAO;
     private UserDAO userDAO = new UserDataBaseDAO();
 
     public User authenticate(String login, String password) {
@@ -88,7 +92,8 @@ public class LibraryWebServiceImpl {
     }
 
     public List<Book> getListOfBooksFromDB() {
-        return libraryDAO.getListOfBooksFromDB();
+//        return libraryDAO.getListOfBooksFromDB(); //TODO correct?
+        return libraryDAO.findAll();
     }
 
     public List<Bookmark> getListOfBookmarksFromDB() {
