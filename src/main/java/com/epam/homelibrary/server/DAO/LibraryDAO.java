@@ -3,17 +3,20 @@ package com.epam.homelibrary.server.DAO;
 import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+//import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
 
 @Repository
-public interface LibraryDAO extends JpaRepository {
-
+public interface LibraryDAO
+//        extends CrudRepository<Book, String>  //TODO generics?
+{
     void addBook(Book book);
 
     void removeBook(String nameOfBook);
@@ -38,7 +41,8 @@ public interface LibraryDAO extends JpaRepository {
 
     List<Book> getListOfBooksFromDB(); //TODO delete?
 
-    List<Book> findAll(); //TODO correct?
+
+//    List<Book> findAll(); //TODO correct?
 
 
     List<Bookmark> getListOfBookMarksFromDB();

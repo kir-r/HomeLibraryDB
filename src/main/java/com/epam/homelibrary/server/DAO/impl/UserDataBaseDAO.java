@@ -1,8 +1,8 @@
 package com.epam.homelibrary.server.DAO.impl;
 
 import com.epam.homelibrary.server.DAO.UserDAO;
-import com.epam.homelibrary.client.Main;
 import com.epam.homelibrary.common.models.User;
+import com.epam.homelibrary.server.endpoint.Publisher;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -44,7 +44,7 @@ public class UserDataBaseDAO implements UserDAO {
             Transaction transaction = session.beginTransaction();
             session.save(user);
             transaction.commit();
-            Main.logger.info("New user " + user.getName() + " is created.");
+            Publisher.logger.info("New user " + user.getName() + " is created.");
         }
     }
 
@@ -60,18 +60,18 @@ public class UserDataBaseDAO implements UserDAO {
             Transaction transaction = session.beginTransaction();
             session.createQuery(criteriaUpdate).executeUpdate();
             transaction.commit();
-            Main.logger.info("User " + username + " is banned.");
+            Publisher.logger.info("User " + username + " is banned.");
         }
     }
 
     public List<String> getUserLogHistory() {
         List<String> listOfUserLogs = new ArrayList<>();
-        try (BufferedReader bufferedreader = new BufferedReader(new FileReader("src/main/resources/app.log"))) {
+        try (BufferedReader bufferedreader = new BufferedReader(new FileReader("src/Publisher/resources/app.log"))) {
             while (bufferedreader.ready()) {
                 listOfUserLogs.add(bufferedreader.readLine());
             }
         } catch (IOException e) {
-            Main.logger.error(e.getMessage());
+            Publisher.logger.error(e.getMessage());
         }
         return listOfUserLogs;
     }

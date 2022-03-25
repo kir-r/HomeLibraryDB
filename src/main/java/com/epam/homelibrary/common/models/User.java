@@ -1,6 +1,6 @@
 package com.epam.homelibrary.common.models;
 
-import com.epam.homelibrary.client.Main;
+import com.epam.homelibrary.server.endpoint.Publisher;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
@@ -97,7 +97,7 @@ public class User {
         if (login.equalsIgnoreCase(this.login) && password.equals(this.password)) {
             return true;
         } else {
-            Main.logger.info("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.");
+            Publisher.logger.info("Oops, login or password is incorrect.\nMake sure that CapsLock is not on by mistake, and try again.");
 
             return false;
         }

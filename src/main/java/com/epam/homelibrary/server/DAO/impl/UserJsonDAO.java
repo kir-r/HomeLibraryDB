@@ -2,8 +2,8 @@ package com.epam.homelibrary.server.DAO.impl;
 
 import com.epam.homelibrary.common.models.Admin;
 import com.epam.homelibrary.common.models.Book;
-import com.epam.homelibrary.client.Main;
 import com.epam.homelibrary.common.models.User;
+import com.epam.homelibrary.server.endpoint.Publisher;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -16,7 +16,7 @@ public class UserJsonDAO {
     public User authenticate(String login, String password) {
         if (login.equalsIgnoreCase("Admin") && password.equals("qwerty")) {
             Admin admin = null;
-            try (BufferedReader reader = new BufferedReader(new FileReader("src\\main\\resources\\admin.json"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("src\\Publisher\\resources\\admin.json"))) {
                 StringBuilder stringBuilder = new StringBuilder();
                 String s;
                 while ((s = reader.readLine()) != null) {
@@ -30,7 +30,7 @@ public class UserJsonDAO {
 
                 admin = gson.fromJson(jsonText, Admin.class);
 
-                Main.logger.info("You have logged as admin\n" + admin);
+                Publisher.logger.info("You have logged as admin\n" + admin);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -38,7 +38,7 @@ public class UserJsonDAO {
 
         } else if (login.equalsIgnoreCase("User") && password.equals("11111")) {
             User user = null;
-            try (BufferedReader reader = new BufferedReader(new FileReader("src\\main\\resources\\users.json"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("src\\Publisher\\resources\\users.json"))) {
                 StringBuilder stringBuilder = new StringBuilder();
                 String s;
                 while ((s = reader.readLine()) != null) {
@@ -52,7 +52,7 @@ public class UserJsonDAO {
 
                 user = gson.fromJson(jsonText, User.class);
 
-                Main.logger.info("You have logged as user\n" + user);
+                Publisher.logger.info("You have logged as user\n" + user);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -65,7 +65,7 @@ public class UserJsonDAO {
     }
 
     public static void refresh(ArrayList<Book> listOfBooks) {
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src\\main\\resources\\Library.json"))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src\\Publisher\\resources\\Library.json"))) {
             String json = new Gson().toJson(listOfBooks);
             bufferedWriter.write(json + "\n");
 
@@ -79,33 +79,33 @@ public class UserJsonDAO {
         user.setName(username);
         user.setBlocked(false);
         listOfUsers.add(user);
-        Main.logger.info("New user " + user.getName() + " is created.");
+        Publisher.logger.info("New user " + user.getName() + " is created.");
     }
 
     public void blockUser() { //14
         String newJson;
-        try (FileReader reader = new FileReader("src\\main\\resources\\users.json")) {
+        try (FileReader reader = new FileReader("src\\Publisher\\resources\\users.json")) {
             Gson gson = new Gson();
             User user = gson.fromJson(reader, User.class);
             user.setBlocked(true);
             newJson = gson.toJson(user);
-            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src\\main\\resources\\users.json"))) {
+            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src\\Publisher\\resources\\users.json"))) {
                 bufferedWriter.write(newJson);
             } catch (Exception e) {
-                Main.logger.error(e.getMessage());
+                Publisher.logger.error(e.getMessage());
             }
         } catch (IOException e) {
-            Main.logger.error(e.getMessage());
+            Publisher.logger.error(e.getMessage());
         }
     }
 
     public void getUserLogHistory() { //15
-        try (BufferedReader bufferedreader = new BufferedReader(new FileReader("src/main/resources/app.log"))) {
+        try (BufferedReader bufferedreader = new BufferedReader(new FileReader("src/Publisher/resources/app.log"))) {
             while (bufferedreader.ready()) {
-                Main.logger.info(bufferedreader.readLine());
+                Publisher.logger.info(bufferedreader.readLine());
             }
         } catch (IOException e) {
-            Main.logger.error(e.getMessage());
+            Publisher.logger.error(e.getMessage());
         }
     }
 }

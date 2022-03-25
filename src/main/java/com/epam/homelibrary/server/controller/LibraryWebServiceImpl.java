@@ -8,31 +8,27 @@ import com.epam.homelibrary.common.models.User;
 import com.epam.homelibrary.server.DAO.HistoryManager;
 import com.epam.homelibrary.server.DAO.LibraryDAO;
 import com.epam.homelibrary.server.DAO.UserDAO;
-//import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
+import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
 import com.epam.homelibrary.server.DAO.impl.UserDataBaseDAO;
+import org.springframework.stereotype.Service;
 
-//import org.glassfish.jersey.spi.Contract; //?
-import org.jvnet.hk2.annotations.Contract; //?
-import org.jvnet.hk2.annotations.Service;
-import org.springframework.beans.factory.annotation.Autowired;
-
-//import javax.annotation.Resource;
-import javax.jws.WebService;
-import javax.xml.ws.WebServiceContext;
-import javax.xml.ws.handler.MessageContext;
 import java.util.List;
-import java.util.Map;
 
 //@WebService(endpointInterface = "com.epam.homelibrary.common.LibraryWebService")
 
 //@Contract
 @Service
 public class LibraryWebServiceImpl {
-//    private LibraryDAO libraryDAO = new LibraryDataBaseDAO();
+    private LibraryDAO libraryDAO = new LibraryDataBaseDAO();
 
-    @Autowired
-    private LibraryDAO libraryDAO;
+//    @Autowired
+//    private LibraryDAO libraryDAO;
     private UserDAO userDAO = new UserDataBaseDAO();
+
+//    @Autowired
+//    public LibraryWebServiceImpl(LibraryDAO libraryDAO) {
+//        this.libraryDAO = libraryDAO;
+//    }
 
     public User authenticate(String login, String password) {
         HistoryManager.authenticate(login);
@@ -91,9 +87,10 @@ public class LibraryWebServiceImpl {
         return libraryDAO.searchBookWithBookmarks(id);
     }
 
+//    @Transactional
     public List<Book> getListOfBooksFromDB() {
-//        return libraryDAO.getListOfBooksFromDB(); //TODO correct?
-        return libraryDAO.findAll();
+        return libraryDAO.getListOfBooksFromDB(); //TODO correct?
+//        return libraryDAO.findAll();
     }
 
     public List<Bookmark> getListOfBookmarksFromDB() {

@@ -4,9 +4,6 @@
 //import com.epam.homelibrary.common.models.Bookmark;
 //import com.epam.homelibrary.common.models.User;
 //
-//import javax.jws.WebMethod;
-//import javax.jws.WebService;
-//import javax.jws.soap.SOAPBinding;
 //import java.util.List;
 //
 //@WebService
