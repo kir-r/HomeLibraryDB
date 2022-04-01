@@ -4,15 +4,19 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 //@EnableWebMvc
 //@Configuration
-@ComponentScan("com.epam.homelibrary")
-//@EnableJpaRepositories("com.epam.homelibrary")
+//@ComponentScan("com.epam.homelibrary")
 @SpringBootApplication
+@EntityScan(basePackages = "com.epam.homelibrary")
+@EnableJpaRepositories(basePackages = "com.epam.homelibrary")
 public class Publisher {
     public static final Logger logger = LogManager.getLogger("Publisher");
+
     public static void main(String[] args) {
         SpringApplication.run(Publisher.class, args);
 

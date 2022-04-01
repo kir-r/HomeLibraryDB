@@ -5,7 +5,7 @@ import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.wrappers.BookListWrapper;
 import com.epam.homelibrary.common.models.wrappers.BookmarkListWrapper;
 import com.epam.homelibrary.server.DAO.HistoryManager;
-import com.epam.homelibrary.server.filter.Logged;
+//import com.epam.homelibrary.server.filter.Logged;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -185,7 +185,7 @@ public class LibraryController { //RESTful Service
 //    @Produces({MediaType.APPLICATION_JSON})
 //    @Path("/get-books")
     @GetMapping(value = "/get-books")
-    @Logged
+//    @Logged
     public ResponseEntity<List<Book>> getListOfBooksFromDB() {
         List<Book> listOfBooks = libraryWebServiceImpl.getListOfBooksFromDB();
         if (listOfBooks.size() != 0) {

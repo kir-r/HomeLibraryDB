@@ -10,6 +10,7 @@ import com.epam.homelibrary.server.DAO.LibraryDAO;
 import com.epam.homelibrary.server.DAO.UserDAO;
 import com.epam.homelibrary.server.DAO.impl.LibraryDataBaseDAO;
 import com.epam.homelibrary.server.DAO.impl.UserDataBaseDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,10 +26,10 @@ public class LibraryWebServiceImpl {
 //    private LibraryDAO libraryDAO;
     private UserDAO userDAO = new UserDataBaseDAO();
 
-//    @Autowired
-//    public LibraryWebServiceImpl(LibraryDAO libraryDAO) {
-//        this.libraryDAO = libraryDAO;
-//    }
+    @Autowired
+    public LibraryWebServiceImpl(LibraryDAO libraryDAO) {
+        this.libraryDAO = libraryDAO;
+    }
 
     public User authenticate(String login, String password) {
         HistoryManager.authenticate(login);
