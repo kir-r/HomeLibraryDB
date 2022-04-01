@@ -16,6 +16,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 //import jakarta.ws.rs.client.Client;
@@ -27,7 +28,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Service
+//@Service
+@Component
 public class RESTConnectionService {
     private static final String REST_URI = "http://localhost:9999/library/";
     private final static String AUTHENTICATE_URI = REST_URI + "/authorization";

@@ -8,6 +8,7 @@ import com.epam.homelibrary.common.models.Book;
 import com.epam.homelibrary.common.models.Bookmark;
 import com.epam.homelibrary.common.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -17,7 +18,8 @@ import java.io.InputStreamReader;
 
 import java.util.List;
 
-@Service
+//@Service
+@Component
 public class LibraryAPI {
     User user;
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
