@@ -9,8 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.web.client.RestTemplate;
 
-@Configuration
-@ComponentScan("com.epam.homelibrary")
+
+
+//@ComponentScan("com.epam.homelibrary")
 //@PropertySource()
 public class MainConfig {
 

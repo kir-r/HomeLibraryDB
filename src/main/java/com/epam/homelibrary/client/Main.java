@@ -1,5 +1,6 @@
 package com.epam.homelibrary.client;
 
+import com.epam.homelibrary.client.config.MainConfig;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,7 +15,7 @@ public class Main {
 //        BasicConfigurator.configure();
 
         Main main = new Main();
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(Main.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
 
         main.libraryAPI = applicationContext.getBean(LibraryAPI.class);
         main.restConnectionService = applicationContext.getBean(RESTConnectionService.class);

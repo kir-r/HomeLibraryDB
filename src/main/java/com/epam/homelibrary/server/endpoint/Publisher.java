@@ -12,8 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //@Configuration
 //@ComponentScan("com.epam.homelibrary")
 @SpringBootApplication
-@EntityScan(basePackages = "com.epam.homelibrary")
-@EnableJpaRepositories(basePackages = "com.epam.homelibrary")
+@EntityScan(basePackages = "com.epam.homelibrary.common.models")
+@EnableJpaRepositories(basePackages = "com.epam.homelibrary.server.DAO")
 public class Publisher {
     public static final Logger logger = LogManager.getLogger("Publisher");
 

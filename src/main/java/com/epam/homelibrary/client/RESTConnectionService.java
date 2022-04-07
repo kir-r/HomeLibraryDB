@@ -12,10 +12,7 @@ import com.epam.homelibrary.common.models.wrappers.UserListWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -27,15 +24,15 @@ import org.springframework.web.client.RestTemplate;
 //import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Map;
 
 //@Service
 @Component
 public class RESTConnectionService {
-    private static final String REST_URI = "http://localhost:9999/library/";
-    private final static String AUTHENTICATE_URI = REST_URI + "/authorization";
+    private static final String REST_URI = "http://localhost:8080/library/";
+    private final static String AUTHENTICATE_URI = REST_URI + "users/authorization";
     private String jwtToken;
     private User user;
-
     private RestTemplate restTemplate;
 
 
@@ -50,13 +47,15 @@ public class RESTConnectionService {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("login", login);
         httpHeaders.add("password", password);
+//        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
 
-            ResponseEntity<User> response = restTemplate
-                    .exchange(AUTHENTICATE_URI, HttpMethod.GET,
-                            new HttpEntity<String>(httpHeaders), User.class);
-
-
-
+        ResponseEntity<User> response = restTemplate
+                .exchange
+                        (AUTHENTICATE_URI, HttpMethod.POST,
+                                new HttpEntity<>(httpHeaders), User.class);
+        user = response.getBody();
+        return user;
+    }
 
 
 //        Response response = client.target(REST_URI)
@@ -70,13 +69,11 @@ public class RESTConnectionService {
 //        }
 
 
-        User user = response.getBody();
 //        if (user != null) {
 //            jwtToken = response.getCookies().get("token").getValue();
 //        }
 //        System.out.println("jwtToken: " + jwtToken);
-        return user;
-    }
+
 
 //    public void createUser(User user) {
 //        Response response = client.target(REST_URI)
@@ -257,14 +254,25 @@ public class RESTConnectionService {
 //                .getList();
 //    }
 //
-//    public List<User> getListOfUserFromDB() {
+    public List<User> getListOfUserFromDB() {
+
+
+
+        ResponseEntity<List> response = restTemplate
+                .exchange
+                        ("http://localhost:8080/library/users/get-users", HttpMethod.GET,
+                                new HttpEntity<List<User>>(new HttpHeaders()), List.class);
+        List<User> list = response.getBody();
+        return list;
+
+
 //        Response response = client.target(REST_URI)
 //                .path("users/get-users")
 //                .request(MediaType.APPLICATION_JSON)
 //                .cookie("token", jwtToken)
 //                .get();
 //        return response.readEntity(UserListWrapper.class).getList();
-//    }
+    }
 //
 //    public List<String> getUserLogHistory() {
 //        Response response = client.target(REST_URI)
